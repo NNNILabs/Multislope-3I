@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "0603 Jumper")(type "KiCad")(uri "${KIPRJMOD}/0603 Jumper.pretty")(options "")(descr ""))
+)
