@@ -1,0 +1,2418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\vivek\Desktop\KiCAD Projects\Multislope 3I\Multislope-3I-\Multislope 3I.kicad_sch</source>
+    <date>27-04-2022 12:31:15</date>
+    <tool>Eeschema (6.0.0)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Multislope 3I.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6628b97a-bd0f-489d-8b60-169a53a549ac</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>1uF</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>332eefb8-9a4c-4247-8a9c-f1abb67fad1e</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>100nF</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ba373b24-3f5e-4a92-bfb0-3523edf185e1</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>191e37d6-0870-4ecf-8f40-3e03dc49b0dc</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7ea15abd-81d0-4efd-ac9c-9153d70c4e38</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>48b932a2-65d1-47a0-8df5-9f6d178607bf</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f73cbbfb-8d4e-4fe8-9f5f-efc218cfa871</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ffdefd8b-782a-45aa-8e64-664be53f10dd</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>100pF</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2c051986-ab08-44c7-8319-50006e5a729a</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>1nF</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7dfd7be9-ba1b-4ab6-8bae-42a51523f3fe</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>42e35f4d-0f3c-41bb-aac9-2e92977ec621</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b1ca8c4a-9549-49b1-a7b5-c66b8b37741f</tstamps>
+    </comp>
+    <comp ref="C13">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>18d564f8-9824-48a7-8f91-52982f6983aa</tstamps>
+    </comp>
+    <comp ref="C14">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>05298290-d68d-45b8-9469-f4480a6ae4ca</tstamps>
+    </comp>
+    <comp ref="C15">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eced03e4-5e52-4ec7-83ae-f96c1918cc3c</tstamps>
+    </comp>
+    <comp ref="C16">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9e668b82-96e3-4102-a218-15f73b9dd26a</tstamps>
+    </comp>
+    <comp ref="C17">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>58e36cef-b9c7-449e-ad58-cb9713cae38d</tstamps>
+    </comp>
+    <comp ref="C18">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>180e2a20-0236-4269-8f0d-45f3eb7edaf9</tstamps>
+    </comp>
+    <comp ref="C19">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bd3756c6-da5c-4693-b105-cbdcaf404d40</tstamps>
+    </comp>
+    <comp ref="C20">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8ba99ffd-f1c4-4e98-966d-a35a80ced159</tstamps>
+    </comp>
+    <comp ref="C21">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>da38a1ab-f803-4be5-ba17-e9dfc994aae5</tstamps>
+    </comp>
+    <comp ref="C22">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c3ee1df8-429e-44b6-b52e-d6ae0ef86ff5</tstamps>
+    </comp>
+    <comp ref="C23">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d03a21e1-1b9f-42dc-97d4-b2bae5818684</tstamps>
+    </comp>
+    <comp ref="C24">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e67f1ab9-8a0c-423d-b1c4-946d74604d5d</tstamps>
+    </comp>
+    <comp ref="C25">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0df754e6-01aa-488f-ae3e-f01294f67ad9</tstamps>
+    </comp>
+    <comp ref="C26">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5ba6cded-03b4-4990-9f78-fd9f5f421f89</tstamps>
+    </comp>
+    <comp ref="C27">
+      <value>1uf</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a0871706-a591-4a48-b7a8-cdeae50d478b</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>4148</value>
+      <footprint>Diode_SMD:D_SOD-323</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4f37de66-0f2a-491f-9e19-ac9e1e7e36db</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>4148</value>
+      <footprint>Diode_SMD:D_SOD-323</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6c8a0a79-307f-4fd1-a6f7-2b5c428972d3</tstamps>
+    </comp>
+    <comp ref="FB1">
+      <value>FB</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="FerriteBead_Small" description="Ferrite bead, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0675bf42-7aae-4b42-b5f5-3189b300f77b</tstamps>
+    </comp>
+    <comp ref="FB2">
+      <value>FB</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="FerriteBead_Small" description="Ferrite bead, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>83e2fb59-8d66-4df1-ae7d-6b17289e6499</tstamps>
+    </comp>
+    <comp ref="FB3">
+      <value>FB</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="FerriteBead_Small" description="Ferrite bead, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a9f5e154-8c0e-46d2-aa1b-77861b94be31</tstamps>
+    </comp>
+    <comp ref="FB4">
+      <value>FB</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="FerriteBead_Small" description="Ferrite bead, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4969d155-4ae1-4c7a-8e0f-cc15f0e05d7f</tstamps>
+    </comp>
+    <comp ref="FB5">
+      <value>FB</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="FerriteBead_Small" description="Ferrite bead, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>660b79fd-0c3e-4fcd-9ea5-eb3a6f080691</tstamps>
+    </comp>
+    <comp ref="H1">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3_Pad_Via</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e7933aeb-a3b7-4cc6-9145-65d0d544b56a</tstamps>
+    </comp>
+    <comp ref="H2">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3_Pad_Via</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7e42e1a3-af8b-46ea-be35-0c77f58f1c1e</tstamps>
+    </comp>
+    <comp ref="H3">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3_Pad_Via</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ddf0d6d9-2966-467f-890b-4d3b60df2caf</tstamps>
+    </comp>
+    <comp ref="H4">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3_Pad_Via</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2def1fb1-e71c-4211-825c-c14bbb3a90c6</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>INT</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0c63adf7-f74d-438c-a072-0930c44532f8</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>TEST</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x07" description="Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>862aa078-8de1-45ee-ba36-311e18d135e7</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>COMP</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aff2d76e-d08f-474f-bf6c-f0e5c675067c</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>SLOT</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>89995b7c-ed8a-41f5-a86f-c6f7c3a1376e</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>SLOT</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9f2dc3e5-a863-4c5d-ab34-489e2d03df84</tstamps>
+    </comp>
+    <comp ref="J6">
+      <value>SLOT</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8daf4d74-7f28-46ca-8822-011773cebf1e</tstamps>
+    </comp>
+    <comp ref="J7">
+      <value>SLOPE2</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a6111d24-4769-47a7-964a-4fe538e2dba1</tstamps>
+    </comp>
+    <comp ref="J8">
+      <value>PWR</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x03" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>36979759-fa5d-4629-a14f-4af5f47fc628</tstamps>
+    </comp>
+    <comp ref="J9">
+      <value>SLOT</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bdcec9dc-da09-4e70-85b5-b38354bb6f6d</tstamps>
+    </comp>
+    <comp ref="J10">
+      <value>PWR</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e7007c17-f178-43e4-8433-05a5fc97a32a</tstamps>
+    </comp>
+    <comp ref="J11">
+      <value>TEST</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x03" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1f8bbbc7-89be-4572-9a53-3a3939a95dca</tstamps>
+    </comp>
+    <comp ref="J12">
+      <value>UART</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d0778a64-bda2-49fd-9dbf-6d3a2923b8eb</tstamps>
+    </comp>
+    <comp ref="J13">
+      <value>INPUT</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0527ae96-514f-47aa-8501-80f714695937</tstamps>
+    </comp>
+    <comp ref="J14">
+      <value>SLOPE</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1451362a-1b5d-4478-a887-4ce617d6ccd0</tstamps>
+    </comp>
+    <comp ref="N1">
+      <value>REF CASE</value>
+      <footprint>0603 Jumper:Ref Case</footprint>
+      <libsource lib="Mechanical" part="Housing" description="Housing"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a56cbfc2-e0e8-4ff7-b32a-e3993a710df9</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>5551</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>www.onsemi.com/pub/Collateral/MMBT5550LT1-D.PDF</datasheet>
+      <libsource lib="Transistor_BJT" part="MMBT5551L" description="0.6A Ic, 160V Vce, NPN Transistor, SOT-23"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7ebe8708-792a-43c3-9b97-cea582711a6c</tstamps>
+    </comp>
+    <comp ref="Q2">
+      <value>5551</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>www.onsemi.com/pub/Collateral/MMBT5550LT1-D.PDF</datasheet>
+      <libsource lib="Transistor_BJT" part="MMBT5551L" description="0.6A Ic, 160V Vce, NPN Transistor, SOT-23"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ed399e20-7cbe-40e5-91ec-f99aa037ddf8</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6cfc1896-8e04-4aa5-962d-b85a8ee40af2</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f82c8d40-c3cf-45f0-849e-cc7b08cc0939</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a2b0c616-9fcd-4167-af0b-fbaf099a32b1</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c89bc618-89e0-46b2-bd72-396299b21ee9</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>5R1</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5a28cb65-bc1f-4d10-af08-700269eb9bf5</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>0R</value>
+      <footprint>0603 Jumper:0603 Jumper</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>43bc7c08-9685-4997-b84c-1e3d0eda816d</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>0R</value>
+      <footprint>0603 Jumper:0603 Jumper</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b07f6f8a-9b11-47f2-9c21-e4d605ae9522</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>77a5f877-6214-4376-a582-a4a70778a38e</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6c575007-a56f-40c8-8ef1-e5411dbf17ff</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ade2cb95-8122-4d54-a630-98e49a0ad1f9</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e7d4bbce-b14c-4ab7-a794-1df466f7ab95</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>52296131-7ecd-4a39-9216-1e1b97e29580</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4df20104-8b53-43b3-8a94-787cc073faca</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eb5f6024-1303-44be-a0d7-11f381403d77</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c3e7b365-74ec-4938-aa3e-d6505aa4052d</tstamps>
+    </comp>
+    <comp ref="R16">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4fb48760-7897-446e-9759-7901375c7101</tstamps>
+    </comp>
+    <comp ref="R17">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>39720bcd-fbab-44a9-bb58-d9d770fc6785</tstamps>
+    </comp>
+    <comp ref="R18">
+      <value>1K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d5a94c17-610f-4ac3-9ce3-54009a5d0d2e</tstamps>
+    </comp>
+    <comp ref="R19">
+      <value>0R</value>
+      <footprint>0603 Jumper:0603 Jumper</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9578971f-3680-4379-a511-809b49c4fe7f</tstamps>
+    </comp>
+    <comp ref="R20">
+      <value>0R</value>
+      <footprint>0603 Jumper:0603 Jumper</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>84fce654-269f-4c6c-ae4e-eafaff4a3f7c</tstamps>
+    </comp>
+    <comp ref="R21">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3cf1be89-118d-4883-a862-f7df175f74fe</tstamps>
+    </comp>
+    <comp ref="R22">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>35e8361f-76d8-46fc-91a2-6bc893322a25</tstamps>
+    </comp>
+    <comp ref="R23">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>de342831-429a-43b9-9969-d0e804066bea</tstamps>
+    </comp>
+    <comp ref="R24">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>faaede8c-2aeb-4f9f-951c-9e98aefd8353</tstamps>
+    </comp>
+    <comp ref="R25">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f1e402fd-dc41-43d4-ad13-b0b917c43e75</tstamps>
+    </comp>
+    <comp ref="R26">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5c56ca85-af23-449f-b9c5-8f5ca6ea7acc</tstamps>
+    </comp>
+    <comp ref="R27">
+      <value>1K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>27996f46-9721-4459-b279-a02029f650d2</tstamps>
+    </comp>
+    <comp ref="R28">
+      <value>1K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2b7613d2-7454-492d-bcac-c693e0e64b96</tstamps>
+    </comp>
+    <comp ref="R29">
+      <value>1K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fbf73ce1-31f4-4cf5-96b3-0184b6ebca61</tstamps>
+    </comp>
+    <comp ref="R30">
+      <value>1K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d6372b44-0b0c-4419-9b18-07d148eac04e</tstamps>
+    </comp>
+    <comp ref="R31">
+      <value>1K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c0142b9a-a832-44f9-902a-2ac9f04288c8</tstamps>
+    </comp>
+    <comp ref="R32">
+      <value>1K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>66ba6072-8cab-47a6-8cdf-016ec92ebdbe</tstamps>
+    </comp>
+    <comp ref="R33">
+      <value>1K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fc191d56-a42a-4644-9f30-70e38a18c847</tstamps>
+    </comp>
+    <comp ref="R34">
+      <value>100K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d3abd803-4d03-46e4-b461-b71c8728000f</tstamps>
+    </comp>
+    <comp ref="R35">
+      <value>1K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2778d783-6019-4027-b6a1-850375732747</tstamps>
+    </comp>
+    <comp ref="R36">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d9ac8629-f007-4884-ae65-66c64aaad151</tstamps>
+    </comp>
+    <comp ref="R37">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>639134aa-1352-4d61-9bbe-1bd467b8eac0</tstamps>
+    </comp>
+    <comp ref="R38">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f32d3a3d-15c3-42a1-9da3-d3c4b380baf0</tstamps>
+    </comp>
+    <comp ref="R39">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>188552ba-5296-48e7-a5e1-ddd5dce08152</tstamps>
+    </comp>
+    <comp ref="R40">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>62fdd72d-bbb8-4f51-a734-d1d9b8538ed4</tstamps>
+    </comp>
+    <comp ref="R41">
+      <value>2K4</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>54ee8cfe-28f2-424b-8629-e51e250fbf55</tstamps>
+    </comp>
+    <comp ref="R42">
+      <value>7K5</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>98c22f57-ae24-4d97-a640-5f82a3fc2afa</tstamps>
+    </comp>
+    <comp ref="R43">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>49657b69-0138-4ffe-a1b6-0c0668091997</tstamps>
+    </comp>
+    <comp ref="R44">
+      <value>50K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>925d75ba-589c-4e9b-9acc-2aa55387c0da</tstamps>
+    </comp>
+    <comp ref="R45">
+      <value>25K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f27425cb-8d76-4933-84eb-8cfb4cbab126</tstamps>
+    </comp>
+    <comp ref="R46">
+      <value>5K6</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>45c38f0b-cd3d-47af-bcec-7d77df8df55a</tstamps>
+    </comp>
+    <comp ref="R47">
+      <value>15K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>675c235f-0142-47a1-a473-46d2f1829756</tstamps>
+    </comp>
+    <comp ref="R48">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>05ebb22e-8c17-4640-8e3b-b8d70bb1d75c</tstamps>
+    </comp>
+    <comp ref="R49">
+      <value>10R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a2400fbd-79ee-417f-8ab9-4e714e964b9d</tstamps>
+    </comp>
+    <comp ref="R50">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>abb99c4f-63f9-4129-b26d-4cc7637258a3</tstamps>
+    </comp>
+    <comp ref="R51">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3a932ca9-4446-4ea1-9b9c-f083f5373b81</tstamps>
+    </comp>
+    <comp ref="R52">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>302f77cd-ab48-48a5-a7b2-0e2b1f542178</tstamps>
+    </comp>
+    <comp ref="RN1">
+      <value>10K</value>
+      <footprint>Package_SO:SOIC-16_3.9x9.9mm_P1.27mm</footprint>
+      <libsource lib="Device" part="R_Pack08_Split" description="8 resistor network, parallel topology, split"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3dcabc13-5020-4da0-934c-8f7e54b8a142 c5fca73e-6969-4798-ae26-1f1d58d21710 f79ff044-7598-4f04-b3b5-8c4d910b6ca3 580914aa-ded3-44e5-b1cf-920b0f2c75c6 6d56b9e0-eccc-4d4c-917d-292943d2d5f0 3c499bb9-1e1a-46bc-b431-9545bb66418e de9190be-0426-45cf-b72f-6e933d6151f4 0789c018-baf5-4a9a-94f8-ebb91f545f31</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>OPA21xx</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/opa2197.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="OPA2197xD" description="Dual 36V, Precision, Rail-to-Rail Input/Output, Low Offset Voltage, Operational Amplifier, SOIC-8"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>30f27120-8919-4f22-a0e2-49bd0c1104a0 848c6095-3966-404d-9f2a-51150fd8dc54 241e0c85-4796-48eb-a5a0-1c0f2d6e5910</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>LM399</value>
+      <footprint>Package_TO_SOT_THT:Analog_TO-46-4_ThermalShield</footprint>
+      <datasheet>https://www.analog.com/media/en/technical-documentation/data-sheets/199399fc.pdf</datasheet>
+      <libsource lib="Reference_Voltage" part="LM399" description="Precision Reference, 6.95V, Buried Zener Diode with Thermal Shielding Can, TO-46-4"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cc4afe6e-6350-4dc4-b23d-027be576f0ed</tstamps>
+    </comp>
+    <comp ref="U3">
+      <value>CD4053B</value>
+      <footprint>Package_SO:SOIC-16_3.9x9.9mm_P1.27mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/cd4052b.pdf</datasheet>
+      <libsource lib="Analog_Switch" part="CD4053B" description="CMOS triple 2-channel analog multiplexer/demultiplexer, TSSOP-16/DIP-16/SOIC-16"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d9ea304f-d64b-49ce-8ddd-0d2ea8e2682e</tstamps>
+    </comp>
+    <comp ref="U4">
+      <value>OPA1xx</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <libsource lib="Better Op-Amp" part="Better_Op-Amp" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bde8c9a2-5a7a-41e9-99ff-c06be43f6550 a4428441-c05c-4bb9-9485-3d4806f1e191</tstamps>
+    </comp>
+    <comp ref="U5">
+      <value>OPA1xx</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <libsource lib="Better Op-Amp" part="Better_Op-Amp" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>79452f24-b48f-40a0-97ea-09c73bb09445 41920203-885a-4726-b3e2-db43c44d1c9c</tstamps>
+    </comp>
+    <comp ref="U6">
+      <value>OPA1xx</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <libsource lib="Better Op-Amp" part="Better_Op-Amp" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>87d12864-a0e8-4310-9a66-a8b9c6099da4 1aac4077-bad0-4463-b828-61cc63a5ccc0</tstamps>
+    </comp>
+    <comp ref="U7">
+      <value>431</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/tl431.pdf</datasheet>
+      <libsource lib="" part="TL431DBZ_1" description="Shunt Regulator, SOT-23"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d0923c7e-2382-4dc2-b2aa-27bf694de74c</tstamps>
+    </comp>
+    <comp ref="U8">
+      <value>431</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/tl431.pdf</datasheet>
+      <libsource lib="Reference_Voltage" part="TL431DBZ" description="Shunt Regulator, SOT-23"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>11e27ff1-17fb-4c4c-b07d-21bf6793dce5</tstamps>
+    </comp>
+    <comp ref="U9">
+      <value>408</value>
+      <footprint>Package_SO:SOIC-16_3.9x9.9mm_P1.27mm</footprint>
+      <datasheet>https://www.analog.com/media/en/technical-documentation/data-sheets/ADG1408_1409.pdf</datasheet>
+      <libsource lib="Analog_Switch" part="ADG1408YRUZ" description="8-channel iCMOS analog multiplexer, 4.7 Ohm Ron, 60 MHz, TSSOP-16"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7ce5541a-769c-4a37-91a1-d2f28c7468b3</tstamps>
+    </comp>
+    <comp ref="U10">
+      <value>LM311</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <libsource lib="" part="Better_Op-Amp_1" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5f32fa3d-c341-4ae2-baea-ed817563f04c 579ab363-6acc-4856-bf07-71cc18493068</tstamps>
+    </comp>
+    <comp ref="U11">
+      <value>NE5534</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <libsource lib="Better Op-Amp" part="Better_Op-Amp" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f7d287b0-cf93-4d50-9350-485b065f7c52 8a41a85f-9279-4462-ab7c-4c941b3b9d96</tstamps>
+    </comp>
+    <comp ref="U12">
+      <value>OPA197</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <libsource lib="Better Op-Amp" part="Better_Op-Amp" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>be95b4bb-0d4a-409c-b238-1c4e704589a1 33361f84-acf5-4251-beaa-c713c464515b</tstamps>
+    </comp>
+    <comp ref="U13">
+      <value>431</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>http://www.cj-elec.com/txUpfile/20134181474991806.pdf</datasheet>
+      <libsource lib="Reference_Voltage" part="CJ432" description="Shunt Regulator, SOT-23"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1d2b90b3-63f3-48af-b57b-d3dc773fb4a3</tstamps>
+    </comp>
+    <comp ref="U14">
+      <value>431</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>http://www.cj-elec.com/txUpfile/20134181474991806.pdf</datasheet>
+      <libsource lib="Reference_Voltage" part="CJ432" description="Shunt Regulator, SOT-23"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d0f1ad7c-9789-495f-98fd-26a5ef2c1553</tstamps>
+    </comp>
+    <comp ref="U15">
+      <value>MCP3202</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>http://ww1.microchip.com/downloads/en/DeviceDoc/21034D.pdf</datasheet>
+      <libsource lib="Analog_ADC" part="MCP3202" description="A/D Converter, 12-Bit, 2-Channel, SPI Interface, 2.7V-5.5V"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>766bb426-0f42-47f8-a719-859ea02ee966</tstamps>
+    </comp>
+    <comp ref="U16">
+      <value>Pico</value>
+      <footprint>MCU_RaspberryPi_and_Boards:RPi_Pico_SMD_TH</footprint>
+      <libsource lib="MCU_RaspberryPi_and_Boards" part="Pico" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6f621977-0aad-4802-9443-309ebfe2b11b</tstamps>
+    </comp>
+    <comp ref="U17">
+      <value>LM35</value>
+      <footprint>Package_TO_SOT_THT:TO-92</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm35.pdf</datasheet>
+      <libsource lib="Sensor_Temperature" part="LM35-LP" description="Precision centigrade temperature sensor, TO-92"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b2229276-bcf8-4d65-bceb-8146710cbc9b</tstamps>
+    </comp>
+    <comp ref="U18">
+      <value>ADuM121N</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>https://www.analog.com/media/en/technical-documentation/data-sheets/ADuM120N_121N.pdf</datasheet>
+      <libsource lib="Isolator" part="ADuM121N" description="Dual-channel digital isolator,1.8 to 5V, 150Mbs, 3kV"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e431a0ef-bf21-4035-8b61-c9417bf189e6</tstamps>
+    </comp>
+    <comp ref="U19">
+      <value>431</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>http://www.cj-elec.com/txUpfile/20134181474991806.pdf</datasheet>
+      <libsource lib="Reference_Voltage" part="CJ432" description="Shunt Regulator, SOT-23"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Multislope 3I.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>37fc7447-f73d-4e89-ab9a-dc5568081d8f</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="" part="Better_Op-Amp_1">
+      <fields>
+        <field name="Reference">U?</field>
+        <field name="Value">Better_Op-Amp</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="+" type="input"/>
+        <pin num="3" name="-" type="input"/>
+        <pin num="4" name="V-" type="power_in"/>
+        <pin num="5" name="VOS" type="input"/>
+        <pin num="6" name="VOS" type="input"/>
+        <pin num="7" name="" type="output"/>
+        <pin num="8" name="V+" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="" part="TL431DBZ_1">
+      <description>Shunt Regulator, SOT-23</description>
+      <docs>http://www.ti.com/lit/ds/symlink/tl431.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U7</field>
+        <field name="Value">TL431DBZ_1</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/tl431.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="REF" type="passive"/>
+        <pin num="2" name="K" type="passive"/>
+        <pin num="3" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Amplifier_Operational" part="OPA2197xD">
+      <description>Dual 36V, Precision, Rail-to-Rail Input/Output, Low Offset Voltage, Operational Amplifier, SOIC-8</description>
+      <docs>http://www.ti.com/lit/ds/symlink/opa2197.pdf</docs>
+      <footprints>
+        <fp>SOIC*3.9x4.9mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">OPA2197xD</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/opa2197.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="output"/>
+        <pin num="2" name="-" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="V-" type="power_in"/>
+        <pin num="5" name="+" type="input"/>
+        <pin num="6" name="-" type="input"/>
+        <pin num="7" name="" type="output"/>
+        <pin num="8" name="V+" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Analog_ADC" part="MCP3202">
+      <description>A/D Converter, 12-Bit, 2-Channel, SPI Interface, 2.7V-5.5V</description>
+      <docs>http://ww1.microchip.com/downloads/en/DeviceDoc/21034D.pdf</docs>
+      <footprints>
+        <fp>DIP*W7.62mm**</fp>
+        <fp>SOIC*3.9x4.9mm*P1.27mm*</fp>
+        <fp>TSSOP*3x3mm*P0.65mm*</fp>
+        <fp>MSOP*3x3mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP3202</field>
+        <field name="Datasheet">http://ww1.microchip.com/downloads/en/DeviceDoc/21034D.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~{CS}/SHDN" type="input"/>
+        <pin num="2" name="CH0" type="passive"/>
+        <pin num="3" name="CH1" type="passive"/>
+        <pin num="4" name="VSS" type="power_in"/>
+        <pin num="5" name="DIN" type="input"/>
+        <pin num="6" name="DOUT" type="output"/>
+        <pin num="7" name="CLK" type="input"/>
+        <pin num="8" name="VDD/VREF" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Analog_Switch" part="ADG1408YRUZ">
+      <description>8-channel iCMOS analog multiplexer, 4.7 Ohm Ron, 60 MHz, TSSOP-16</description>
+      <docs>https://www.analog.com/media/en/technical-documentation/data-sheets/ADG1408_1409.pdf</docs>
+      <footprints>
+        <fp>TSSOP*4.4x5mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ADG1408YRUZ</field>
+        <field name="Footprint">Package_SO:TSSOP-16_4.4x5mm_P0.65mm</field>
+        <field name="Datasheet">https://www.analog.com/media/en/technical-documentation/data-sheets/ADG1408_1409.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A0" type="input"/>
+        <pin num="2" name="EN" type="input"/>
+        <pin num="3" name="VSS" type="power_in"/>
+        <pin num="4" name="S1" type="bidirectional"/>
+        <pin num="5" name="S2" type="bidirectional"/>
+        <pin num="6" name="S3" type="bidirectional"/>
+        <pin num="7" name="S4" type="bidirectional"/>
+        <pin num="8" name="D" type="bidirectional"/>
+        <pin num="9" name="S8" type="bidirectional"/>
+        <pin num="10" name="S7" type="bidirectional"/>
+        <pin num="11" name="S6" type="bidirectional"/>
+        <pin num="12" name="S5" type="bidirectional"/>
+        <pin num="13" name="VDD" type="power_in"/>
+        <pin num="14" name="GND" type="power_in"/>
+        <pin num="15" name="A2" type="input"/>
+        <pin num="16" name="A1" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Analog_Switch" part="CD4053B">
+      <description>CMOS triple 2-channel analog multiplexer/demultiplexer, TSSOP-16/DIP-16/SOIC-16</description>
+      <docs>http://www.ti.com/lit/ds/symlink/cd4052b.pdf</docs>
+      <footprints>
+        <fp>TSSOP*4.4x5mm*P0.65mm*</fp>
+        <fp>DIP*W7.62*</fp>
+        <fp>SOIC*3.9x9.9mm*P1.27mm*</fp>
+        <fp>SO*5.3x10.2mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">CD4053B</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/cd4052b.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="B1" type="bidirectional"/>
+        <pin num="2" name="B0" type="bidirectional"/>
+        <pin num="3" name="C1" type="bidirectional"/>
+        <pin num="4" name="C" type="bidirectional"/>
+        <pin num="5" name="C0" type="bidirectional"/>
+        <pin num="6" name="INH" type="input"/>
+        <pin num="7" name="VEE" type="power_in"/>
+        <pin num="8" name="VSS" type="power_in"/>
+        <pin num="9" name="S3" type="input"/>
+        <pin num="10" name="S2" type="input"/>
+        <pin num="11" name="S1" type="input"/>
+        <pin num="12" name="A0" type="bidirectional"/>
+        <pin num="13" name="A1" type="bidirectional"/>
+        <pin num="14" name="A" type="bidirectional"/>
+        <pin num="15" name="B" type="bidirectional"/>
+        <pin num="16" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Better Op-Amp" part="Better_Op-Amp">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Better_Op-Amp</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VOS" type="input"/>
+        <pin num="2" name="-" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="V-" type="power_in"/>
+        <pin num="5" name="NC" type="no_connect"/>
+        <pin num="6" name="" type="output"/>
+        <pin num="7" name="V+" type="power_in"/>
+        <pin num="8" name="VOS" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x01">
+      <description>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x01</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x02">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x03">
+      <description>Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x03</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x04">
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x07">
+      <description>Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x07</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D">
+      <description>Diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="FerriteBead_Small">
+      <description>Ferrite bead, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+        <fp>*Ferrite*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">FB</field>
+        <field name="Value">FerriteBead_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Pack08_Split">
+      <description>8 resistor network, parallel topology, split</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>DIP*</fp>
+        <fp>SOIC*</fp>
+        <fp>R*Array*Concave*</fp>
+        <fp>R*Array*Convex*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">RN</field>
+        <field name="Value">R_Pack08_Split</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="R1.1" type="passive"/>
+        <pin num="2" name="R2.1" type="passive"/>
+        <pin num="3" name="R3.1" type="passive"/>
+        <pin num="4" name="R4.1" type="passive"/>
+        <pin num="5" name="R5.1" type="passive"/>
+        <pin num="6" name="R6.1" type="passive"/>
+        <pin num="7" name="R7.1" type="passive"/>
+        <pin num="8" name="R8.1" type="passive"/>
+        <pin num="9" name="R8.2" type="passive"/>
+        <pin num="10" name="R7.2" type="passive"/>
+        <pin num="11" name="R6.2" type="passive"/>
+        <pin num="12" name="R5.2" type="passive"/>
+        <pin num="13" name="R4.2" type="passive"/>
+        <pin num="14" name="R3.2" type="passive"/>
+        <pin num="15" name="R2.2" type="passive"/>
+        <pin num="16" name="R1.2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Isolator" part="ADuM121N">
+      <description>Dual-channel digital isolator,1.8 to 5V, 150Mbs, 3kV</description>
+      <docs>https://www.analog.com/media/en/technical-documentation/data-sheets/ADuM120N_121N.pdf</docs>
+      <footprints>
+        <fp>SOIC*3.9x4.9mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ADuM121N</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet">https://www.analog.com/media/en/technical-documentation/data-sheets/ADuM120N_121N.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD1" type="power_in"/>
+        <pin num="2" name="VOA" type="output"/>
+        <pin num="3" name="VIB" type="input"/>
+        <pin num="4" name="GND1" type="power_in"/>
+        <pin num="5" name="GND2" type="power_in"/>
+        <pin num="6" name="VOB" type="output"/>
+        <pin num="7" name="VIA" type="input"/>
+        <pin num="8" name="VDD2" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="MCU_RaspberryPi_and_Boards" part="Pico">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Pico</field>
+        <field name="Footprint">RPi_Pico:RPi_Pico_SMD_TH</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GPIO0" type="bidirectional"/>
+        <pin num="2" name="GPIO1" type="bidirectional"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="GPIO2" type="bidirectional"/>
+        <pin num="5" name="GPIO3" type="bidirectional"/>
+        <pin num="6" name="GPIO4" type="bidirectional"/>
+        <pin num="7" name="GPIO5" type="bidirectional"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="GPIO6" type="bidirectional"/>
+        <pin num="10" name="GPIO7" type="bidirectional"/>
+        <pin num="11" name="GPIO8" type="bidirectional"/>
+        <pin num="12" name="GPIO9" type="bidirectional"/>
+        <pin num="13" name="GND" type="power_in"/>
+        <pin num="14" name="GPIO10" type="bidirectional"/>
+        <pin num="15" name="GPIO11" type="bidirectional"/>
+        <pin num="16" name="GPIO12" type="bidirectional"/>
+        <pin num="17" name="GPIO13" type="bidirectional"/>
+        <pin num="18" name="GND" type="power_in"/>
+        <pin num="19" name="GPIO14" type="bidirectional"/>
+        <pin num="20" name="GPIO15" type="bidirectional"/>
+        <pin num="21" name="GPIO16" type="bidirectional"/>
+        <pin num="22" name="GPIO17" type="bidirectional"/>
+        <pin num="23" name="GND" type="power_in"/>
+        <pin num="24" name="GPIO18" type="bidirectional"/>
+        <pin num="25" name="GPIO19" type="bidirectional"/>
+        <pin num="26" name="GPIO20" type="bidirectional"/>
+        <pin num="27" name="GPIO21" type="bidirectional"/>
+        <pin num="28" name="GND" type="power_in"/>
+        <pin num="29" name="GPIO22" type="bidirectional"/>
+        <pin num="30" name="RUN" type="input"/>
+        <pin num="31" name="GPIO26_ADC0" type="bidirectional"/>
+        <pin num="32" name="GPIO27_ADC1" type="bidirectional"/>
+        <pin num="33" name="AGND" type="power_in"/>
+        <pin num="34" name="GPIO28_ADC2" type="bidirectional"/>
+        <pin num="35" name="ADC_VREF" type="unspecified"/>
+        <pin num="36" name="3V3" type="unspecified"/>
+        <pin num="37" name="3V3_EN" type="input"/>
+        <pin num="38" name="GND" type="bidirectional"/>
+        <pin num="39" name="VSYS" type="unspecified"/>
+        <pin num="40" name="VBUS" type="unspecified"/>
+        <pin num="41" name="SWCLK" type="input"/>
+        <pin num="42" name="GND" type="power_in"/>
+        <pin num="43" name="SWDIO" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="Housing">
+      <description>Housing</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Enclosure*</fp>
+        <fp>Housing*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">N</field>
+        <field name="Value">Housing</field>
+        <field name="Datasheet">~</field>
+      </fields>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+        <field name="Datasheet">~</field>
+      </fields>
+    </libpart>
+    <libpart lib="Reference_Voltage" part="CJ432">
+      <description>Shunt Regulator, SOT-23</description>
+      <docs>http://www.cj-elec.com/txUpfile/20134181474991806.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">CJ432</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet">http://www.cj-elec.com/txUpfile/20134181474991806.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="REF" type="passive"/>
+        <pin num="2" name="K" type="passive"/>
+        <pin num="3" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Reference_Voltage" part="LM399">
+      <description>Precision Reference, 6.95V, Buried Zener Diode with Thermal Shielding Can, TO-46-4</description>
+      <docs>https://www.analog.com/media/en/technical-documentation/data-sheets/199399fc.pdf</docs>
+      <footprints>
+        <fp>Analog*TO?46*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM399</field>
+        <field name="Footprint">Package_TO_SOT_THT:Analog_TO-46-4_ThermalShield</field>
+        <field name="Datasheet">https://www.analog.com/media/en/technical-documentation/data-sheets/199399fc.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+        <pin num="3" name="" type="power_in"/>
+        <pin num="4" name="" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Reference_Voltage" part="TL431DBZ">
+      <description>Shunt Regulator, SOT-23</description>
+      <docs>http://www.ti.com/lit/ds/symlink/tl431.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U8</field>
+        <field name="Value">431</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/tl431.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="REF" type="passive"/>
+        <pin num="2" name="K" type="passive"/>
+        <pin num="3" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Sensor_Temperature" part="LM35-LP">
+      <description>Precision centigrade temperature sensor, TO-92</description>
+      <docs>http://www.ti.com/lit/ds/symlink/lm35.pdf</docs>
+      <footprints>
+        <fp>TO?92*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM35-LP</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/lm35.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+VS" type="power_in"/>
+        <pin num="2" name="Vout" type="output"/>
+        <pin num="3" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Transistor_BJT" part="MMBT5551L">
+      <description>0.6A Ic, 160V Vce, NPN Transistor, SOT-23</description>
+      <docs>www.onsemi.com/pub/Collateral/MMBT5550LT1-D.PDF</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">MMBT5551L</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet">www.onsemi.com/pub/Collateral/MMBT5550LT1-D.PDF</field>
+      </fields>
+      <pins>
+        <pin num="1" name="B" type="input"/>
+        <pin num="2" name="E" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Amplifier_Operational">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Amplifier_Operational.kicad_sym</uri>
+    </library>
+    <library logical="Analog_ADC">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Analog_ADC.kicad_sym</uri>
+    </library>
+    <library logical="Analog_Switch">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Analog_Switch.kicad_sym</uri>
+    </library>
+    <library logical="Better Op-Amp">
+      <uri>C:\Users\vivek\Desktop\KiCAD Projects\Multislope 3I\Multislope-3I-/Better Op-Amp.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Device.kicad_sym</uri>
+    </library>
+    <library logical="Isolator">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Isolator.kicad_sym</uri>
+    </library>
+    <library logical="MCU_RaspberryPi_and_Boards">
+      <uri>C:/Users/vivek/Desktop/KiCAD Projects/Libraries/RPi Pico/KiCad-RP-Pico-main/RP-Pico Libraries/MCU_RaspberryPi_and_Boards.lib</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Mechanical.kicad_sym</uri>
+    </library>
+    <library logical="Reference_Voltage">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Reference_Voltage.kicad_sym</uri>
+    </library>
+    <library logical="Sensor_Temperature">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Sensor_Temperature.kicad_sym</uri>
+    </library>
+    <library logical="Transistor_BJT">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Transistor_BJT.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3">
+      <node ref="C22" pin="1" pintype="passive"/>
+      <node ref="J10" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="R35" pin="2" pintype="passive"/>
+      <node ref="R39" pin="2" pintype="passive"/>
+      <node ref="R41" pin="2" pintype="passive"/>
+      <node ref="R48" pin="2" pintype="passive"/>
+      <node ref="R49" pin="2" pintype="passive"/>
+      <node ref="U17" pin="1" pinfunction="+VS" pintype="power_in"/>
+    </net>
+    <net code="2" name="+5V">
+      <node ref="C27" pin="1" pintype="passive"/>
+      <node ref="Q2" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R50" pin="2" pintype="passive"/>
+      <node ref="U16" pin="39" pinfunction="VSYS" pintype="unspecified"/>
+    </net>
+    <net code="3" name="+15V">
+      <node ref="C24" pin="1" pintype="passive"/>
+      <node ref="J10" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Q1" pin="3" pinfunction="C" pintype="passive"/>
+      <node ref="Q2" pin="3" pinfunction="C" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R25" pin="2" pintype="passive"/>
+      <node ref="R37" pin="2" pintype="passive"/>
+      <node ref="R43" pin="2" pintype="passive"/>
+      <node ref="R52" pin="2" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="U2" pin="3" pintype="power_in"/>
+    </net>
+    <net code="4" name="-15V">
+      <node ref="C24" pin="2" pintype="passive"/>
+      <node ref="J10" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="R20" pin="1" pintype="passive"/>
+      <node ref="R26" pin="1" pintype="passive"/>
+      <node ref="R38" pin="1" pintype="passive"/>
+      <node ref="R40" pin="1" pintype="passive"/>
+      <node ref="R46" pin="2" pintype="passive"/>
+      <node ref="U2" pin="4" pintype="power_in"/>
+    </net>
+    <net code="5" name="/+REF">
+      <node ref="J11" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="RN1" pin="12" pinfunction="R5.2" pintype="passive"/>
+      <node ref="RN1" pin="8" pinfunction="R8.1" pintype="passive"/>
+      <node ref="U1" pin="1" pintype="output"/>
+      <node ref="U9" pin="7" pinfunction="S4" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="/-REF">
+      <node ref="J11" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="RN1" pin="13" pinfunction="R4.2" pintype="passive"/>
+      <node ref="RN1" pin="7" pinfunction="R7.1" pintype="passive"/>
+      <node ref="U1" pin="7" pintype="output"/>
+      <node ref="U9" pin="6" pinfunction="S3" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="/BOOT+">
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="U6" pin="7" pinfunction="V+" pintype="power_in"/>
+      <node ref="U7" pin="2" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="8" name="/BOOT-">
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="R24" pin="1" pintype="passive"/>
+      <node ref="U6" pin="4" pinfunction="V-" pintype="power_in"/>
+      <node ref="U8" pin="3" pinfunction="A" pintype="passive"/>
+    </net>
+    <net code="9" name="/COMP">
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R34" pin="2" pintype="passive"/>
+      <node ref="R35" pin="1" pintype="passive"/>
+      <node ref="U10" pin="7" pintype="output"/>
+      <node ref="U16" pin="9" pinfunction="GPIO6" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="/INT">
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R36" pin="1" pintype="passive"/>
+      <node ref="R44" pin="1" pintype="passive"/>
+      <node ref="U5" pin="6" pintype="output"/>
+    </net>
+    <net code="11" name="/RAW">
+      <node ref="J11" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="U2" pin="1" pintype="passive"/>
+      <node ref="U9" pin="5" pinfunction="S2" pintype="bidirectional"/>
+    </net>
+    <net code="12" name="/SLOPE">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J14" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U10" pin="3" pinfunction="-" pintype="input"/>
+      <node ref="U11" pin="6" pintype="output"/>
+    </net>
+    <net code="13" name="/SLOPE2">
+      <node ref="J7" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R47" pin="2" pintype="passive"/>
+      <node ref="U12" pin="6" pintype="output"/>
+      <node ref="U15" pin="2" pinfunction="CH0" pintype="passive"/>
+    </net>
+    <net code="14" name="/VIN">
+      <node ref="R22" pin="1" pintype="passive"/>
+      <node ref="R23" pin="2" pintype="passive"/>
+      <node ref="RN1" pin="11" pinfunction="R6.2" pintype="passive"/>
+      <node ref="U6" pin="2" pinfunction="-" pintype="input"/>
+      <node ref="U6" pin="6" pintype="output"/>
+      <node ref="U7" pin="3" pinfunction="A" pintype="passive"/>
+      <node ref="U8" pin="2" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="15" name="GND">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="C19" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C20" pin="1" pintype="passive"/>
+      <node ref="C21" pin="2" pintype="passive"/>
+      <node ref="C22" pin="2" pintype="passive"/>
+      <node ref="C23" pin="1" pintype="passive"/>
+      <node ref="C25" pin="1" pintype="passive"/>
+      <node ref="C27" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="FB1" pin="2" pintype="passive"/>
+      <node ref="FB2" pin="2" pintype="passive"/>
+      <node ref="FB4" pin="2" pintype="passive"/>
+      <node ref="FB5" pin="2" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J10" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="J13" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J14" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J2" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J6" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J7" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J8" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J9" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+      <node ref="R33" pin="1" pintype="passive"/>
+      <node ref="R42" pin="1" pintype="passive"/>
+      <node ref="R51" pin="1" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="+" pintype="input"/>
+      <node ref="U10" pin="1" pinfunction="GND" pintype="power_in"/>
+      <node ref="U11" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U12" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U13" pin="3" pinfunction="A" pintype="passive"/>
+      <node ref="U14" pin="1" pinfunction="REF" pintype="passive"/>
+      <node ref="U14" pin="2" pinfunction="K" pintype="passive"/>
+      <node ref="U15" pin="4" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U16" pin="13" pinfunction="GND" pintype="power_in"/>
+      <node ref="U16" pin="18" pinfunction="GND" pintype="power_in"/>
+      <node ref="U16" pin="23" pinfunction="GND" pintype="power_in"/>
+      <node ref="U16" pin="28" pinfunction="GND" pintype="power_in"/>
+      <node ref="U16" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U16" pin="33" pinfunction="AGND" pintype="power_in"/>
+      <node ref="U16" pin="38" pinfunction="GND" pintype="bidirectional"/>
+      <node ref="U16" pin="42" pinfunction="GND" pintype="power_in"/>
+      <node ref="U16" pin="8" pinfunction="GND" pintype="power_in"/>
+      <node ref="U17" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U18" pin="4" pinfunction="GND1" pintype="power_in"/>
+      <node ref="U19" pin="3" pinfunction="A" pintype="passive"/>
+      <node ref="U2" pin="2" pintype="passive"/>
+      <node ref="U3" pin="6" pinfunction="INH" pintype="input"/>
+      <node ref="U3" pin="8" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U4" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U9" pin="10" pinfunction="S7" pintype="bidirectional"/>
+      <node ref="U9" pin="11" pinfunction="S6" pintype="bidirectional"/>
+      <node ref="U9" pin="12" pinfunction="S5" pintype="bidirectional"/>
+      <node ref="U9" pin="14" pinfunction="GND" pintype="power_in"/>
+      <node ref="U9" pin="9" pinfunction="S8" pintype="bidirectional"/>
+    </net>
+    <net code="16" name="Net-(C1-Pad2)">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="17" name="Net-(C2-Pad1)">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+    </net>
+    <net code="18" name="Net-(C3-Pad1)">
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="RN1" pin="1" pinfunction="R1.1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="19" name="Net-(C4-Pad1)">
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="V-" pintype="power_in"/>
+    </net>
+    <net code="20" name="Net-(C5-Pad2)">
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="U4" pin="7" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="21" name="Net-(C6-Pad1)">
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="U4" pin="4" pinfunction="V-" pintype="power_in"/>
+    </net>
+    <net code="22" name="Net-(C7-Pad2)">
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="U5" pin="7" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="23" name="Net-(C8-Pad1)">
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+      <node ref="U5" pin="4" pinfunction="V-" pintype="power_in"/>
+    </net>
+    <net code="24" name="Net-(C9-Pad1)">
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="R16" pin="1" pintype="passive"/>
+    </net>
+    <net code="25" name="Net-(C10-Pad1)">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="FB3" pin="1" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+      <node ref="U4" pin="2" pinfunction="-" pintype="input"/>
+      <node ref="U5" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="26" name="Net-(C11-Pad2)">
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="R25" pin="1" pintype="passive"/>
+      <node ref="U9" pin="13" pinfunction="VDD" pintype="power_in"/>
+    </net>
+    <net code="27" name="Net-(C12-Pad1)">
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="R26" pin="2" pintype="passive"/>
+      <node ref="U9" pin="3" pinfunction="VSS" pintype="power_in"/>
+    </net>
+    <net code="28" name="Net-(C13-Pad2)">
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U3" pin="16" pinfunction="VDD" pintype="power_in"/>
+    </net>
+    <net code="29" name="Net-(C14-Pad2)">
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="U10" pin="8" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="30" name="Net-(C15-Pad1)">
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="U10" pin="4" pinfunction="V-" pintype="power_in"/>
+    </net>
+    <net code="31" name="Net-(C18-Pad2)">
+      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="R37" pin="1" pintype="passive"/>
+      <node ref="U11" pin="7" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="32" name="Net-(C19-Pad1)">
+      <node ref="C19" pin="1" pintype="passive"/>
+      <node ref="R38" pin="2" pintype="passive"/>
+      <node ref="U11" pin="4" pinfunction="V-" pintype="power_in"/>
+    </net>
+    <net code="33" name="Net-(C20-Pad2)">
+      <node ref="C20" pin="2" pintype="passive"/>
+      <node ref="R39" pin="1" pintype="passive"/>
+      <node ref="U12" pin="7" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="34" name="Net-(C21-Pad1)">
+      <node ref="C21" pin="1" pintype="passive"/>
+      <node ref="R40" pin="2" pintype="passive"/>
+      <node ref="U12" pin="4" pinfunction="V-" pintype="power_in"/>
+    </net>
+    <net code="35" name="Net-(C23-Pad2)">
+      <node ref="C23" pin="2" pintype="passive"/>
+      <node ref="R48" pin="1" pintype="passive"/>
+      <node ref="U15" pin="8" pinfunction="VDD/VREF" pintype="power_in"/>
+    </net>
+    <net code="36" name="Net-(C25-Pad2)">
+      <node ref="C25" pin="2" pintype="passive"/>
+      <node ref="R49" pin="1" pintype="passive"/>
+      <node ref="U18" pin="1" pinfunction="VDD1" pintype="power_in"/>
+    </net>
+    <net code="37" name="Net-(C26-Pad1)">
+      <node ref="C26" pin="1" pintype="passive"/>
+      <node ref="J12" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U18" pin="8" pinfunction="VDD2" pintype="power_in"/>
+    </net>
+    <net code="38" name="Net-(C26-Pad2)">
+      <node ref="C26" pin="2" pintype="passive"/>
+      <node ref="J12" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U18" pin="5" pinfunction="GND2" pintype="power_in"/>
+    </net>
+    <net code="39" name="Net-(D1-Pad1)">
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R36" pin="2" pintype="passive"/>
+      <node ref="U11" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="40" name="Net-(FB1-Pad1)">
+      <node ref="FB1" pin="1" pintype="passive"/>
+      <node ref="U3" pin="7" pinfunction="VEE" pintype="power_in"/>
+    </net>
+    <net code="41" name="Net-(FB2-Pad1)">
+      <node ref="FB2" pin="1" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="C0" pintype="bidirectional"/>
+    </net>
+    <net code="42" name="Net-(FB3-Pad2)">
+      <node ref="FB3" pin="2" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="B1" pintype="bidirectional"/>
+      <node ref="U3" pin="13" pinfunction="A1" pintype="bidirectional"/>
+      <node ref="U3" pin="3" pinfunction="C1" pintype="bidirectional"/>
+    </net>
+    <net code="43" name="Net-(FB4-Pad1)">
+      <node ref="FB4" pin="1" pintype="passive"/>
+      <node ref="U3" pin="2" pinfunction="B0" pintype="bidirectional"/>
+    </net>
+    <net code="44" name="Net-(FB5-Pad1)">
+      <node ref="FB5" pin="1" pintype="passive"/>
+      <node ref="U3" pin="12" pinfunction="A0" pintype="bidirectional"/>
+    </net>
+    <net code="45" name="Net-(J2-Pad1)">
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R30" pin="2" pintype="passive"/>
+      <node ref="U16" pin="1" pinfunction="GPIO0" pintype="bidirectional"/>
+    </net>
+    <net code="46" name="Net-(J2-Pad2)">
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R32" pin="2" pintype="passive"/>
+      <node ref="U16" pin="2" pinfunction="GPIO1" pintype="bidirectional"/>
+    </net>
+    <net code="47" name="Net-(J2-Pad4)">
+      <node ref="J2" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R31" pin="2" pintype="passive"/>
+      <node ref="U16" pin="4" pinfunction="GPIO2" pintype="bidirectional"/>
+    </net>
+    <net code="48" name="Net-(J2-Pad5)">
+      <node ref="J2" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="R27" pin="2" pintype="passive"/>
+      <node ref="U16" pin="5" pinfunction="GPIO3" pintype="bidirectional"/>
+    </net>
+    <net code="49" name="Net-(J2-Pad6)">
+      <node ref="J2" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="R28" pin="2" pintype="passive"/>
+      <node ref="U16" pin="6" pinfunction="GPIO4" pintype="bidirectional"/>
+    </net>
+    <net code="50" name="Net-(J2-Pad7)">
+      <node ref="J2" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="R29" pin="2" pintype="passive"/>
+      <node ref="U16" pin="7" pinfunction="GPIO5" pintype="bidirectional"/>
+    </net>
+    <net code="51" name="Net-(J12-Pad2)">
+      <node ref="J12" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U18" pin="7" pinfunction="VIA" pintype="input"/>
+    </net>
+    <net code="52" name="Net-(J12-Pad3)">
+      <node ref="J12" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U18" pin="6" pinfunction="VOB" pintype="output"/>
+    </net>
+    <net code="53" name="Net-(J13-Pad1)">
+      <node ref="J13" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U9" pin="4" pinfunction="S1" pintype="bidirectional"/>
+    </net>
+    <net code="54" name="Net-(Q1-Pad1)">
+      <node ref="Q1" pin="1" pinfunction="B" pintype="input"/>
+      <node ref="R43" pin="1" pintype="passive"/>
+      <node ref="U13" pin="2" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="55" name="Net-(Q2-Pad1)">
+      <node ref="Q2" pin="1" pinfunction="B" pintype="input"/>
+      <node ref="R52" pin="1" pintype="passive"/>
+      <node ref="U19" pin="2" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="56" name="Net-(R1-Pad1)">
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="RN1" pin="16" pinfunction="R1.2" pintype="passive"/>
+    </net>
+    <net code="57" name="Net-(R6-Pad1)">
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+    </net>
+    <net code="58" name="Net-(R17-Pad1)">
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="U4" pin="6" pintype="output"/>
+    </net>
+    <net code="59" name="Net-(R17-Pad2)">
+      <node ref="R17" pin="2" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="U5" pin="3" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="60" name="Net-(R21-Pad1)">
+      <node ref="R21" pin="1" pintype="passive"/>
+      <node ref="R22" pin="2" pintype="passive"/>
+      <node ref="U7" pin="1" pinfunction="REF" pintype="passive"/>
+    </net>
+    <net code="61" name="Net-(R23-Pad1)">
+      <node ref="R23" pin="1" pintype="passive"/>
+      <node ref="R24" pin="2" pintype="passive"/>
+      <node ref="U8" pin="1" pinfunction="REF" pintype="passive"/>
+    </net>
+    <net code="62" name="Net-(R27-Pad1)">
+      <node ref="R27" pin="1" pintype="passive"/>
+      <node ref="U3" pin="11" pinfunction="S1" pintype="input"/>
+    </net>
+    <net code="63" name="Net-(R28-Pad1)">
+      <node ref="R28" pin="1" pintype="passive"/>
+      <node ref="U3" pin="10" pinfunction="S2" pintype="input"/>
+    </net>
+    <net code="64" name="Net-(R29-Pad1)">
+      <node ref="R29" pin="1" pintype="passive"/>
+      <node ref="U3" pin="9" pinfunction="S3" pintype="input"/>
+    </net>
+    <net code="65" name="Net-(R30-Pad1)">
+      <node ref="R30" pin="1" pintype="passive"/>
+      <node ref="U9" pin="1" pinfunction="A0" pintype="input"/>
+    </net>
+    <net code="66" name="Net-(R31-Pad1)">
+      <node ref="R31" pin="1" pintype="passive"/>
+      <node ref="U9" pin="16" pinfunction="A1" pintype="input"/>
+    </net>
+    <net code="67" name="Net-(R32-Pad1)">
+      <node ref="R32" pin="1" pintype="passive"/>
+      <node ref="U9" pin="15" pinfunction="A2" pintype="input"/>
+    </net>
+    <net code="68" name="Net-(R33-Pad2)">
+      <node ref="R33" pin="2" pintype="passive"/>
+      <node ref="R34" pin="1" pintype="passive"/>
+      <node ref="U10" pin="2" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="69" name="Net-(R41-Pad1)">
+      <node ref="R41" pin="1" pintype="passive"/>
+      <node ref="R42" pin="2" pintype="passive"/>
+      <node ref="U13" pin="1" pinfunction="REF" pintype="passive"/>
+    </net>
+    <net code="70" name="Net-(R44-Pad2)">
+      <node ref="R44" pin="2" pintype="passive"/>
+      <node ref="R45" pin="1" pintype="passive"/>
+      <node ref="R47" pin="1" pintype="passive"/>
+      <node ref="U12" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="71" name="Net-(R45-Pad2)">
+      <node ref="R45" pin="2" pintype="passive"/>
+      <node ref="R46" pin="1" pintype="passive"/>
+      <node ref="U14" pin="3" pinfunction="A" pintype="passive"/>
+    </net>
+    <net code="72" name="Net-(R50-Pad1)">
+      <node ref="R50" pin="1" pintype="passive"/>
+      <node ref="R51" pin="2" pintype="passive"/>
+      <node ref="U19" pin="1" pinfunction="REF" pintype="passive"/>
+    </net>
+    <net code="73" name="Net-(RN1-Pad2)">
+      <node ref="RN1" pin="2" pinfunction="R2.1" pintype="passive"/>
+      <node ref="RN1" pin="5" pinfunction="R5.1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="74" name="Net-(RN1-Pad3)">
+      <node ref="RN1" pin="3" pinfunction="R3.1" pintype="passive"/>
+      <node ref="RN1" pin="4" pinfunction="R4.1" pintype="passive"/>
+    </net>
+    <net code="75" name="Net-(RN1-Pad6)">
+      <node ref="RN1" pin="6" pinfunction="R6.1" pintype="passive"/>
+      <node ref="U3" pin="4" pinfunction="C" pintype="bidirectional"/>
+    </net>
+    <net code="76" name="Net-(RN1-Pad9)">
+      <node ref="RN1" pin="9" pinfunction="R8.2" pintype="passive"/>
+      <node ref="U3" pin="15" pinfunction="B" pintype="bidirectional"/>
+    </net>
+    <net code="77" name="Net-(RN1-Pad10)">
+      <node ref="RN1" pin="10" pinfunction="R7.2" pintype="passive"/>
+      <node ref="U3" pin="14" pinfunction="A" pintype="bidirectional"/>
+    </net>
+    <net code="78" name="Net-(RN1-Pad14)">
+      <node ref="RN1" pin="14" pinfunction="R3.2" pintype="passive"/>
+      <node ref="RN1" pin="15" pinfunction="R2.2" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="79" name="Net-(U6-Pad3)">
+      <node ref="U6" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U9" pin="8" pinfunction="D" pintype="bidirectional"/>
+    </net>
+    <net code="80" name="Net-(U15-Pad1)">
+      <node ref="U15" pin="1" pinfunction="~{CS}/SHDN" pintype="input"/>
+      <node ref="U16" pin="17" pinfunction="GPIO13" pintype="bidirectional"/>
+    </net>
+    <net code="81" name="Net-(U15-Pad3)">
+      <node ref="U15" pin="3" pinfunction="CH1" pintype="passive"/>
+      <node ref="U17" pin="2" pinfunction="Vout" pintype="output"/>
+    </net>
+    <net code="82" name="Net-(U15-Pad5)">
+      <node ref="U15" pin="5" pinfunction="DIN" pintype="input"/>
+      <node ref="U16" pin="16" pinfunction="GPIO12" pintype="bidirectional"/>
+    </net>
+    <net code="83" name="Net-(U15-Pad6)">
+      <node ref="U15" pin="6" pinfunction="DOUT" pintype="output"/>
+      <node ref="U16" pin="15" pinfunction="GPIO11" pintype="bidirectional"/>
+    </net>
+    <net code="84" name="Net-(U15-Pad7)">
+      <node ref="U15" pin="7" pinfunction="CLK" pintype="input"/>
+      <node ref="U16" pin="14" pinfunction="GPIO10" pintype="bidirectional"/>
+    </net>
+    <net code="85" name="Net-(U16-Pad11)">
+      <node ref="U16" pin="11" pinfunction="GPIO8" pintype="bidirectional"/>
+      <node ref="U18" pin="3" pinfunction="VIB" pintype="input"/>
+    </net>
+    <net code="86" name="Net-(U16-Pad12)">
+      <node ref="U16" pin="12" pinfunction="GPIO9" pintype="bidirectional"/>
+      <node ref="U18" pin="2" pinfunction="VOA" pintype="output"/>
+    </net>
+    <net code="87" name="unconnected-(J8-Pad1)">
+      <node ref="J8" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="88" name="unconnected-(J8-Pad3)">
+      <node ref="J8" pin="3" pinfunction="Pin_3" pintype="passive"/>
+    </net>
+    <net code="89" name="unconnected-(U4-Pad1)">
+      <node ref="U4" pin="1" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="90" name="unconnected-(U4-Pad5)">
+      <node ref="U4" pin="5" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="91" name="unconnected-(U4-Pad8)">
+      <node ref="U4" pin="8" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="92" name="unconnected-(U5-Pad1)">
+      <node ref="U5" pin="1" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="93" name="unconnected-(U5-Pad5)">
+      <node ref="U5" pin="5" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="94" name="unconnected-(U5-Pad8)">
+      <node ref="U5" pin="8" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="95" name="unconnected-(U6-Pad1)">
+      <node ref="U6" pin="1" pinfunction="VOS" pintype="input"/>
+    </net>
+    <net code="96" name="unconnected-(U6-Pad5)">
+      <node ref="U6" pin="5" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="97" name="unconnected-(U6-Pad8)">
+      <node ref="U6" pin="8" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="98" name="unconnected-(U9-Pad2)">
+      <node ref="U9" pin="2" pinfunction="EN" pintype="input"/>
+    </net>
+    <net code="99" name="unconnected-(U10-Pad5)">
+      <node ref="U10" pin="5" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="100" name="unconnected-(U10-Pad6)">
+      <node ref="U10" pin="6" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="101" name="unconnected-(U11-Pad1)">
+      <node ref="U11" pin="1" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="102" name="unconnected-(U11-Pad5)">
+      <node ref="U11" pin="5" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="103" name="unconnected-(U11-Pad8)">
+      <node ref="U11" pin="8" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="104" name="unconnected-(U12-Pad1)">
+      <node ref="U12" pin="1" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="105" name="unconnected-(U12-Pad5)">
+      <node ref="U12" pin="5" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="106" name="unconnected-(U12-Pad8)">
+      <node ref="U12" pin="8" pinfunction="VOS" pintype="input+no_connect"/>
+    </net>
+    <net code="107" name="unconnected-(U16-Pad10)">
+      <node ref="U16" pin="10" pinfunction="GPIO7" pintype="bidirectional"/>
+    </net>
+    <net code="108" name="unconnected-(U16-Pad19)">
+      <node ref="U16" pin="19" pinfunction="GPIO14" pintype="bidirectional"/>
+    </net>
+    <net code="109" name="unconnected-(U16-Pad20)">
+      <node ref="U16" pin="20" pinfunction="GPIO15" pintype="bidirectional"/>
+    </net>
+    <net code="110" name="unconnected-(U16-Pad21)">
+      <node ref="U16" pin="21" pinfunction="GPIO16" pintype="bidirectional"/>
+    </net>
+    <net code="111" name="unconnected-(U16-Pad22)">
+      <node ref="U16" pin="22" pinfunction="GPIO17" pintype="bidirectional"/>
+    </net>
+    <net code="112" name="unconnected-(U16-Pad24)">
+      <node ref="U16" pin="24" pinfunction="GPIO18" pintype="bidirectional"/>
+    </net>
+    <net code="113" name="unconnected-(U16-Pad25)">
+      <node ref="U16" pin="25" pinfunction="GPIO19" pintype="bidirectional"/>
+    </net>
+    <net code="114" name="unconnected-(U16-Pad26)">
+      <node ref="U16" pin="26" pinfunction="GPIO20" pintype="bidirectional"/>
+    </net>
+    <net code="115" name="unconnected-(U16-Pad27)">
+      <node ref="U16" pin="27" pinfunction="GPIO21" pintype="bidirectional"/>
+    </net>
+    <net code="116" name="unconnected-(U16-Pad29)">
+      <node ref="U16" pin="29" pinfunction="GPIO22" pintype="bidirectional"/>
+    </net>
+    <net code="117" name="unconnected-(U16-Pad30)">
+      <node ref="U16" pin="30" pinfunction="RUN" pintype="input"/>
+    </net>
+    <net code="118" name="unconnected-(U16-Pad31)">
+      <node ref="U16" pin="31" pinfunction="GPIO26_ADC0" pintype="bidirectional"/>
+    </net>
+    <net code="119" name="unconnected-(U16-Pad32)">
+      <node ref="U16" pin="32" pinfunction="GPIO27_ADC1" pintype="bidirectional"/>
+    </net>
+    <net code="120" name="unconnected-(U16-Pad34)">
+      <node ref="U16" pin="34" pinfunction="GPIO28_ADC2" pintype="bidirectional"/>
+    </net>
+    <net code="121" name="unconnected-(U16-Pad35)">
+      <node ref="U16" pin="35" pinfunction="ADC_VREF" pintype="unspecified"/>
+    </net>
+    <net code="122" name="unconnected-(U16-Pad36)">
+      <node ref="U16" pin="36" pinfunction="3V3" pintype="unspecified"/>
+    </net>
+    <net code="123" name="unconnected-(U16-Pad37)">
+      <node ref="U16" pin="37" pinfunction="3V3_EN" pintype="input"/>
+    </net>
+    <net code="124" name="unconnected-(U16-Pad40)">
+      <node ref="U16" pin="40" pinfunction="VBUS" pintype="unspecified"/>
+    </net>
+    <net code="125" name="unconnected-(U16-Pad41)">
+      <node ref="U16" pin="41" pinfunction="SWCLK" pintype="input"/>
+    </net>
+    <net code="126" name="unconnected-(U16-Pad43)">
+      <node ref="U16" pin="43" pinfunction="SWDIO" pintype="bidirectional"/>
+    </net>
+  </nets>
+</export>
