@@ -1,0 +1,50 @@
+{
+    "files.associations": {
+        "ws2812.pio.h": "c",
+        "cstdio": "c",
+        "stdlib.h": "c",
+        "pio.h": "c",
+        "usb_hid.h": "c",
+        "config.h": "c",
+        "clocks.h": "c",
+        "bootrom.h": "c",
+        "usb_descriptors.h": "c",
+        "wsled.h": "c",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
+    },
+    "cSpell.words": [
+        "bootloader",
+        "GAMEPAD",
+        "gpio",
+        "GPIO",
+        "pico",
+        "PICO",
+        "sendkey",
+        "thiss"
+    ],
+    // These settings tweaks to the cmake plugin will ensure
+    // that you debug using cortex-debug instead of trying to launch
+    // a Pico binary on the host
+    "cmake.statusbar.advanced": {
+        "debug": {
+            "visibility": "hidden"
+        },
+        "launch": {
+            "visibility": "hidden"
+        },
+        "build": {
+            "visibility": "default"
+        },
+        "buildTarget": {
+            "visibility": "hidden"
+        }
+    },
+    "cmake.buildBeforeRun": true,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cmake.generator": "Unix Makefiles",
+    "cortex-debug.openocdPath": "/home/dmytro/pico/openocd/src/openocd",
+    "cortex-debug.armToolchainPath":"/opt/st/stm32cubeide_1.9.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.linux64_1.0.0.202111181127/tools/bin/",
+}
