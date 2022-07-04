@@ -13,11 +13,11 @@ set(CMAKE_CXX_STANDARD 17)
 # Creates a pico-sdk subdirectory in our project for the libraries
 pico_sdk_init()
 
-include_directories(${CMAKE_SOURCE_DIR}/inc)
-link_directories(${CMAKE_SOURCE_DIR}/lib)
+# include_directories(${CMAKE_SOURCE_DIR}/inc)
+# link_directories(${CMAKE_SOURCE_DIR}/lib)
 
 # Tell CMake where to find the executable source file
-add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/main.cpp)
+add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/main.c)
 
 # Create C header file with the name <pio program>.pio.h
 # pico_generate_pio_header(${PROJECT_NAME}  
@@ -27,6 +27,7 @@ add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/main.cpp)
 # Link to pico_stdlib (gpio, time, etc. functions)
 target_link_libraries(${PROJECT_NAME} 
     pico_stdlib
+    hardware_spi
 )
 
 # Create map/bin/hex/uf2 files

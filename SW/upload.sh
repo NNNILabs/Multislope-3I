@@ -1,4 +1,4 @@
 cd ./build/
 make
 cd ..
-cp ./build/PicoMacro.uf2 /media/$USER/RPI-RP2/
+cp ./build/Multislope.uf2 /media/$USER/RPI-RP2/
