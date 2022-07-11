@@ -133,9 +133,10 @@ int main() {
     pio_sm_set_enabled(pio, multislopeSM, true);
 
     while(true){
-        float read = readMCP(false, 3.3);
+        float read1 = readMCP(false, 3.3);
         uint32_t counts = get_counts(pio, multislopeSM, 6000);
-        printf("%f, %d\n", read, counts);
+        float read2 = readMCP(false, 3.3);
+        printf("%f, %d, %f\n", read1, counts, read2);
         sleep_ms(1000);
         if(get_bootsel_button()){
             reset_usb_boot(0,0);
