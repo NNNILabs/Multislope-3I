@@ -134,7 +134,7 @@ int main() {
 
     while(true){
         float read = readMCP(false, 3.3);
-        uint32_t counts = get_counts(pio, multislopeSM, 0xFFFFFFFF);
+        uint32_t counts = get_counts(pio, multislopeSM, 6000);
         printf("%f, %d\n", read, counts);
         sleep_ms(1000);
         if(get_bootsel_button()){
