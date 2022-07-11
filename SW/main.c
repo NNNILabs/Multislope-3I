@@ -5,7 +5,34 @@
 #include "hardware/structs/ioqspi.h"
 #include "hardware/structs/sio.h"
 #include "hardware/spi.h"
+#include "hardware/pio.h"
 #include "pico/bootrom.h"
+#include "ms.pio.h"
+
+#define MAINS_FREQ 50                   // Hz
+
+const uint8_t MCLK = 18;                // SPI Clock Pin
+const uint8_t M_EN = 16;
+
+const uint8_t MUX_A0 = 22;
+const uint8_t MUX_A1 = 26;
+const uint8_t MUX_A2 = 27;
+
+const uint8_t PWMA = 3;                // need to be next to each other
+const uint8_t PWMB = 4;                // need to be next to each other
+const uint8_t MEAS = 5;
+const uint8_t COMP = 6;
+
+const uint8_t RESGP = 28;
+const uint8_t RESADC = 2;
+
+const uint64_t mainsPeriodus = 1000000/MAINS_FREQ;
+
+#if MAINS_FREQ == 50
+    const uint32_t MScyclesPerPLC = 6000;
+#elif MAINS_FREQ == 60
+    const uint32_t MScyclesPerPLC = 5000;
+#endif
 
 // MCP3202 ADC
 #define CS 13
@@ -28,6 +55,17 @@ bool __no_inline_not_in_flash_func(get_bootsel_button)() {
     return button_state;
 }
 
+
+uint32_t get_counts(PIO pio, uint sm , uint32_t countNum){
+    uint32_t counts = 0;
+    pio_sm_put_blocking(pio, sm, countNum - 1);
+    gpio_put(PICO_DEFAULT_LED_PIN, true);
+    counts = ~pio_sm_get_blocking(pio, sm);
+    gpio_put(PICO_DEFAULT_LED_PIN, false);
+    //return ((2*(int64_t)counts) - (int64_t)countNum);
+    return counts;
+}
+
 float readMCP(bool channel, float reference){
     uint8_t buffer[] = {0x01, 0x80 + (0x40 & (channel << 6)) + 0x20, 0x00};
     uint8_t read_buffer[3];
@@ -42,6 +80,7 @@ float readMCP(bool channel, float reference){
 }
 
 int main() {
+    set_sys_clock_khz(96000, true);  
     stdio_init_all();
     spi_init(spi1, 100 * 1000); // 100kHz
 
@@ -57,10 +96,47 @@ int main() {
 
     gpio_init(PICO_DEFAULT_LED_PIN);
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
+
+    gpio_init(MUX_A0);
+    gpio_init(MUX_A1);
+    gpio_init(MUX_A2);
+    gpio_init(MCLK);
+
+    gpio_set_dir(MCLK, GPIO_OUT);
+    gpio_set_dir(MUX_A0, GPIO_OUT);
+    gpio_set_dir(MUX_A1, GPIO_OUT);
+    gpio_set_dir(MUX_A2, GPIO_OUT);
+    
+    sleep_us(10);
+    gpio_put(MCLK, true);
+    gpio_put(MUX_A0, true);
+    gpio_put(MUX_A1, false);
+    gpio_put(MUX_A2, false);
+
+    // Choose PIO instance (0 or 1)
+    PIO pio = pio0;
+
+    // Get first free state machine in PIO 0
+    uint multislopeSM = pio_claim_unused_sm(pio, true);
+
+    // Add PIO program to PIO instruction memory. SDK will find location and
+    // return with the memory offset of the program.
+    uint multislopeOffset = pio_add_program(pio, &ms_program);
+
+    const float div = 10;
+
+    // Initialize the program using the helper function in our .pio file
+    ms_program_init(pio, multislopeSM, multislopeOffset, PWMA, COMP, div, MEAS);
+
+
+    // Start running our PIO program in the state machine
+    pio_sm_set_enabled(pio, multislopeSM, true);
+
     while(true){
         float read = readMCP(false, 3.3);
-        printf("%f\n", read);
-        sleep_ms(100);
+        uint32_t counts = get_counts(pio, multislopeSM, 0xFFFFFFFF);
+        printf("%f, %d\n", read, counts);
+        sleep_ms(1000);
         if(get_bootsel_button()){
             reset_usb_boot(0,0);
         }

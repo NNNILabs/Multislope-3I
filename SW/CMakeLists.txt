@@ -28,13 +28,16 @@ add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/main.c)
 target_link_libraries(${PROJECT_NAME} 
     pico_stdlib
     hardware_spi
+    hardware_pio
 )
 
 # Create map/bin/hex/uf2 files
 pico_add_extra_outputs(${PROJECT_NAME})
 
+pico_generate_pio_header(${PROJECT_NAME}  
+        ${CMAKE_CURRENT_LIST_DIR}/ms.pio
+)
+
 # Enable usb output, disable uart output
-# TODO
-# bring back USB prinflater
 pico_enable_stdio_usb(${PROJECT_NAME} 1)
 pico_enable_stdio_uart(${PROJECT_NAME} 0)

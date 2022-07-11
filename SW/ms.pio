@@ -1,0 +1,70 @@
+.program ms
+.side_set 1
+; 1 side set bit for the MEAS pin
+
+; don't forget to enable auto push
+start:
+    mov X, !NULL        side 0              ; set X to 0xFFFFFFFF
+    out Y, 32           side 0              ; read the number desired counts
+    jmp begining        side 0              ; got to PWM
+
+finish:
+    set pins 0          side 0              ; turn switches off
+    in X, 32            side 0              ; push PWM to FIFO
+    jmp start           side 0              ; go back to start
+
+.wrap_target
+begining:
+    set pins 2          side 1               ; set PWMA high, and PWMB low                    [01 clock cycles]
+    jmp pin PWMhigh     side 1               ; read comparator input, jump to pwm high state  [01 clock cycles]
+    set pins 1          side 1               ; turn off PWMA if the pin is low                [01 clock cycles]
+    jmp PWMlow      side 1               ; else jump to PWM low state                     [01 clock cycles] (if pin is low we decrement X)
+PWMhigh:
+    set pins 2          side 1 [15]          ; keep PWMA high             [02 clock cycles] + [28 clock cycles] = 30
+    nop                 side 1 [11]
+    set pins 1          side 1               ; set PWMA low, at the same time PWMB high       [01 clock cycles]
+    jmp begining    side 1               ; go to the beginning if y is not zero yet       [01 clock cycles] = total 32
+                   ; go to rundown when y is zero                   we don't care at this point anymore
+PWMlow:
+    set pins 1          side 1 [15]              ; set PWMA low                [4 clock cycles] + [27 clock cycles] = 31
+    nop                 side 1 [10]
+    jmp begining    side 1                ; go to the beginning if y is not zero yet       [01 clock cycles] = total 32                      
+.wrap                                
+
+% c-sdk {
+
+// Helper function (for use in C program) to initialize this PIO program
+void ms_program_init(PIO pio, uint sm, uint offset, uint pin, uint input, float div, uint pin_MEAS) {
+
+    // Sets up state machine and wrap target. This function is automatically
+    pio_sm_config c = ms_program_get_default_config(offset);
+    
+    sm_config_set_sideset_pins(&c, pin_MEAS); //side set
+    
+    // Allow PIO to control GPIO pin (as output)
+    pio_gpio_init(pio, pin);
+    pio_gpio_init(pio, pin+1);
+    pio_gpio_init(pio, pin_MEAS);      
+    
+    
+    // set the pin for jump if pin high instruction
+    sm_config_set_jmp_pin(&c, input); 
+
+    // Connect pin to SET pin (control with 'set' instruction)
+    sm_config_set_set_pins(&c, pin, 2);
+    
+    // Set the pin direction to output (in PIO)
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 2, true);      // 2 pins for PWM high and low
+    pio_sm_set_consecutive_pindirs(pio, sm, pin_MEAS, 1, true); // 1 pin for MEAS pin
+
+    // Set auto push to ISR
+    sm_config_set_in_shift(&c, false, true, 32);
+    sm_config_set_out_shift(&c, false, true, 32);
+    // Set the clock divider for the state machine
+    sm_config_set_clkdiv(&c, div);
+
+    // Load configuration and jump to start of the program
+    pio_sm_init(pio, sm, offset, &c);
+}
+
+%}
