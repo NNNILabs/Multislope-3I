@@ -66,7 +66,7 @@ uint32_t get_counts(PIO pio, uint sm , uint32_t countNum){
     return counts;
 }
 
-float readMCP(bool channel, float reference){
+uint16_t readMCP(bool channel){
     uint8_t buffer[] = {0x01, 0x80 + (0x40 & (channel << 6)) + 0x20, 0x00};
     uint8_t read_buffer[3];
     gpio_put(CS, false);
@@ -76,7 +76,7 @@ float readMCP(bool channel, float reference){
     sleep_us(5);
     gpio_put(CS, true);
     uint16_t result = ((read_buffer[1] << 8) | read_buffer[2]);
-    return (result * (reference/4096));
+    return result;
 }
 
 int main() {
@@ -133,11 +133,15 @@ int main() {
     pio_sm_set_enabled(pio, multislopeSM, true);
 
     while(true){
-        float read1 = readMCP(false, 3.3);
-        uint32_t counts = get_counts(pio, multislopeSM, 6000);
-        float read2 = readMCP(false, 3.3);
-        printf("%f, %d, %f\n", read1, counts, read2);
-        sleep_ms(1000);
+        int read1 = readMCP(false);
+        uint32_t counts = get_counts(pio, multislopeSM, 60000);
+        int read2 = readMCP(false);
+        int residue = read2 - read1;
+        float countResult = (counts - (60000 - counts))/60000;
+        float residueResult = (residue * (float)(3.3/4096)) * 0.00005;
+        float output = countResult + residueResult;
+        printf("%f\n", output);
+        sleep_ms(10);
         if(get_bootsel_button()){
             reset_usb_boot(0,0);
         }
