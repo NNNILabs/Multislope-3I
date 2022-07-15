@@ -133,15 +133,16 @@ int main() {
     pio_sm_set_enabled(pio, multislopeSM, true);
 
     while(true){
+        //uint32_t preCharge = get_counts(pio, multislopeSM, 1000);
+        sleep_ms(10);
         int read1 = readMCP(false);
         uint32_t counts = get_counts(pio, multislopeSM, 60000);
         int read2 = readMCP(false);
-        int residue = read2 - read1;
-        float countResult = (counts - (60000 - counts))/60000;
-        float residueResult = (residue * (float)(3.3/4096)) * 0.00005;
-        float output = countResult + residueResult;
-        printf("%f\n", output);
-        sleep_ms(10);
+        float approximate = (((2 * counts) - 6000) / 60000) * 14;
+        float residue = ((read2 - read1) * 0.002685) * 0.00005;
+        float result = approximate + residue;
+        printf("%f\n", result);
+        //sleep_ms(10);
         if(get_bootsel_button()){
             reset_usb_boot(0,0);
         }
