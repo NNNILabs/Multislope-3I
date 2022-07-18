@@ -137,13 +137,6 @@ int main() {
     while(true){
         //uint32_t preCharge = get_counts(pio, multislopeSM, 1000);
         sleep_ms(10);
-        int read1 = readMCP(false);
-        uint32_t counts = get_counts(pio, multislopeSM, 60000);
-        int read2 = readMCP(false);
-        float approximate = (((2 * counts) - 6000) / 60000) * 14;
-        float residue = ((read2 - read1) * 0.002685) * 0.00005;
-        float result = approximate + residue;
-        printf("%f\n", result);
         //sleep_ms(10);
         if(get_bootsel_button()){
             reset_usb_boot(0,0);
@@ -152,10 +145,18 @@ int main() {
         chr = getchar_timeout_us(0);
         if(chr != PICO_ERROR_TIMEOUT){
             chr = 0;
-            uint16_t val = readMCP(true);
-            float temp = ((3.3/4096) * val * 100);
+            int read1 = readMCP(false);
+            uint32_t counts = get_counts(pio, multislopeSM, 60000);
+            int read2 = readMCP(false);
+            float approximate = (((2 * counts) - 6000) / 60000) * 14;
+            float residue = ((read2 - read1) * 0.002685) * 0.00005;
+            float result = approximate + residue;
+            printf("%f\n", result);
+
+            // uint16_t val = readMCP(true);
+            // float temp = ((3.3/4096) * val * 100);
+            // printf("%f\n", temp);
             sleep_ms(10);
-            printf("%f\n", temp);
         }
     }
     return 0;
