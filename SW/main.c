@@ -148,10 +148,11 @@ int main() {
             int read1 = readMCP(false);
             uint32_t counts = get_counts(pio, multislopeSM, 60000);
             int read2 = readMCP(false);
-            float approximate = (((2 * counts) - 6000) / 60000) * 14;
-            float residue = ((read2 - read1) * 0.002685) * 0.00005;
-            float result = approximate + residue;
-            printf("%f\n", result);
+            int residue = read2 - read1;
+            int countDifference = 60000 - (2 * counts);
+            float approximate = countDifference * 0.000233;
+            approximate = approximate / 1.166305;
+            printf("%d, %f, %d\n", counts, approximate, residue);
 
             // uint16_t val = readMCP(true);
             // float temp = ((3.3/4096) * val * 100);
