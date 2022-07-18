@@ -6933,7 +6933,7 @@
   (gr_circle (center 96 68) (end 97.65 68) (layer "User.1") (width 0.15) (fill none) (tstamp 763e3032-6c82-4ffe-bc25-c3536b0170e1))
   (gr_line (start 96 63) (end 186 63) (layer "User.1") (width 0.15) (tstamp 77a39290-cbef-4417-92dd-bd19a64a03da))
   (gr_arc (start 96 137) (mid 92.464466 135.535534) (end 91 132) (layer "User.1") (width 0.15) (tstamp 8b5e0205-c587-4050-b94f-cc54059e40a4))
-  (gr_circle (center 186 68) (end 187.65 68) (layer "User.1") (width 0.15) (fill none) (tstamp 8f8a3e78-6b2f-4357-9844-41fccc16fe73))
+  (gr_circle (center 186 68) (end 187.65 68) (layer "User.1") (width 0.15) (fill none) (tstamp b0cead16-6461-4e3e-9ca3-2e43f46ff1b9))
   (gr_line (start 191 68) (end 191 132) (layer "User.1") (width 0.15) (tstamp c65ba2c9-dffe-4f00-a051-423e57562a1d))
   (gr_arc (start 186 63) (mid 189.535534 64.464466) (end 191 68) (layer "User.1") (width 0.15) (tstamp c8fcd968-155f-44aa-a800-8cf269c9dcc4))
   (gr_circle (center 96 132) (end 97.65 132) (layer "User.1") (width 0.15) (fill none) (tstamp cbe32b18-6d05-4dfa-9c45-bb56a6038d84))
