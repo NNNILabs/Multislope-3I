@@ -132,6 +132,8 @@ int main() {
     // Start running our PIO program in the state machine
     pio_sm_set_enabled(pio, multislopeSM, true);
 
+    int chr = 0;
+
     while(true){
         //uint32_t preCharge = get_counts(pio, multislopeSM, 1000);
         sleep_ms(10);
@@ -145,6 +147,15 @@ int main() {
         //sleep_ms(10);
         if(get_bootsel_button()){
             reset_usb_boot(0,0);
+        }
+
+        chr = getchar_timeout_us(0);
+        if(chr != PICO_ERROR_TIMEOUT){
+            chr = 0;
+            uint16_t val = readMCP(true);
+            float temp = ((3.3/4096) * val * 100);
+            sleep_ms(10);
+            printf("%f\n", temp);
         }
     }
     return 0;
