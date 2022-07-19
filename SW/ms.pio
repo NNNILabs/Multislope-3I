@@ -11,7 +11,17 @@ start:
 finish:
     set pins 0          side 0              ; turn switches off
     in X, 32            side 0              ; push PWM to FIFO
-    jmp start           side 0              ; go back to start
+
+dither:
+dithHigh:
+    jmp !OSRE start     side 0              ; jump out of desaturation when the OSR has data 
+    set pins 1          side 0 [1]          ; set pin polarity
+    jmp pin dithHigh    side 0              ; check if the integrator is still high
+dithLow:
+    jmp !OSRE start     side 0              ; jump out of desaturation when the OSR has data 
+    set pins 2          side 0              ; set pin polarity
+    jmp pin dithHigh    side 0              ; check if the integrator is high
+    jmp dithLow         side 0              ; stay low
 
 .wrap_target
 begining:
