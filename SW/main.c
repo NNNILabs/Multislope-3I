@@ -110,7 +110,7 @@ int main() {
     sleep_us(10);
     gpio_put(MCLK, true);
     gpio_put(MUX_A0, false);
-    gpio_put(MUX_A1, true);
+    gpio_put(MUX_A1, false);
     gpio_put(MUX_A2, false);
 
     // Choose PIO instance (0 or 1)
@@ -134,6 +134,8 @@ int main() {
 
     int chr = 0;
 
+    get_counts(pio, multislopeSM, 100); //just to get the thing started up
+
     while(true){
         //uint32_t preCharge = get_counts(pio, multislopeSM, 1000);
         sleep_ms(10);
@@ -145,7 +147,6 @@ int main() {
         chr = getchar_timeout_us(0);
         if(chr != PICO_ERROR_TIMEOUT){
             chr = 0;
-            get_counts(pio, multislopeSM, 100); //desaturation
             int read1 = readMCP(false); //First residue reading
             uint32_t counts = get_counts(pio, multislopeSM, 60000); //Multisloping for 200ms
             int read2 = readMCP(false); //Second residue reading
@@ -154,7 +155,7 @@ int main() {
             float residueVolt = residueDiff * 0.002685; //calculate residue voltage 
             float residue = residueVolt * 0.000050; //scale residue voltage by integrator and meas time parameters
             float approximate = countDifference * 0.000233; //calculate rough voltage
-            float result = approximate  + residue; //calculate final voltage by adding rough and residue
+            float result = approximate + residue; //calculate final voltage by adding rough and residue
             printf("%f\n", result);
             // uint16_t val = readMCP(true);
             // float temp = ((3.3/4096) * val * 100);
