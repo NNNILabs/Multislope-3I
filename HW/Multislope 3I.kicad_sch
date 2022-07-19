@@ -5895,6 +5895,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e4224cb9-d81f-4575-870b-be54f90b4f18)
   )
+  (text "Note:\n+/-REF shouldn't be selected beacuse they \nsaturate the integrator, consequence of \nhaving same integrator resistor values \nfor input and references."
+    (at 15.24 208.28 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid fae870d0-13bf-4c00-b93b-b81c9c784c53)
+  )
 
   (label "MEAS" (at 180.34 163.83 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
