@@ -6,12 +6,14 @@
 start:
     mov X, !NULL        side 0              ; set X to 0xFFFFFFFF
     out Y, 32           side 0              ; read the number desired counts
+    irq wait 0          side 0              ; first residue reading
     jmp begining        side 0              ; got to PWM
 
 finish:
     set pins 0          side 0              ; turn switches off
     in X, 32            side 0              ; push PWM to FIFO
-
+    irq wait 1          side 0              ; second residue reading
+    
 dither:
 dithHigh:
     jmp !OSRE start     side 0              ; jump out of desaturation when the OSR has data 

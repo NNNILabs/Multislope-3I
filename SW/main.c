@@ -79,10 +79,31 @@ uint16_t readMCP(bool channel){
     return result;
 }
 
+uint16_t irqMCPdiff(bool read){
+    static uint16_t first = 0;
+    static uint16_t second = 0;
+    if (pio0_hw->irq & 1) {
+        pio0_hw->irq = 1;
+        // PIO0 IRQ0 fired means we need to take first MCP reading
+        first = readMCP(false);
+    }else if (pio0_hw->irq & 2) {
+        pio0_hw->irq = 2;
+        // PIO0 IRQ1 fired means it's time for the second reading
+        second = readMCP(true);
+    }
+    if (read) {
+        return second - first;
+    }
+}
+
+void pio_irq(){
+    irqMCPdiff(false);
+}
+
 int main() {
     set_sys_clock_khz(96000, true);  
     stdio_init_all();
-    spi_init(spi1, 100 * 1000); // 100kHz
+    spi_init(spi1, 500 * 1000); // 500kHz
 
     spi_set_format(spi1, 8, 0, 0, SPI_MSB_FIRST);
 
@@ -128,6 +149,10 @@ int main() {
     // Initialize the program using the helper function in our .pio file
     ms_program_init(pio, multislopeSM, multislopeOffset, PWMA, COMP, div, MEAS);
 
+    // Enable IRQ0 & 1 on PIO0
+    irq_set_exclusive_handler(PIO0_IRQ_0, pio_irq);
+    irq_set_enabled(PIO0_IRQ_0, true);
+    pio0_hw->inte0 = PIO_IRQ0_INTE_SM0_BITS | PIO_IRQ0_INTE_SM1_BITS;
 
     // Start running our PIO program in the state machine
     pio_sm_set_enabled(pio, multislopeSM, true);
@@ -145,10 +170,13 @@ int main() {
         chr = getchar_timeout_us(0);
         if(chr != PICO_ERROR_TIMEOUT){
             chr = 0;
-            int read1 = readMCP(false);
+            //int read1 = readMCP(false);
             uint32_t counts = get_counts(pio, multislopeSM, 60000);
-            int read2 = readMCP(false);
-            int residue = read2 - read1;
+            //int read2 = readMCP(false);
+            //int residue = read2 - read1;
+
+            int residue = irqMCPdiff(true);
+
             int countDifference = 60000 - (2 * counts);
             float approximate = countDifference * 0.000233;
             approximate = approximate / 1.166305;
