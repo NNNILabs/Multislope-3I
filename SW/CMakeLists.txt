@@ -29,6 +29,7 @@ target_link_libraries(${PROJECT_NAME}
     pico_stdlib
     hardware_spi
     hardware_pio
+    hardware_dma
 )
 
 # Create map/bin/hex/uf2 files
