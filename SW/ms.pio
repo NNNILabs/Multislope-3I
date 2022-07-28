@@ -4,6 +4,7 @@
 
 ; don't forget to enable auto push
 start:
+    set pins 0          side 0
     mov X, !NULL        side 0              ; set X to 0xFFFFFFFF
     out Y, 32           side 0              ; read the number desired counts
     irq wait 0          side 0              ; first residue reading
