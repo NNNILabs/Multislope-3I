@@ -97,6 +97,8 @@ bool fistReading = true;
 PIO pio;
 uint multislopeSM;
 
+void configureDMA();
+
 void dma_irq_handler() {
     // Clear interrupt.
     // and disable the interrupt
@@ -111,6 +113,8 @@ void dma_irq_handler() {
         resultPostMultislope = ((DMA_SPI_ADC_readBuffer[1] << 8) | DMA_SPI_ADC_readBuffer[2]);
         pio_sm_put(pio, multislopeSM, (uint32_t)1);
     }
+    // reset the DMA
+    configureDMA();
 }
 
 void pio_irq(){
@@ -135,6 +139,39 @@ void pio_irq(){
     
 }
 
+void configureDMA(){
+    // We set the outbound DMA to transfer from a memory buffer to the SPI transmit FIFO paced by the SPI TX FIFO DREQ
+    // The default is for the read address to increment every element (in this case 1 byte = DMA_SIZE_8)
+    // and for the write address to remain unchanged.
+
+    dma_channel_config dma_conf_tx = dma_channel_get_default_config(dma_tx);
+    channel_config_set_transfer_data_size(&dma_conf_tx, DMA_SIZE_8);
+    channel_config_set_dreq(&dma_conf_tx, spi_get_dreq(spi1, true));
+    dma_channel_configure(dma_tx, &dma_conf_tx,
+                          &spi_get_hw(spi1)->dr, // write address
+                          DMA_SPI_ADC_writeBuffer, // read address
+                          TRANSFER_LENGTH, // element count (each element is of size transfer_data_size)
+                          false); // don't start yet
+
+    // We set the inbound DMA to transfer from the SPI receive FIFO to a memory buffer paced by the SPI RX FIFO DREQ
+    // We configure the read address to remain unchanged for each element, but the write
+    // address to increment (so data is written throughout the buffer)
+    dma_channel_config dma_conf_rx = dma_channel_get_default_config(dma_rx);
+    channel_config_set_transfer_data_size(&dma_conf_rx, DMA_SIZE_8);
+    channel_config_set_dreq(&dma_conf_rx, spi_get_dreq(spi1, false));
+    channel_config_set_read_increment(&dma_conf_rx, false);
+    channel_config_set_write_increment(&dma_conf_rx, true);
+    dma_channel_configure(dma_rx, &dma_conf_rx,
+                          DMA_SPI_ADC_readBuffer, // write address
+                          &spi_get_hw(spi1)->dr, // read address
+                          TRANSFER_LENGTH, // element count (each element is of size transfer_data_size)
+                          false); // don't start yet
+    
+    // configure DMA interrupts
+    dma_channel_set_irq0_enabled(dma_rx, true);
+    irq_set_exclusive_handler(DMA_IRQ_0, dma_irq_handler);
+    //irq_set_enabled(DMA_IRQ_0, true);
+}
 
 int main() {
     set_sys_clock_khz(96000, true);  
@@ -194,37 +231,7 @@ int main() {
     dma_tx = dma_claim_unused_channel(true);
     dma_rx = dma_claim_unused_channel(true);
 
-    // We set the outbound DMA to transfer from a memory buffer to the SPI transmit FIFO paced by the SPI TX FIFO DREQ
-    // The default is for the read address to increment every element (in this case 1 byte = DMA_SIZE_8)
-    // and for the write address to remain unchanged.
-
-    dma_channel_config c = dma_channel_get_default_config(dma_tx);
-    channel_config_set_transfer_data_size(&c, DMA_SIZE_8);
-    channel_config_set_dreq(&c, spi_get_dreq(spi1, true));
-    dma_channel_configure(dma_tx, &c,
-                          &spi_get_hw(spi1)->dr, // write address
-                          DMA_SPI_ADC_writeBuffer, // read address
-                          TRANSFER_LENGTH, // element count (each element is of size transfer_data_size)
-                          false); // don't start yet
-
-    // We set the inbound DMA to transfer from the SPI receive FIFO to a memory buffer paced by the SPI RX FIFO DREQ
-    // We configure the read address to remain unchanged for each element, but the write
-    // address to increment (so data is written throughout the buffer)
-    c = dma_channel_get_default_config(dma_rx);
-    channel_config_set_transfer_data_size(&c, DMA_SIZE_8);
-    channel_config_set_dreq(&c, spi_get_dreq(spi1, false));
-    channel_config_set_read_increment(&c, false);
-    channel_config_set_write_increment(&c, true);
-    dma_channel_configure(dma_rx, &c,
-                          DMA_SPI_ADC_readBuffer, // write address
-                          &spi_get_hw(spi1)->dr, // read address
-                          TRANSFER_LENGTH, // element count (each element is of size transfer_data_size)
-                          false); // don't start yet
-
-    // configure DMA interrupts
-    dma_channel_set_irq0_enabled(dma_rx, true);
-    irq_set_exclusive_handler(DMA_IRQ_0, dma_irq_handler);
-    //irq_set_enabled(DMA_IRQ_0, true);
+    configureDMA();
 
     // Start running our PIO program in the state machine
     pio_sm_set_enabled(pio, multislopeSM, true);
@@ -251,6 +258,8 @@ int main() {
             //int residueDiff = read1 - read2; //Difference in residue readings, 1 - 2 because scaling amp is inverted
             int residueDiff = resultPreMultislope - resultPostMultislope;
             printf("%d, %d\n", resultPreMultislope, resultPostMultislope);
+            printf("spi wite buffer: %d, %d, %d\n", DMA_SPI_ADC_writeBuffer[0], DMA_SPI_ADC_writeBuffer[1], DMA_SPI_ADC_writeBuffer[2]);
+            printf("spi read buffer: %d, %d, %d\n", DMA_SPI_ADC_readBuffer[0], DMA_SPI_ADC_readBuffer[1], DMA_SPI_ADC_readBuffer[2]);
             int countDifference = 60000 - (2 * counts); //calculate count difference
             float residueVolt = residueDiff * 0.002685; //calculate residue voltage 
             float residue = residueVolt * 0.000050; //scale residue voltage by integrator and meas time parameters
