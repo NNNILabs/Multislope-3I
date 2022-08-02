@@ -100,7 +100,6 @@ void dma_irq_handler() {
     // and disable the interrupt
     dma_hw->ints0 = (1u << dma_rx);
     irq_set_enabled(DMA_IRQ_0, false);
-    printf("Capture finished, %d\n", time_us_32());
     gpio_put(CS, true);
     if(fistReading){
         fistReading = false;
@@ -120,7 +119,6 @@ void pio_irq(){
         // PIO0 IRQ0 fired means we need to take first MCP reading
         // start DMAs simultaneously
         // enable IRQ
-        printf("PIO0 IRQ0 fired\nStarting capture: %d\n", time_us_32());
         gpio_put(CS, false);
         irq_set_enabled(DMA_IRQ_0, true);
         dma_start_channel_mask((1u << dma_tx) | (1u << dma_rx));
@@ -128,7 +126,6 @@ void pio_irq(){
         
         //first = readMCP(false);
     }else if (pio0_hw->irq & 2) {
-        printf("PIO0 IRQ1 fired\nStarting capture: %d\n", time_us_32());
         // PIO0 IRQ1 fired means it's time for the second reading
         gpio_put(CS, false);
         irq_set_enabled(DMA_IRQ_0, true);
@@ -256,9 +253,6 @@ int main() {
             //int read2 = readMCP(false); //Second residue reading
             //int residueDiff = read1 - read2; //Difference in residue readings, 1 - 2 because scaling amp is inverted
             int residueDiff = resultPreMultislope - resultPostMultislope;
-            printf("%d, %d\n", resultPreMultislope, resultPostMultislope);
-            printf("spi wite buffer: %d, %d, %d\n", DMA_SPI_ADC_writeBuffer[0], DMA_SPI_ADC_writeBuffer[1], DMA_SPI_ADC_writeBuffer[2]);
-            printf("spi read buffer: %d, %d, %d\n", DMA_SPI_ADC_readBuffer[0], DMA_SPI_ADC_readBuffer[1], DMA_SPI_ADC_readBuffer[2]);
             int countDifference = 60000 - (2 * counts); //calculate count difference
             float residueVolt = residueDiff * 0.002685; //calculate residue voltage 
             float residue = residueVolt * 0.000050; //scale residue voltage by integrator and meas time parameters
