@@ -30,6 +30,10 @@ target_link_libraries(${PROJECT_NAME}
     hardware_spi
     hardware_pio
     hardware_dma
+    hardware_gpio
+    hardware_sync
+    hardware_structs
+    pico_bootrom
 )
 
 # Create map/bin/hex/uf2 files
