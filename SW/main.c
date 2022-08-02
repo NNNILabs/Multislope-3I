@@ -13,7 +13,6 @@
 #define MAINS_FREQ 50                   // Hz
 
 const uint8_t MCLK = 18;                // SPI Clock Pin
-const uint8_t M_EN = 16;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
@@ -23,9 +22,6 @@ const uint8_t PWMA = 3;                // need to be next to each other
 const uint8_t PWMB = 4;                // need to be next to each other
 const uint8_t MEAS = 5;
 const uint8_t COMP = 6;
-
-const uint8_t RESGP = 28;
-const uint8_t RESADC = 2;
 
 const uint64_t mainsPeriodus = 1000000/MAINS_FREQ;
 
