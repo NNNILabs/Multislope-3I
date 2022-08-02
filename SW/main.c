@@ -101,6 +101,7 @@ void dma_irq_handler() {
     dma_hw->ints0 = (1u << dma_rx);
     irq_set_enabled(DMA_IRQ_0, false);
     printf("Capture finished, %d\n", time_us_32());
+    gpio_put(CS, true);
     if(fistReading){
         fistReading = false;
         resultPreMultislope = ((DMA_SPI_ADC_readBuffer[1] << 8) | DMA_SPI_ADC_readBuffer[2]);
@@ -120,6 +121,7 @@ void pio_irq(){
         // start DMAs simultaneously
         // enable IRQ
         printf("PIO0 IRQ0 fired\nStarting capture: %d\n", time_us_32());
+        gpio_put(CS, false);
         irq_set_enabled(DMA_IRQ_0, true);
         dma_start_channel_mask((1u << dma_tx) | (1u << dma_rx));
         pio0_hw->irq = 1;
@@ -128,6 +130,7 @@ void pio_irq(){
     }else if (pio0_hw->irq & 2) {
         printf("PIO0 IRQ1 fired\nStarting capture: %d\n", time_us_32());
         // PIO0 IRQ1 fired means it's time for the second reading
+        gpio_put(CS, false);
         irq_set_enabled(DMA_IRQ_0, true);
         dma_start_channel_mask((1u << dma_tx) | (1u << dma_rx));
         pio0_hw->irq = 2;
