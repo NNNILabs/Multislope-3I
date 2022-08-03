@@ -1,1 +1,6 @@
-/.vscode/
+.vscode/
+!build
+build/*
+!build/Build.bat
+!build/Multislope.uf2
+!build/NNNI - only run Build.bat when this directory is empty, or CMakeLists has been changed.txt

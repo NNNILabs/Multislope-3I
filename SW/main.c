@@ -7,6 +7,7 @@
 #include "hardware/spi.h"
 #include "hardware/pio.h"
 #include "hardware/dma.h"
+#include "hardware/irq.h"
 #include "pico/bootrom.h"
 #include "ms.pio.h"
 
