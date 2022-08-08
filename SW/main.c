@@ -8,6 +8,7 @@
 #include "hardware/pio.h"
 #include "hardware/dma.h"
 #include "hardware/irq.h"
+#include "hardware/adc.h"
 #include "pico/bootrom.h"
 #include "ms.pio.h"
 
@@ -94,6 +95,9 @@ bool fistReading = true;
 PIO pio;
 uint multislopeSM;
 
+uint16_t picoADC_before;
+uint16_t picoADC_after;
+
 void configureDMA();
 
 void dma_irq_handler() {
@@ -122,6 +126,7 @@ void pio_irq(){
         // enable IRQ
         gpio_put(CS, false);
         irq_set_enabled(DMA_IRQ_0, true);
+        picoADC_before = adc_read();
         dma_start_channel_mask((1u << dma_tx) | (1u << dma_rx));
         pio0_hw->irq = 1;
         
@@ -130,6 +135,7 @@ void pio_irq(){
         // PIO0 IRQ1 fired means it's time for the second reading
         gpio_put(CS, false);
         irq_set_enabled(DMA_IRQ_0, true);
+        picoADC_after = adc_read();
         dma_start_channel_mask((1u << dma_tx) | (1u << dma_rx));
         pio0_hw->irq = 2;
     }
@@ -174,6 +180,8 @@ int main() {
     set_sys_clock_khz(96000, true);  
     stdio_init_all();
     spi_init(spi1, 500 * 1000); // 500kHz
+    adc_init();
+
 
     spi_set_format(spi1, 8, 0, 0, SPI_MSB_FIRST);
 
@@ -194,6 +202,8 @@ int main() {
     gpio_init(MUX_A1);
     gpio_init(MUX_A2);
     gpio_init(MCLK);
+    adc_gpio_init(26);
+    adc_select_input(0);
 
     gpio_set_dir(MCLK, GPIO_OUT);
     gpio_set_dir(MUX_A0, GPIO_OUT);
@@ -260,6 +270,7 @@ int main() {
             float approximate = countDifference * 0.000233; //calculate rough voltage
             float result = approximate + residue; //calculate final voltage by adding rough and residue
             printf("%f\n", result);
+            printf("%d, %d\n", picoADC_before, picoADC_after);
             // uint16_t val = readMCP(true);
             // float temp = ((3.3/4096) * val * 100);
             // printf("%f\n", temp);
