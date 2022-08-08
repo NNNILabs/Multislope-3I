@@ -14,8 +14,6 @@
 
 #define MAINS_FREQ 50                   // Hz
 
-const uint8_t MCLK = 18;                // SPI Clock Pin
-
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
 const uint8_t MUX_A2 = 1;
@@ -93,6 +91,7 @@ uint16_t resultPostMultislope = 0;
 bool fistReading = true;
 
 PIO pio;
+
 uint multislopeSM;
 
 uint16_t picoADC_before;
@@ -201,20 +200,18 @@ int main() {
     gpio_init(MUX_A0);
     gpio_init(MUX_A1);
     gpio_init(MUX_A2);
-    gpio_init(MCLK);
     adc_gpio_init(26);
     adc_select_input(0);
 
-    gpio_set_dir(MCLK, GPIO_OUT);
     gpio_set_dir(MUX_A0, GPIO_OUT);
     gpio_set_dir(MUX_A1, GPIO_OUT);
     gpio_set_dir(MUX_A2, GPIO_OUT);
     
     sleep_us(10);
-    gpio_put(MCLK, true);
-    gpio_put(MUX_A0, false);
-    gpio_put(MUX_A1, false);
-    gpio_put(MUX_A2, false);
+
+    gpio_put(MUX_A0, true);
+    gpio_put(MUX_A1, true);
+    gpio_put(MUX_A2, true);
 
     // initialise multislope PIO
     pio = pio0;
@@ -242,7 +239,9 @@ int main() {
 
     // Start running our PIO program in the state machine
     pio_sm_set_enabled(pio, multislopeSM, true);
-    
+
+    get_counts(pio, multislopeSM, 10);
+
     int chr = 0;
     
     while(true){
@@ -256,8 +255,8 @@ int main() {
         chr = getchar_timeout_us(0);
         if(chr != PICO_ERROR_TIMEOUT){
             chr = 0;
+
             //int read1 = readMCP(false); //First residue reading
-            gpio_put(PICO_DEFAULT_LED_PIN, true);
             uint32_t counts = get_counts(pio, multislopeSM, 10); //Multisloping for 200ms
             fistReading = true;
             gpio_put(PICO_DEFAULT_LED_PIN, false);
@@ -270,10 +269,16 @@ int main() {
             float approximate = countDifference * 0.000233; //calculate rough voltage
             float result = approximate + residue; //calculate final voltage by adding rough and residue
             printf("%f\n", result);
-            printf("%d, %d\n", picoADC_before, picoADC_after);
+            
             // uint16_t val = readMCP(true);
             // float temp = ((3.3/4096) * val * 100);
             // printf("%f\n", temp);
+            uint16_t residueint = resultPreMultislope - resultPostMultislope;
+            
+            printf("%d, %d, %d\n", counts, resultPreMultislope, resultPostMultislope);
+            
+            printf("%d, %d\n", picoADC_before, picoADC_after);
+
             sleep_ms(10);
         }
     }
