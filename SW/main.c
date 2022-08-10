@@ -37,6 +37,9 @@ const uint64_t mainsPeriodus = 1000000/MAINS_FREQ;
 #define MOSI 11
 #define MISO 12
 
+double constant1 = 14.0;
+double constant2 = 0.00333;
+
 // function that allows us to use the BOOTSEL button as user input
 bool __no_inline_not_in_flash_func(get_bootsel_button)() {
     const uint CS_PIN_INDEX = 1;
@@ -175,6 +178,20 @@ void configureDMA(){
     //irq_set_enabled(DMA_IRQ_0, true);
 }
 
+double getReading()
+{
+    double result = (double)0.0;
+    uint32_t counts = get_counts(pio, multislopeSM, 60000); //Multisloping for 200ms
+    fistReading = true;
+    double approximate_voltage = 60000.0 - (2.0 * (double)counts);
+    approximate_voltage = approximate_voltage / 60000.0;
+    approximate_voltage = approximate_voltage * constant1;
+    double residue_voltage = (constant2) * 0.00005;
+    residue_voltage = residue_voltage * (picoADC_before - picoADC_after);
+    result = approximate_voltage + residue_voltage;
+    return result;
+}
+
 int main() {
     set_sys_clock_khz(96000, true);  
     stdio_init_all();
@@ -256,43 +273,27 @@ int main() {
         if(chr != PICO_ERROR_TIMEOUT){
             chr = 0;
 
-            //int read1 = readMCP(false); //First residue reading
-            uint32_t counts = get_counts(pio, multislopeSM, 10); //Multisloping for 200ms
-            fistReading = true;
-            gpio_put(PICO_DEFAULT_LED_PIN, false);
-            //int read2 = readMCP(false); //Second residue reading
-            //int residueDiff = read1 - read2; //Difference in residue readings, 1 - 2 because scaling amp is inverted
-            int residueDiff = resultPreMultislope - resultPostMultislope;
-            int countDifference = 60000 - (2 * counts); //calculate count difference
-            float residueVolt = residueDiff * 0.002685; //calculate residue voltage 
-            float residue = residueVolt * 0.000050; //scale residue voltage by integrator and meas time parameters
-            float approximate = countDifference * 0.000233; //calculate rough voltage
-            float result = approximate + residue; //calculate final voltage by adding rough and residue
+            //Zero reading
+            gpio_put(MUX_A0, true);
+            gpio_put(MUX_A1, true);
+            gpio_put(MUX_A2, true);
 
-            printf("%.8f\n", result);
+            double zero = getReading();
 
-            double constant1 = 14.0;
-            double constant2 = 0.00333;
+            //Input reading
+            gpio_put(MUX_A0, false);
+            gpio_put(MUX_A1, false);
+            gpio_put(MUX_A2, false);
 
-            // float approximate_voltage = (constant1) * (60000 - 2*counts)/60000;
-            double approximate_voltage = 60000.0 - (2.0 * (double)counts);
-            approximate_voltage = approximate_voltage / 60000.0;
-            approximate_voltage = approximate_voltage * constant1;
-            double residue_voltage = (constant2) * 0.00005;
-            residue_voltage = residue_voltage * (picoADC_before - picoADC_after);
+            double input = getReading();
+
+            double reading = input - zero;
             
-            printf("%.8f, %.8f\n", approximate_voltage, residue_voltage);
-
+            printf("%.8f, %.8f, %.8f\n", zero, input, reading);
             // uint16_t val = readMCP(true);
             // float temp = ((3.3/4096) * val * 100);
             // printf("%f\n", temp);
-            uint16_t residueint = resultPreMultislope - resultPostMultislope;
-            
-            printf("%d, %d, %d\n", counts, resultPreMultislope, resultPostMultislope);
-            
-            printf("%d, %d\n", picoADC_before, picoADC_after);
-
-            sleep_ms(10);
+            reading = input = zero = (double)0.0;
         }
     }
     return 0;
