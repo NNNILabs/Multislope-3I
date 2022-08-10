@@ -268,8 +268,21 @@ int main() {
             float residue = residueVolt * 0.000050; //scale residue voltage by integrator and meas time parameters
             float approximate = countDifference * 0.000233; //calculate rough voltage
             float result = approximate + residue; //calculate final voltage by adding rough and residue
-            printf("%f\n", result);
+
+            printf("%.8f\n", result);
+
+            double constant1 = 14.0;
+            double constant2 = 0.00333;
+
+            // float approximate_voltage = (constant1) * (60000 - 2*counts)/60000;
+            double approximate_voltage = 60000.0 - (2.0 * (double)counts);
+            approximate_voltage = approximate_voltage / 60000.0;
+            approximate_voltage = approximate_voltage * constant1;
+            double residue_voltage = (constant2) * 0.00005;
+            residue_voltage = residue_voltage * (picoADC_before - picoADC_after);
             
+            printf("%.8f, %.8f\n", approximate_voltage, residue_voltage);
+
             // uint16_t val = readMCP(true);
             // float temp = ((3.3/4096) * val * 100);
             // printf("%f\n", temp);
