@@ -278,6 +278,8 @@ int main() {
             gpio_put(MUX_A1, true);
             gpio_put(MUX_A2, true);
 
+            sleep_ms(500);
+
             double zero = getReading();
 
             //Input reading
@@ -285,11 +287,14 @@ int main() {
             gpio_put(MUX_A1, false);
             gpio_put(MUX_A2, false);
 
+            sleep_ms(500);
+
             double input = getReading();
 
             double reading = input - zero;
+            reading = reading * (double)0.855895;
             
-            printf("%.8f, %.8f, %.8f\n", zero, input, reading);
+            printf("%.8f\n", reading);
             // uint16_t val = readMCP(true);
             // float temp = ((3.3/4096) * val * 100);
             // printf("%f\n", temp);
