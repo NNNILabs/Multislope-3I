@@ -19,4 +19,4 @@ The readings from the overall converter (PWM counts and residue) were noisy, and
 ## Notes
 - Another version of the converter is in development, with improvements to speed, resolution and noise. 
 ## Link to YouTube Video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aNtOfKR7sto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=aNtOfKR7sto
