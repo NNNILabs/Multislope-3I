@@ -8,7 +8,7 @@ The KiCAD project files can be used to generate gerber files, which can be used 
 ## Board Image
 ![Front side of the PCB](https://github.com/NNNILabs/Multislope-3I/blob/main/Resources/front.PNG)
 ## Results
-The readings from the overall converter (PWM counts and residue) were noisy, and the raw readings from the MCP3202 residue ADC were noisy and contained unexplained banding. 
+The readings from the overall converter (PWM counts and residue) were noisy, and the raw readings from the MCP3202 residue ADC were noisy and contained unexplained banding. Linearity shows a parabolic curve, probably because of wrong constants or small mismatches in switch resistances. 
 ### Linearity
 ![Linearity](https://github.com/NNNILabs/Multislope-3I/blob/main/Resources/linearity.png)
 ### MCP3202 Raw Data (Detail)
