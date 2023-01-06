@@ -62,8 +62,8 @@
       35,
       36
     ],
-    "visible_layers": "7fcffff_80000007",
-    "zone_display_mode": 0
+    "visible_layers": "7fcffff_00000001",
+    "zone_display_mode": 1
   },
   "meta": {
     "filename": "Multislope 3I.kicad_prl",
