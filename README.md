@@ -8,7 +8,7 @@ The KiCAD project files can be used to generate gerber files, which can be used 
 ## List of Files
 - Hardware: KiCAD PCB design files, BOM and schematic. 
 ![Front side of the PCB](https://github.com/NNNILabs/Multislope-3I/blob/main/Resources/front.PNG)
-- Software: C/C++ code, uf2 file fr direct upload. 
+- Software: C/C++ code, uf2 file for direct upload. 
 - Resources: Infographics
 ## Application Examples
 - The readings from the overall converter (PWM counts and residue) were noisy, and the raw readings from the MCP3202 residue ADC were noisy and contained unexplained banding. Linearity shows a parabolic curve, probably because of wrong constants or small mismatches in switch resistances. 
