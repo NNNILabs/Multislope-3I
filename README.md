@@ -20,7 +20,7 @@ The KiCAD project files can be used to generate gerber files, which can be used 
 - Software bug that causes PWM timing or MCP3202 reading errors
 - Layout that causes interference between analog and digital signal traces
 ## Notes
-- An interactive Excel document is provided in the Resources folder, with a slider to vary the residue constant to visually determine the best constant to reconcile runup and residue readings. Update: Excel file broke somehow, but you can still see the effect of moving the slider in the video linked below, timestamp 10:15.
+- An interactive Excel document is provided in the Resources folder, with a slider to vary the residue constant to visually determine the best constant to reconcile runup and residue readings. Update: Excel file broke somehow, but you can still see the effect of moving the slider in the video linked below, timestamp [10:15](https://youtu.be/aNtOfKR7sto?t=615).
 - Another version of the converter is in development, with improvements to speed, resolution and noise. 
 ## Links
 https://www.youtube.com/watch?v=aNtOfKR7sto
