@@ -17,7 +17,7 @@ The KiCAD project files can be used to generate gerber files, which can be used 
 ### MCP3202 Raw Data (Detail)
 ![Noise](https://github.com/NNNILabs/Multislope-3I/blob/main/Resources/noise.PNG)
 ### Cause
-- Reading noise was ![determined](https://hackaday.io/project/190528-multislope-adc/log/218489-a-path-forward) to be caused by poor layout and decoupling around the MCP3202 residue ADC. 
+- Reading noise was [determined](https://hackaday.io/project/190528-multislope-adc/log/218489-a-path-forward) to be caused by poor layout and decoupling around the MCP3202 residue ADC. 
 - Linearity bell curve could be caused by input resistor's PCR.
 ## Notes
 - An interactive Excel document is provided in the Resources folder, with a slider to vary the residue constant to visually determine the best constant to reconcile runup and residue readings. Update: Excel file broke somehow, but you can still see the effect of moving the slider in the video linked below, timestamp [10:15](https://youtu.be/aNtOfKR7sto?t=615).
