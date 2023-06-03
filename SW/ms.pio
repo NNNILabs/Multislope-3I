@@ -13,7 +13,7 @@ start:
 
 finish:
     set pins 0          side 0              ; turn switches off
-    in X, 32            side 0              ; push PWM to FIFO
+    in  X, 32           side 0              ; push PWM to FIFO
     irq wait 1          side 0              ; second residue reading
     out NULL, 32        side 0              ; stall until DMA finished reading the ADC
     
@@ -41,11 +41,33 @@ PWMhigh:
     jmp Y-- begining    side 1               ; go to the beginning if y is not zero yet       [01 clock cycles] = total 32
     jmp finish          side 0               ; go to rundown when y is zero                   we don't care at this point anymore
 PWMlow:
-	set pins 2          side 1 [15]              ; set PWMA low                [4 clock cycles] + [27 clock cycles] = 31
+	set pins 2          side 1 [15]          ; set PWMA low                [4 clock cycles] + [27 clock cycles] = 31
 	nop                 side 1 [10]
-    jmp Y-- begining    side 1                ; go to the beginning if y is not zero yet       [01 clock cycles] = total 32
+    jmp Y-- begining    side 1               ; go to the beginning if y is not zero yet       [01 clock cycles] = total 32
     jmp finish          side 0                      
 .wrap                                
+
+
+// Tried and tested PIO code to read from the MCP3202
+// Set in and out shift to 18
+/*
+.program output
+.side_set 2
+
+.wrap_target
+    bitloop:
+        out pins, 1           side 0 [1]
+        in  pins, 1           side 2
+        jmp x--   bitloop     side 2
+        out pins, 1           side 0
+        mov x,    y           side 0     ; Reload bit counter from Y
+        in  pins, 1           side 2
+        jmp !osre bitloop     side 2     ; Fall-through if TXF empties
+        nop                   side 0 [1] ; CSn back porch
+    public entry_point:                  ; Must set X,Y to n-2 before starting!
+        pull ifempty          side 1 [1] ; Block with CSn high (minimum 2 cycles)
+.wrap
+*/
 
 % c-sdk {
 
