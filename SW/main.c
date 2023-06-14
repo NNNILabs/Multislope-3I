@@ -181,7 +181,7 @@ void configureDMA(){
 double getReading()
 {
     double result = (double)0.0;
-    uint32_t counts = get_counts(pio, multislopeSM, 60000); //Multisloping for 200ms
+    uint32_t counts = get_counts(pio, multislopeSM, 60); //Multisloping for 20ms
     fistReading = true;
     double approximate_voltage = 60000.0 - (2.0 * (double)counts);
     approximate_voltage = approximate_voltage / 60000.0;
@@ -189,6 +189,9 @@ double getReading()
     double residue_voltage = (constant2) * 0.00005;
     residue_voltage = residue_voltage * (picoADC_before - picoADC_after);
     result = approximate_voltage + residue_voltage;
+
+    printf("%d, %d, %d\n", counts, resultPreMultislope, resultPostMultislope);
+
     return result;
 }
 
@@ -227,8 +230,8 @@ int main() {
     sleep_us(10);
 
     gpio_put(MUX_A0, true);
-    gpio_put(MUX_A1, true);
-    gpio_put(MUX_A2, true);
+    gpio_put(MUX_A1, false);
+    gpio_put(MUX_A2, false);
 
     // initialise multislope PIO
     pio = pio0;
@@ -257,7 +260,7 @@ int main() {
     // Start running our PIO program in the state machine
     pio_sm_set_enabled(pio, multislopeSM, true);
 
-    get_counts(pio, multislopeSM, 10);
+    get_counts(pio, multislopeSM, 1);
 
     int chr = 0;
     
@@ -274,31 +277,31 @@ int main() {
             chr = 0;
 
             //Zero reading
-            gpio_put(MUX_A0, true);
-            gpio_put(MUX_A1, true);
-            gpio_put(MUX_A2, true);
+            //gpio_put(MUX_A0, true);
+            //gpio_put(MUX_A1, true);
+            //gpio_put(MUX_A2, true);
 
-            sleep_ms(500);
+            sleep_ms(10);
 
             double zero = getReading();
 
             //Input reading
-            gpio_put(MUX_A0, false);
-            gpio_put(MUX_A1, false);
-            gpio_put(MUX_A2, false);
+            //gpio_put(MUX_A0, false);
+            //gpio_put(MUX_A1, false);
+            //gpio_put(MUX_A2, false);
 
-            sleep_ms(500);
+            //sleep_ms(500);
 
-            double input = getReading();
+            //double input = getReading();
 
-            double reading = input - zero;
-            reading = reading * (double)0.855895;
+            //double reading = input - zero;
+            //reading = reading * (double)0.855895;
             
-            printf("%.8f\n", reading);
+            //printf("%.8f\n", reading);
             // uint16_t val = readMCP(true);
             // float temp = ((3.3/4096) * val * 100);
             // printf("%f\n", temp);
-            reading = input = zero = (double)0.0;
+            //reading = input = zero = (double)0.0;
         }
     }
     return 0;
