@@ -67,18 +67,18 @@ uint32_t get_counts(PIO pio, uint sm , uint32_t countNum){
     return counts;
 }
 
-uint16_t readMCP(bool channel){
-    const uint8_t buffer[] = {0x01, 0x80 + (0x40 & (channel << 6)) + 0x20, 0x00};
-    uint8_t read_buffer[3];
-    gpio_put(CS, false);
-    spi_read_blocking(spi1, buffer[0], &read_buffer[0], 1);
-    spi_read_blocking(spi1, buffer[1], &read_buffer[1], 1);
-    spi_read_blocking(spi1, buffer[2], &read_buffer[2], 1);
-    sleep_us(5);
-    gpio_put(CS, true);
-    uint16_t result = ((read_buffer[1] << 8) | read_buffer[2]);
-    return result;
-}
+// uint16_t readMCP(bool channel){
+//     const uint8_t buffer[] = {0x01, 0x80 + (0x40 & (channel << 6)) + 0x20, 0x00};
+//     uint8_t read_buffer[3];
+//     gpio_put(CS, false);
+//     spi_read_blocking(spi1, buffer[0], &read_buffer[0], 1);
+//     spi_read_blocking(spi1, buffer[1], &read_buffer[1], 1);
+//     spi_read_blocking(spi1, buffer[2], &read_buffer[2], 1);
+//     sleep_us(5);
+//     gpio_put(CS, true);
+//     uint16_t result = ((read_buffer[1] << 8) | read_buffer[2]);
+//     return result;
+// }
 
 #define TRANSFER_LENGTH 3
 
@@ -110,10 +110,10 @@ void dma_irq_handler() {
     gpio_put(CS, true);
     if(fistReading){
         fistReading = false;
-        resultPreMultislope = ((DMA_SPI_ADC_readBuffer[1] << 8) | DMA_SPI_ADC_readBuffer[2]);
+        resultPostMultislope = ((DMA_SPI_ADC_readBuffer[1] << 8) | DMA_SPI_ADC_readBuffer[2]);
         pio_sm_put(pio, multislopeSM, (uint32_t)1);
     }else{
-        resultPostMultislope = ((DMA_SPI_ADC_readBuffer[1] << 8) | DMA_SPI_ADC_readBuffer[2]);
+        resultPreMultislope = ((DMA_SPI_ADC_readBuffer[1] << 8) | DMA_SPI_ADC_readBuffer[2]);
         pio_sm_put(pio, multislopeSM, (uint32_t)1);
     }
     // reset the DMA
@@ -128,16 +128,16 @@ void pio_irq(){
         // enable IRQ
         gpio_put(CS, false);
         irq_set_enabled(DMA_IRQ_0, true);
-        picoADC_before = adc_read();
+        picoADC_after = adc_read();
         dma_start_channel_mask((1u << dma_tx) | (1u << dma_rx));
         pio0_hw->irq = 1;
         
-        //first = readMCP(false);
+        //uint16_t first = readMCP(false);
     }else if (pio0_hw->irq & 2) {
         // PIO0 IRQ1 fired means it's time for the second reading
         gpio_put(CS, false);
         irq_set_enabled(DMA_IRQ_0, true);
-        picoADC_after = adc_read();
+        picoADC_before = adc_read();
         dma_start_channel_mask((1u << dma_tx) | (1u << dma_rx));
         pio0_hw->irq = 2;
     }
@@ -190,7 +190,7 @@ double getReading()
     residue_voltage = residue_voltage * (picoADC_before - picoADC_after);
     result = approximate_voltage + residue_voltage;
 
-    printf("%d, %d, %d\n", counts, resultPreMultislope, resultPostMultislope);
+    printf("%d, %d, %d, %d\n", counts, resultPreMultislope, resultPostMultislope, (resultPostMultislope - resultPreMultislope));
 
     return result;
 }
@@ -237,7 +237,7 @@ int main() {
     pio = pio0;
     multislopeSM = pio_claim_unused_sm(pio, true);
     uint multislopeOffset = pio_add_program(pio, &ms_program);
-    const float div = 10;
+    const float div = 20;
     ms_program_init(pio, multislopeSM, multislopeOffset, PWMA, COMP, div, MEAS);
 
     // Enable IRQ0 & 1 on PIO0
@@ -272,16 +272,16 @@ int main() {
             reset_usb_boot(0,0);
         }
 
-        chr = getchar_timeout_us(0);
-        if(chr != PICO_ERROR_TIMEOUT){
-            chr = 0;
+        // chr = getchar_timeout_us(0);
+        // if(chr != PICO_ERROR_TIMEOUT){
+        //     chr = 0;
 
             //Zero reading
             //gpio_put(MUX_A0, true);
             //gpio_put(MUX_A1, true);
             //gpio_put(MUX_A2, true);
 
-            sleep_ms(10);
+            //sleep_ms(10);
 
             double zero = getReading();
 
@@ -302,7 +302,7 @@ int main() {
             // float temp = ((3.3/4096) * val * 100);
             // printf("%f\n", temp);
             //reading = input = zero = (double)0.0;
-        }
+        // }
     }
     return 0;
 }

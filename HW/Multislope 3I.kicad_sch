@@ -8485,11 +8485,11 @@
     (pin "1" (uuid 10bca99a-9783-4bab-9a0d-22da2c8443bf))
     (pin "4" (uuid 7cecc63c-48fa-4634-8c97-d56136d96d15))
     (pin "5" (uuid 3dd7ba6d-58d0-4668-bf89-3ae2dc7e4cfb))
-    (pin "6" (uuid 172d6b03-a4be-4cff-ac34-9b84e4b169a9))
+    (pin "6" (uuid 172d6b03-a4be-4cff-ac34-9b84e4b169aa))
     (pin "8" (uuid 1dc50773-83cc-465b-9401-fabf0c40c0d9))
     (pin "2" (uuid bdfb7dd1-0d0f-493d-bb03-018864840b49))
     (pin "3" (uuid f3f4ed4d-fb48-4b60-affe-a9b21945003f))
-    (pin "6" (uuid 172d6b03-a4be-4cff-ac34-9b84e4b169a9))
+    (pin "6" (uuid 172d6b03-a4be-4cff-ac34-9b84e4b169aa))
     (instances
       (project "Multislope 3I"
         (path "/55992e35-fe7b-468a-9b7a-1e4dc931b904"
