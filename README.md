@@ -1,6 +1,7 @@
 # Multislope 3I 
 ## Introduction
 This repository contains hardware and software files for the third multislope prototype board, designated 3I. This is the most complete and proper version of the PCB so far, including a proper 8-resistor network, an LM399/ADR1399 reference, composite integrator (with two SOIC-8 footprints), shielding on the integrator summing node and test points to easily probe crucial nodes. 
+History and operation are documented extensively [here](https://hackaday.io/project/190528-multislope-adc)
 ## Project Motivation
 The second prototype PCB was completed hastily with not much thought put into either layout or choice of parts, so a better-designed (and hopefully better-evaluated) board was in order. 
 ## Usage
