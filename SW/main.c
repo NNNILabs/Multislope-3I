@@ -14,6 +14,9 @@
 
 #define MAINS_FREQ 50                   // Hz
 
+const float div = 5;
+uint32_t pwmCycles = 12;
+
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
 const uint8_t MUX_A2 = 1;
@@ -181,7 +184,7 @@ void configureDMA(){
 double getReading()
 {
     double result = (double)0.0;
-    uint32_t counts = get_counts(pio, multislopeSM, 60); //Multisloping for 20ms
+    uint32_t counts = get_counts(pio, multislopeSM, pwmCycles); //Multisloping for 20ms
     fistReading = true;
     double approximate_voltage = 60000.0 - (2.0 * (double)counts);
     approximate_voltage = approximate_voltage / 60000.0;
@@ -189,8 +192,10 @@ double getReading()
     double residue_voltage = (constant2) * 0.00005;
     residue_voltage = residue_voltage * (picoADC_before - picoADC_after);
     result = approximate_voltage + residue_voltage;
+    int difference = pwmCycles - (2*counts);
+    float voltage = (difference * 0.001708815) + 0.00;
 
-    printf("%d, %d, %d, %d\n", counts, resultPreMultislope, resultPostMultislope, (resultPostMultislope - resultPreMultislope));
+    printf("%d, %d, %d, %d\n", difference, resultPreMultislope, resultPostMultislope, (resultPostMultislope - resultPreMultislope));
 
     return result;
 }
@@ -229,7 +234,7 @@ int main() {
     
     sleep_us(10);
 
-    gpio_put(MUX_A0, true);
+    gpio_put(MUX_A0, false);
     gpio_put(MUX_A1, false);
     gpio_put(MUX_A2, false);
 
@@ -237,7 +242,7 @@ int main() {
     pio = pio0;
     multislopeSM = pio_claim_unused_sm(pio, true);
     uint multislopeOffset = pio_add_program(pio, &ms_program);
-    const float div = 20;
+
     ms_program_init(pio, multislopeSM, multislopeOffset, PWMA, COMP, div, MEAS);
 
     // Enable IRQ0 & 1 on PIO0
