@@ -42,22 +42,13 @@ dither:
 // Tried and tested PIO code to read from the MCP3202
 // Set in and out shift to 18
 /*
-.program output
-.side_set 2
-
-.wrap_target
-    bitloop:
-        out pins, 1           side 0 [1]
-        in  pins, 1           side 2
-        jmp x--   bitloop     side 2
-        out pins, 1           side 0
-        mov x,    y           side 0     ; Reload bit counter from Y
-        in  pins, 1           side 2
-        jmp !osre bitloop     side 2     ; Fall-through if TXF empties
-        nop                   side 0 [1] ; CSn back porch
-    public entry_point:                  ; Must set X,Y to n-2 before starting!
-        pull ifempty          side 1 [1] ; Block with CSn high (minimum 2 cycles)
-.wrap
+SCK is side-set pin 0
+MOSI is OUT pin 0
+MISO is IN pin 0
+.program spi_cpha0
+.side_set 1
+    out pins, 1 side 0 [1] ; Stall here on empty (sideset proceeds even if
+    in pins, 1  side 1 [1] ; instruction stalls, so we stall with SCK low)
 */
 
 % c-sdk {
