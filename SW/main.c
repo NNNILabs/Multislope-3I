@@ -202,7 +202,7 @@ double getReading()
 }
 
 int main() {
-    set_sys_clock_khz(96000, true);  
+    set_sys_clock_khz(96000, true);
     stdio_init_all();
     //spi_init(spi1, 500 * 1000); // 500kHz
     adc_init();

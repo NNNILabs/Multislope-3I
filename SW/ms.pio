@@ -7,7 +7,7 @@ start:
     set pins 0          side 0              ; [1]
     mov X, !NULL        side 0              ; [2] set X to 0xFFFFFFFF
     out Y, 32           side 0              ; [3] read the number desired counts
-    ;irq 0               side 0              ; [4] first residue reading
+    irq 0               side 0              ; [4] first residue reading
     out NULL, 32        side 0              ; [5] stall until DMA finished reading the ADC
 
 beginning:
@@ -28,7 +28,7 @@ dummy:
 finish:
     set pins 0          side 0              ; [16] turn switches off
     in  X, 32           side 0              ; [17] push PWM to FIFO
-    ;irq 1               side 0              ; [18] second residue reading
+    irq 0               side 0              ; [18] second residue reading
     out NULL, 32        side 0              ; [19] stall until DMA finished reading the ADC
 
 .wrap_target
