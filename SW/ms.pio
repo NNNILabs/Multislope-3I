@@ -4,53 +4,62 @@
 
 ; don't forget to enable auto push
 start:
-    set pins 0          side 0
-    mov X, !NULL        side 0              ; set X to 0xFFFFFFFF
-    out Y, 32           side 0              ; read the number desired counts
-    irq 0               side 0              ; first residue reading
-    out NULL, 32        side 0              ; stall until DMA finished reading the ADC
+    set pins 0          side 0              ; [1]
+    mov X, !NULL        side 0              ; [2] set X to 0xFFFFFFFF
+    out Y, 32           side 0              ; [3] read the number desired counts
+    ;irq 0               side 0              ; [4] first residue reading
+    out NULL, 32        side 0              ; [5] stall until DMA finished reading the ADC
 
 beginning:
-	set pins, 1         side 1
-	jmp pin pwmhigh     side 1 
-	set pins, 2         side 1 [15]
-	jmp Y-- beginning   side 1 [13]
-	jmp finish          side 0
+	set pins, 1         side 1              ; [6]
+	jmp pin pwmhigh     side 1              ; [7]
+	set pins, 2         side 1 [15]         ; [8]
+	jmp Y-- beginning   side 1 [13]         ; [9]
+	jmp finish          side 0              ; [10]
 	
 pwmhigh:
-	jmp X-- dummy       side 1 [15]
-dummy:
-    nop                 side 1 [11]
-	set pins 2          side 1
-	jmp Y-- beginning   side 1 
-	jmp finish          side 0
+	jmp X-- dummy       side 1 [15]         ; [11]
+dummy: 
+    nop                 side 1 [11]         ; [12]
+	set pins 2          side 1              ; [13]
+	jmp Y-- beginning   side 1              ; [14]
+	jmp finish          side 0              ; [15]
 
 finish:
-    set pins 0          side 0              ; turn switches off
-    in  X, 32           side 0              ; push PWM to FIFO
-    irq 1               side 0              ; second residue reading
-    out NULL, 32        side 0              ; stall until DMA finished reading the ADC
+    set pins 0          side 0              ; [16] turn switches off
+    in  X, 32           side 0              ; [17] push PWM to FIFO
+    ;irq 1               side 0              ; [18] second residue reading
+    out NULL, 32        side 0              ; [19] stall until DMA finished reading the ADC
 
 .wrap_target
 dither:
-    jmp !OSRE start     side 0              ; jump out of desaturation when the OSR has data 
-    set pins 1          side 0              ; set pin polarity
-    jmp pin dither      side 0              ; check if the integrator is still high
-    set pins, 2         side 0 [1]
+    jmp !OSRE start     side 0              ; [20] jump out of desaturation when the OSR has data 
+    set pins 1          side 0              ; [21] set pin polarity
+    jmp pin dither      side 0              ; [22] check if the integrator is still high
+    set pins, 2         side 0 [1]          ; [23]
 .wrap
 
-// Tried and tested PIO code to read from the MCP3202
-// Set in and out shift to 18
+; PIO code to read from the MCP3202
+; Set in and out shift to 18
 /*
 SCK is side-set pin 0
 MOSI is OUT pin 0
-MISO is IN pin 0
-.program spi_cpha0
-.side_set 1
-    out pins, 1 side 0 [1] ; Stall here on empty (sideset proceeds even if
-    in pins, 1  side 1 [1] ; instruction stalls, so we stall with SCK low)
+MISO is IN pin 0 
 */
+.program adc
+.side_set 1 opt
 
+out Y, 32       side 0      ; [24] read the number desired bits to read
+
+.wrap_target
+mov X, Y                    ; [25] reload the X register
+irq wait 0                  ; [26] wait for IRQ to fire (start the readout)
+bitloop:
+    out pins, 1 side 0 [2]  ; [27] Stall here on empty (sideset proceeds even if
+    in pins, 1  side 1 [1]  ; [28] instruction stalls, so we stall with SCK low)
+    jmp X-- bitloop         ; [29] Loop until we've read all the bits
+irq clear 0             ; [30] Clear the IRQ flag
+.wrap   
 % c-sdk {
 
 // Helper function (for use in C program) to initialize this PIO program
@@ -84,6 +93,31 @@ void ms_program_init(PIO pio, uint sm, uint offset, uint pin, uint input, float 
     sm_config_set_clkdiv(&c, div);
 
     // Load configuration and jump to start of the program
+    pio_sm_init(pio, sm, offset, &c);
+}
+
+void mcp_program_init(PIO pio, uint sm, uint offset, uint clk_pin, uint mosi_pin, uint miso_pin, float div){
+    pio_sm_config c = ms_program_get_default_config(offset);
+    
+    sm_config_set_sideset_pins(&c, clk_pin);
+
+    pio_gpio_init(pio, clk_pin);
+    pio_gpio_init(pio, mosi_pin);
+    pio_gpio_init(pio, miso_pin);
+
+    pio_sm_set_consecutive_pindirs(pio, sm, clk_pin, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, mosi_pin, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, miso_pin, 1, false);
+
+    sm_config_set_out_pins(&c, mosi_pin, 1);
+    sm_config_set_in_pins(&c, miso_pin);
+    sm_config_set_sideset_pins(&c, clk_pin);
+
+    sm_config_set_out_shift(&c, false, true, 18);
+    sm_config_set_in_shift(&c, false, true, 18);
+
+    sm_config_set_clkdiv(&c, div);
+
     pio_sm_init(pio, sm, offset, &c);
 }
 

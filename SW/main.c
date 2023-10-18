@@ -9,6 +9,7 @@
 #include "hardware/dma.h"
 #include "hardware/irq.h"
 #include "hardware/adc.h"
+#include "hardware/clocks.h"
 #include "pico/bootrom.h"
 #include "ms.pio.h"
 
@@ -203,19 +204,19 @@ double getReading()
 int main() {
     set_sys_clock_khz(96000, true);  
     stdio_init_all();
-    spi_init(spi1, 500 * 1000); // 500kHz
+    //spi_init(spi1, 500 * 1000); // 500kHz
     adc_init();
 
 
-    spi_set_format(spi1, 8, 0, 0, SPI_MSB_FIRST);
+    // spi_set_format(spi1, 8, 0, 0, SPI_MSB_FIRST);
 
-    gpio_set_function(MISO, GPIO_FUNC_SPI);
-    gpio_set_function(CLK, GPIO_FUNC_SPI);
-    gpio_set_function(MOSI, GPIO_FUNC_SPI);
-    //gpio_set_function(CS, GPIO_FUNC_SPI);
-    gpio_init(CS);
-    gpio_set_dir(CS, GPIO_OUT);
-    gpio_put(CS, true);
+    // gpio_set_function(MISO, GPIO_FUNC_SPI);
+    // gpio_set_function(CLK, GPIO_FUNC_SPI);
+    // gpio_set_function(MOSI, GPIO_FUNC_SPI);
+    // //gpio_set_function(CS, GPIO_FUNC_SPI);
+    // gpio_init(CS);
+    // gpio_set_dir(CS, GPIO_OUT);
+    // gpio_put(CS, true);
 
     gpio_init(PICO_DEFAULT_LED_PIN);
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
@@ -245,10 +246,25 @@ int main() {
 
     ms_program_init(pio, multislopeSM, multislopeOffset, PWMA, COMP, div, MEAS);
 
-    // Enable IRQ0 & 1 on PIO0
-    irq_set_exclusive_handler(PIO0_IRQ_0, pio_irq);
-    irq_set_enabled(PIO0_IRQ_0, true);
-    pio0_hw->inte0 = PIO_IRQ0_INTE_SM0_BITS | PIO_IRQ0_INTE_SM1_BITS;
+    // initialise ADC PIO
+    pio = pio0;
+    uint adcSM = pio_claim_unused_sm(pio, true);
+    uint adcOffset = pio_add_program(pio, &adc_program);
+    const uint adc_pio_freq_khz = 1000000;  // this will be divided by 4 to get the SPI clock
+    uint sys_clock = clock_get_hz(clk_sys);
+    float div = (float)sys_clock / (float)adc_pio_freq_khz;
+    mcp_program_init(pio, adcSM, adcOffset, CLK, MOSI, MISO, div);
+
+    // setup MCP CS pin and pull it low
+    gpio_init(CS);
+    gpio_set_dir(CS, GPIO_OUT);
+    gpio_put(CS, false);
+
+
+    // Enable IRQ0 & 1 on PIO0 (we are reading the ADC with PIO now)
+    // irq_set_exclusive_handler(PIO0_IRQ_0, pio_irq);
+    // irq_set_enabled(PIO0_IRQ_0, true);
+    // pio0_hw->inte0 = PIO_IRQ0_INTE_SM0_BITS | PIO_IRQ0_INTE_SM1_BITS;
 
     // IRQ setup:
     // PIO sends interrupt in IRQ0 for first residue reading
@@ -260,22 +276,45 @@ int main() {
     dma_tx = dma_claim_unused_channel(true);
     dma_rx = dma_claim_unused_channel(true);
 
-    configureDMA();
+    //configureDMA();
+
+    // Start running adc PIO program in the state machine
+    pio_sm_set_enabled(pio, adcSM, true);
+    
+    // put 18 into the FIFO of the adc
+    pio_sm_put_blocking(pio, adcSM, (uint)18);
 
     // Start running our PIO program in the state machine
     pio_sm_set_enabled(pio, multislopeSM, true);
 
     get_counts(pio, multislopeSM, 1);
 
+    // put the DMA_SPI_ADC_writeBuffer into the TX FIFO of the PIO instance
+    uint32_t adc_write = 0;
+    for(int i = 0; i < TRANSFER_LENGTH; i++){
+        adc_write = (adc_write << 8) | DMA_SPI_ADC_writeBuffer[i];
+    }
+    pio_sm_put_blocking(pio, adcSM, adc_write);
+
+    // read out the ADC to clear the FIFO
+    uint32_t adc_result = pio_sm_get(pio, adcSM);
+
     int chr = 0;
     
     while(true){
         //uint32_t preCharge = get_counts(pio, multislopeSM, 1000);
-        sleep_ms(10);
+        sleep_ms(500);
         //sleep_ms(10);
         if(get_bootsel_button()){
             reset_usb_boot(0,0);
         }
+
+        uint32_t counts = get_counts(pio, multislopeSM, 100);
+        printf("%d\n", counts);
+        // read out the ADC, the FIFO has 18 bits + 18 bits of data (36 bits)
+        uint32_t adc_result = pio_sm_get(pio, adcSM);
+        // print the results in hex
+        printf("ADC result: 0x%08x\n", adc_result);
 
         // chr = getchar_timeout_us(0);
         // if(chr != PICO_ERROR_TIMEOUT){
@@ -288,7 +327,7 @@ int main() {
 
             //sleep_ms(10);
 
-            double zero = getReading();
+            // double zero = getReading();
 
             //Input reading
             //gpio_put(MUX_A0, false);
