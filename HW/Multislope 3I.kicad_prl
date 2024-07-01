@@ -64,8 +64,14 @@
       35,
       36
     ],
-    "visible_layers": "7fcffff_00000001",
+    "visible_layers": "7fcffff_00000007",
     "zone_display_mode": 0
+  },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
   },
   "meta": {
     "filename": "Multislope 3I.kicad_prl",

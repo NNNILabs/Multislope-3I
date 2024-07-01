@@ -1,55 +1,35 @@
 .program ms
-.side_set 1
-; 1 side set bit for the MEAS pin
 
-; don't forget to enable auto push
+; 01.07.2024 - Changed code to remove sideset and just use set (iMo, EEVBlog)
+
+entry:
+    set pins  0b000
+    mov X     !NULL
+    out Y     32
+    irq       0      [9]
 start:
-    set pins 0          side 0
-    mov X, !NULL        side 0              ; set X to 0xFFFFFFFF
-    out Y, 32           side 0              ; read the number desired counts
-    irq 0               side 0              ; first residue reading
-    out NULL, 32        side 0              ; stall until DMA finished reading the ADC
-
-beginning:
-	set pins, 1         side 1
-	jmp pin pwmhigh     side 1 
-	set pins, 2         side 1 [15]
-	jmp Y-- beginning   side 1 [13]
-	jmp finish          side 0
-	
-pwmhigh:
-	jmp X-- dummy       side 1 [15]
+    set pins  0b101
+    jmp pin   high      
+    set pins  0b110  [12]
+    jmp Y--   start
+    jmp       exit
+high:
+    jmp X--   dummy  [11]
 dummy:
-    nop                 side 1 [11]
-	set pins 2          side 1
-	jmp Y-- beginning   side 1 
-	jmp finish          side 0
-
-finish:
-    set pins 0          side 0              ; turn switches off
-    in  X, 32           side 0              ; push PWM to FIFO
-    irq 1               side 0              ; second residue reading
-    out NULL, 32        side 0              ; stall until DMA finished reading the ADC
-
+    set pins  0b110
+    jmp Y--   start
+    jmp       exit
+exit:
+    set pins  0b000
+    in  X     32
+    irq       0      [9]
 .wrap_target
 dither:
-    jmp !OSRE start     side 0              ; jump out of desaturation when the OSR has data 
-    set pins 1          side 0              ; set pin polarity
-    jmp pin dither      side 0              ; check if the integrator is still high
-    set pins, 2         side 0 [1]
+    jmp !OSRE entry
+    set pins  0b001
+    jmp pin   dither
+    set pins  0b010  [1]
 .wrap
-
-// Tried and tested PIO code to read from the MCP3202
-// Set in and out shift to 18
-/*
-SCK is side-set pin 0
-MOSI is OUT pin 0
-MISO is IN pin 0
-.program spi_cpha0
-.side_set 1
-    out pins, 1 side 0 [1] ; Stall here on empty (sideset proceeds even if
-    in pins, 1  side 1 [1] ; instruction stalls, so we stall with SCK low)
-*/
 
 % c-sdk {
 
@@ -59,7 +39,7 @@ void ms_program_init(PIO pio, uint sm, uint offset, uint pin, uint input, float 
     // Sets up state machine and wrap target. This function is automatically
     pio_sm_config c = ms_program_get_default_config(offset);
     
-    sm_config_set_sideset_pins(&c, pin_MEAS); //side set
+    // sm_config_set_sideset_pins(&c, pin_MEAS); //side set
     
     // Allow PIO to control GPIO pin (as output)
     pio_gpio_init(pio, pin);
@@ -71,15 +51,55 @@ void ms_program_init(PIO pio, uint sm, uint offset, uint pin, uint input, float 
     sm_config_set_jmp_pin(&c, input); 
 
     // Connect pin to SET pin (control with 'set' instruction)
-    sm_config_set_set_pins(&c, pin, 2);
+    sm_config_set_set_pins(&c, pin, 3);
     
     // Set the pin direction to output (in PIO)
-    pio_sm_set_consecutive_pindirs(pio, sm, pin, 2, true);      // 2 pins for PWM high and low
-    pio_sm_set_consecutive_pindirs(pio, sm, pin_MEAS, 1, true); // 1 pin for MEAS pin
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 3, true);      // 2 pins for PWM high and low
+    // pio_sm_set_consecutive_pindirs(pio, sm, pin_MEAS, 1, true); // 1 pin for MEAS pin
 
     // Set auto push to ISR
     sm_config_set_in_shift(&c, false, true, 32);
     sm_config_set_out_shift(&c, false, true, 32);
+    // Set the clock divider for the state machine
+    sm_config_set_clkdiv(&c, div);
+
+    // Load configuration and jump to start of the program
+    pio_sm_init(pio, sm, offset, &c);
+}
+
+%}
+
+.program residue
+
+.wrap_target
+prog:
+    wait 1 irq 0
+    set  X     17
+loop:
+    set  pins  0b1
+    set  pins  0b0
+    jmp  X--   loop
+.wrap 
+
+% c-sdk {
+
+// Helper function (for use in C program) to initialize this PIO program
+void residue_program_init(PIO pio, uint sm, uint offset, uint pin, float div) {
+
+    // Sets up state machine and wrap target. This function is automatically
+    pio_sm_config c = residue_program_get_default_config(offset);
+    
+    // Allow PIO to control GPIO pin (as output)
+    pio_gpio_init(pio, pin);    
+
+    // Connect pin to SET pin (control with 'set' instruction)
+    sm_config_set_set_pins(&c, pin, 1);
+    
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, true);      // 2 pins for PWM high and low
+
+    // Set auto push to ISR
+    // sm_config_set_in_shift(&c, false, true, 32);
+    // sm_config_set_out_shift(&c, false, true, 32);
     // Set the clock divider for the state machine
     sm_config_set_clkdiv(&c, div);
 
