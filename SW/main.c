@@ -15,7 +15,7 @@
 #define MAINS_FREQ 50                   // Hz
 
 const float div = 20;
-uint32_t pwmCycles = 12;
+uint32_t pwmCycles = 6000;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
@@ -26,7 +26,17 @@ const uint8_t PWMB = 4;                // need to be next to each other
 const uint8_t MEAS = 5;
 const uint8_t COMP = 6;
 
-const uint64_t mainsPeriodus = 1000000/MAINS_FREQ;
+PIO pio;
+
+uint multislopeSM;
+uint residueSM;
+
+const uint32_t residueConfig = 53248;
+
+uint32_t counts = 0;
+uint32_t residueBefore = 0;
+uint32_t residueAfter = 0;
+uint32_t residueCal = 0;
 
 #if MAINS_FREQ == 50
     const uint32_t MScyclesPerPLC = 6000;
@@ -36,9 +46,9 @@ const uint64_t mainsPeriodus = 1000000/MAINS_FREQ;
 
 // MCP3202 ADC
 #define CS   13
-#define CLK  10
+#define CLK  12
 #define MOSI 11
-#define MISO 12
+#define MISO 10
 
 double constant1 = 14.0;
 double constant2 = 0.00333;
@@ -76,54 +86,20 @@ void setMuxState(enum muxState inputState)
     }
 }
 
-uint32_t get_counts(PIO pio, uint sm , uint32_t countNum){
-    uint32_t counts = 0;
-    pio_sm_put_blocking(pio, sm, countNum - 1);
-    gpio_put(PICO_DEFAULT_LED_PIN, true);
-    counts = ~pio_sm_get_blocking(pio, sm);
-    gpio_put(PICO_DEFAULT_LED_PIN, false);
-    //return ((2*(int64_t)counts) - (int64_t)countNum);
-    return counts;
-}
-
-#define TRANSFER_LENGTH 3
-
-uint8_t DMA_SPI_ADC_writeBuffer[TRANSFER_LENGTH] = {0x01, 0x80 + (0x40 & (false << 6)) + 0x20, 0x00};
-uint8_t DMA_SPI_ADC_readBuffer[TRANSFER_LENGTH];
-
-uint dma_rx;
-uint dma_tx;
-
-uint16_t resultPreMultislope = 0;
-uint16_t resultPostMultislope = 0;
-
-bool fistReading = true;
-
-PIO pio;
-
-uint multislopeSM;
-uint residueSM;
-
-uint16_t picoADC_before;
-uint16_t picoADC_after;
-
-double getReading()
+void get_counts(uint32_t countNum)
 {
-    double result = (double)0.0;
-    uint32_t counts = get_counts(pio, multislopeSM, pwmCycles); //Multisloping for 20ms
-    fistReading = true;
-    double approximate_voltage = 60000.0 - (2.0 * (double)counts);
-    approximate_voltage = approximate_voltage / 60000.0;
-    approximate_voltage = approximate_voltage * constant1;
-    double residue_voltage = (constant2) * 0.00005;
-    residue_voltage = residue_voltage * (picoADC_before - picoADC_after);
-    result = approximate_voltage + residue_voltage;
-    int difference = pwmCycles - (2*counts);
-    float voltage = (difference * 0.001708815) + 0.00;
+    gpio_put(PICO_DEFAULT_LED_PIN, true);
 
-    printf("%d, %d, %d, %d\n", difference, resultPreMultislope, resultPostMultislope, (resultPostMultislope - resultPreMultislope));
+    pio_sm_put_blocking(pio, multislopeSM, countNum - 1);         // write number of PWM cycles to runup state machine
+    pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));   // write config data to residue ADC
+    residueBefore = pio_sm_get_blocking(pio, residueSM);          // read pre-runup integrator state
+    counts = ~pio_sm_get_blocking(pio, multislopeSM);             // read runup counts
+    pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));   // write config data to residue ADC
+    residueAfter = pio_sm_get_blocking(pio, residueSM);           // read post-runup integrator state
 
-    return result;
+    // printf("%d, %d, %d, %d\n", counts, residueBefore, residueAfter, (residueAfter - residueBefore));
+
+    gpio_put(PICO_DEFAULT_LED_PIN, false);
 }
 
 int main() 
@@ -147,35 +123,70 @@ int main()
     
     sleep_us(10);
 
-    setMuxState(MUX_GND);
+    gpio_init(13);
+    gpio_set_dir(13, GPIO_OUT);
+    gpio_put(13, false);
+
+    // setMuxState(MUX_RAW);
+    // setMuxState(MUX_RAW);
 
     // initialise multislope PIO
     pio = pio0;
     multislopeSM = pio_claim_unused_sm(pio, true);
     uint multislopeOffset = pio_add_program(pio, &ms_program);
 
-    ms_program_init(pio, multislopeSM, multislopeOffset, PWMA, COMP, div, MEAS);
-
     residueSM = pio_claim_unused_sm(pio, true);
     uint residueOffset = pio_add_program(pio, &residue_program);
 
-    residue_program_init(pio, residueSM, residueOffset, CLK, 40.0f);
+    ms_program_init(pio, multislopeSM, multislopeOffset, PWMA, COMP, div, MEAS);
+    residue_program_init(pio, residueSM, residueOffset, MISO, div);
 
     // Start running our PIO program in the state machine
     pio_sm_set_enabled(pio, multislopeSM, true);
 
     pio_sm_set_enabled(pio, residueSM, true);
 
-    get_counts(pio, multislopeSM, 1);
+    get_counts(12); // start dithering
 
     int chr = 0;
-    
+
+    uint32_t newInput = 0;
+    char inputBuffer[32] = {0};
+
+
+
     while(true)
     {
-        sleep_ms(10);
+        // sleep_ms(500);
+        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
-        double zero = getReading();
+        // calibration of residue ADC
+        setMuxState(MUX_GND);
+        sleep_us(100);
+        get_counts(3);
+        residueCal = (residueAfter > residueBefore) ? (residueAfter - residueBefore) : (residueBefore - residueAfter);
 
+        setMuxState(MUX_GND);
+        sleep_us(100);
+        get_counts(pwmCycles);
+        uint32_t countGnd = ((residueCal * ((2 * counts) - pwmCycles)) + (residueAfter - residueBefore));
+        sleep_us(100);
+
+        setMuxState(MUX_RAW);
+        sleep_us(100);
+        get_counts(pwmCycles);
+        uint32_t countRaw = ((residueCal * ((2 * counts) - pwmCycles)) + (residueAfter - residueBefore));
+        sleep_us(100);
+
+        setMuxState(MUX_IN);
+        sleep_us(100);
+        get_counts(pwmCycles);
+        uint32_t countIn = ((residueCal * ((2 * counts) - pwmCycles)) + (residueAfter - residueBefore));
+        sleep_us(100);
+
+        setMuxState(MUX_GND);
+
+        printf("%d, %d, %d\n", countGnd, countRaw, countIn);
     }
     
     return 0;
