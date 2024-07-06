@@ -12,5 +12,16 @@ Did three-phase auto zero on the calibrated reading, noise is generally within 1
 Jaromir elaborated on the residue calibration algorithm. One runup, residue difference = R1; One runup, one rundown, residue difference = R2; One runup, one down, one up, residue difference = R3. One down cycle = R2 - R1, one up cycle = R3 - R2. After normal measurement, count number of 'up' (+) cycles, multiply by (R3-R2), count number of 'down' (-) cycles, multiply by (R2 - R1), (signed) add, add residue difference.
 Wrote a separate calibration PIO program that involved a lot of hacks. irq wait didn't behave properly at all, turns out the problem was very complicated since the SPI code involved in and out shifting. Fixed using delays in the C/C++ code. Finally got the 1-2-3 calibration scheme up and running.
 Noise is still in the range of 100μVpp. Discovered a math mistake in yesterday's run, forgot to multiply by abs Vref. I suspect modulation frequency is too high for my circuit.
+
+05.07.2024
+Investigating the reference and summing nodes shows settling time issues. References can be compensated using a 47pF capacitor (according to LTspice) to provide a settling time to sub-ppm levels in a few 100 ns. The summing junction is slightly trickier. The 10kΩ reference resistors create a ±1.4mA reference current that loads the integrator and inreases settling time (verified by LTspice) compared to something like 50kΩ, also increases INL due to switch Ron modulation and PCR. There are three possible solutions to this problem: increase the resistor network from 10kΩ to 50kΩ, decrease the modulation frequency (75kHz seems like a good number, 3x less than the 300kHz currently used), and use a fast second op-amp (OPA828 is in stock and seems suitable).
+The residue ADC's noise also comes into play. The scaling amplifier that scales the ±5V integrator swing to 0V to 3.3V for the residue ADC is in effect an attenuator, so the referred-to-input noise is greater. If instead an amplifier were used in combination with rundown, the RTI noise would decrease.
+
+TODO: (order of minimally invasive)
+- Change Pico power to 3.3V from linear regulator
+- Remove reference filter capacitor and note effects (it's a regular 100nF)
+- Add compensation (47pF?) to reference amplifiers and measure noise
+- change fast op-amp to OPA828
+
 TODO: Clean up rundown code and read the rundown counts. Optimize code to save some instructions if necessary. Try to remove the offset in the - loop.
 possible optimization - reduce need for delay in runup by using 'irq wait', irq 0 [20] uses a lot of delays, half the total delay could gain one sideset pin.

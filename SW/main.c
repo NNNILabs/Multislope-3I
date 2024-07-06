@@ -15,7 +15,7 @@
 #define MAINS_FREQ 50                   // Hz
 
 const float div = 20;
-uint32_t pwmCycles = 600000;
+uint32_t pwmCycles = 6000;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
