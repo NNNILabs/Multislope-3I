@@ -23,5 +23,8 @@ TODO: (order of minimally invasive)
 - Add compensation (47pF?) to reference amplifiers and measure noise
 - change fast op-amp to OPA828
 
+06.07.2024
+After removing the raw reference filter (consisting of a 10kΩ resistor (one of 8 in a NOMCT array) and a regular 100nF X7R capacitor), conversion noise decreased from 100μVpp to 50μVpp (rough estimate). Switching to linear regulator (pun not intended) didn't seem to make much of a difference, in fact, noise apparently *increased*, have to see if different wiring fixes it. Didn't really, but looks like it improved offset, might have something to do with the Pico drawing current and changing residue ADC vref (the 3.3V supply). Reducing modulation frequency reduced resolution but looks like peak to peak noise has not changed, stuck at 60μVpp...in fact, there are samples up to 100μVpp.
+
 TODO: Clean up rundown code and read the rundown counts. Optimize code to save some instructions if necessary. Try to remove the offset in the - loop.
 possible optimization - reduce need for delay in runup by using 'irq wait', irq 0 [20] uses a lot of delays, half the total delay could gain one sideset pin.

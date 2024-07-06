@@ -12,10 +12,8 @@
 #include "pico/bootrom.h"
 #include "ms.pio.h"
 
-#define MAINS_FREQ 50                   // Hz
-
-const float div = 20;
-uint32_t pwmCycles = 6000;
+const float div = 80;
+uint32_t pwmCycles = 1500;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
@@ -45,9 +43,6 @@ int32_t RUD = 0;
 #define CLK  12
 #define MOSI 11
 #define MISO 10
-
-double constant1 = 14.0;
-double constant2 = 0.00333;
 
 enum muxState
 {
@@ -228,8 +223,8 @@ int main()
 
     while(true)
     {
-        // sleep_ms(500);
-        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
+        sleep_ms(500);
+        // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
         sleep_us(10);
         get_counts(pwmCycles);
