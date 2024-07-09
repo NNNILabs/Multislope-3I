@@ -35,8 +35,8 @@ const uint32_t residueConfig = 53248;
 int32_t counts = 0;
 int32_t residueBefore = 0;
 int32_t residueAfter = 0;
-int32_t RUU = 0;
-int32_t RUD = 0;
+int32_t RUU = 1540;
+int32_t RUD = 1540;
 
 // MCP3202 ADC
 #define CS   13
@@ -181,8 +181,11 @@ int main()
     pio_sm_set_enabled(pio, residueSM, true);
     pio_sm_set_enabled(pio, calibrationSM, true);
 
-    get_cal();
-    get_cal();
+    // get_cal();
+
+    // sleep_ms(1000);
+
+    // get_cal();
 
     pio_sm_set_enabled(pio, residueSM, false);
     pio_sm_set_enabled(pio, calibrationSM, false);
@@ -209,30 +212,31 @@ int main()
     uint32_t newInput = 0;
     char inputBuffer[32] = {0};
 
-    setMuxState(MUX_GND);
-    sleep_us(10);
-    get_counts(pwmCycles);
-    int32_t finalGround = (counts * RUU) - ((6000 - counts) * RUD) + (residueAfter - residueBefore);
-
     setMuxState(MUX_RAW);
-    sleep_us(10);
-    get_counts(pwmCycles);
-    int32_t finalRaw = (counts * RUU) - ((6000 - counts) * RUD) + (residueAfter - residueBefore);
-
-    setMuxState(MUX_GND);
 
     while(true)
     {
-        sleep_ms(500);
+        sleep_ms(100);
         // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
-        sleep_us(10);
-        get_counts(pwmCycles);
-        int32_t finalIn = (counts * RUU) - ((6000 - counts) * RUD) + (residueAfter - residueBefore);
+        // setMuxState(MUX_GND);
+        // sleep_us(10);
+        get_counts(1500);
+        // int32_t finalIn = (counts * RUU) - ((6000 - counts) * RUD) + (residueAfter - residueBefore);
 
-        double voltage = 6.85f * (double)(finalIn - finalGround)/(double)(finalRaw - finalGround);
+        // setMuxState(MUX_GND);
+        // sleep_us(10);
+        // get_counts(pwmCycles);
+        // int32_t finalGround = (counts * RUU) - ((6000 - counts) * RUD) + (residueAfter - residueBefore);
 
-        printf("%d, %d, %d, %012lf\n", finalGround, finalRaw, finalIn, voltage);
+        // setMuxState(MUX_RAW);
+        // sleep_us(10);
+        // get_counts(pwmCycles);
+        // int32_t finalRaw = (counts * RUU) - ((6000 - counts) * RUD) + (residueAfter - residueBefore);
+
+        // double voltage = 6.85f * (double)(finalIn - finalGround)/(double)(finalRaw - finalGround);
+
+        // printf("%d, %d, %d, %012lf\n", finalGround, finalRaw, finalIn, voltage);
     }
     
     return 0;

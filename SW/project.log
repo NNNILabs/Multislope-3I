@@ -10,7 +10,7 @@ Did three-phase auto zero on the calibrated reading, noise is generally within 1
 
 04.07.2024
 Jaromir elaborated on the residue calibration algorithm. One runup, residue difference = R1; One runup, one rundown, residue difference = R2; One runup, one down, one up, residue difference = R3. One down cycle = R2 - R1, one up cycle = R3 - R2. After normal measurement, count number of 'up' (+) cycles, multiply by (R3-R2), count number of 'down' (-) cycles, multiply by (R2 - R1), (signed) add, add residue difference.
-Wrote a separate calibration PIO program that involved a lot of hacks. irq wait didn't behave properly at all, turns out the problem was very complicated since the SPI code involved in and out shifting. Fixed using delays in the C/C++ code. Finally got the 1-2-3 calibration scheme up and running.
+Wrote a separate calibration PIO program that involved a lot of hacks. irq wait didn't behave properly at all, turns out the problem was very complicated since the SPI code involved in and out shifting, blocking reads and writes took priority over interrupts. Fixed using delays in the C/C++ code. Finally got the 1-2-3 calibration scheme up and running.
 Noise is still in the range of 100μVpp. Discovered a math mistake in yesterday's run, forgot to multiply by abs Vref. I suspect modulation frequency is too high for my circuit.
 
 05.07.2024
@@ -26,5 +26,5 @@ TODO: (order of minimally invasive)
 06.07.2024
 After removing the raw reference filter (consisting of a 10kΩ resistor (one of 8 in a NOMCT array) and a regular 100nF X7R capacitor), conversion noise decreased from 100μVpp to 50μVpp (rough estimate). Switching to linear regulator (pun not intended) didn't seem to make much of a difference, in fact, noise apparently *increased*, have to see if different wiring fixes it. Didn't really, but looks like it improved offset, might have something to do with the Pico drawing current and changing residue ADC vref (the 3.3V supply). Reducing modulation frequency reduced resolution but looks like peak to peak noise has not changed, stuck at 60μVpp...in fact, there are samples up to 100μVpp.
 
-TODO: Clean up rundown code and read the rundown counts. Optimize code to save some instructions if necessary. Try to remove the offset in the - loop.
-possible optimization - reduce need for delay in runup by using 'irq wait', irq 0 [20] uses a lot of delays, half the total delay could gain one sideset pin.
+08.07.2024
+Realized that I had OPAx197 on the integrator and references. Replaced by OPAx140. Ringing reduced on the references, settling is more exponential than ringy on the summing junction. Readings increased in noise by a huge amount. I suspect something wrong with residue calibration, or the residue ADC going out of range. I was right, redid the values of the scaling resistors so a ±10V integrator voltage resulted in a 600mV to 2.8V input on the residue ADC (values could be optimized some more). For some reason, the summing junction is not maintained at 0V. The output of the first stage op-amp drifts to 15V and stays there for some reason. The OPAx140 were from Mouser, so theoretically shouldn't be fake or defective. Decided to start from scratch.
