@@ -28,3 +28,6 @@ After removing the raw reference filter (consisting of a 10kΩ resistor (one of 
 
 08.07.2024
 Realized that I had OPAx197 on the integrator and references. Replaced by OPAx140. Ringing reduced on the references, settling is more exponential than ringy on the summing junction. Readings increased in noise by a huge amount. I suspect something wrong with residue calibration, or the residue ADC going out of range. I was right, redid the values of the scaling resistors so a ±10V integrator voltage resulted in a 600mV to 2.8V input on the residue ADC (values could be optimized some more). For some reason, the summing junction is not maintained at 0V. The output of the first stage op-amp drifts to 15V and stays there for some reason. The OPAx140 were from Mouser, so theoretically shouldn't be fake or defective. Decided to start from scratch.
+
+10.07.2024
+Page 316 in the RP2040 datasheet has an interesting example for driving WS2812 LED strips which could theoretically be modified to do multislope runup and calibration with the same code, although the details have to be worked out. Similar to the code I wrote for delta-sigma PWM feedback, DMA (or even the processor) could be used to write to the TX FIFO to set duty cycle, side-set can set the appropriate pins. How counting and residue would work in this case is also yet to be figured out.
