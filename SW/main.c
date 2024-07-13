@@ -12,7 +12,7 @@
 #include "pico/bootrom.h"
 #include "ms.pio.h"
 
-const float div = 80;
+const float div = 100;
 uint32_t pwmCycles = 1500;
 
 const uint8_t MUX_A0 = 0;
@@ -139,7 +139,7 @@ void get_cal()
 
 int main() 
 {
-    set_sys_clock_khz(96000, true);  
+    set_sys_clock_khz(100000, true);  
     stdio_init_all();
 
     sleep_ms(1000);
@@ -212,7 +212,7 @@ int main()
     uint32_t newInput = 0;
     char inputBuffer[32] = {0};
 
-    setMuxState(MUX_RAW);
+    setMuxState(MUX_IN);
 
     while(true)
     {
@@ -221,7 +221,7 @@ int main()
 
         // setMuxState(MUX_GND);
         // sleep_us(10);
-        get_counts(1500);
+        get_counts(150);
         // int32_t finalIn = (counts * RUU) - ((6000 - counts) * RUD) + (residueAfter - residueBefore);
 
         // setMuxState(MUX_GND);
@@ -237,6 +237,7 @@ int main()
         // double voltage = 6.85f * (double)(finalIn - finalGround)/(double)(finalRaw - finalGround);
 
         // printf("%d, %d, %d, %012lf\n", finalGround, finalRaw, finalIn, voltage);
+
     }
     
     return 0;

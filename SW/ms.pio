@@ -17,15 +17,17 @@ switch:
     set pins  0b000
     in X      32
 
-;     set pins  0b001
-; runup_high:
-;     jmp pin   runup_high
-;     set pins  0b010
-; runup_low:
-;     jmp pin   stop
-;     jmp       runup_low
-; stop:
-;     set pins  0b000
+    set pins  0b001
+runup_high:
+    jmp       skip
+skip:
+    jmp pin   runup_high
+    set pins  0b010 [1]
+runup_low:
+    jmp pin   stop
+    jmp       runup_low
+stop:
+    set pins  0b000
 
     irq wait  0
 

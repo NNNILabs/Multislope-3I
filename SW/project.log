@@ -18,10 +18,10 @@ Investigating the reference and summing nodes shows settling time issues. Refere
 The residue ADC's noise also comes into play. The scaling amplifier that scales the ±5V integrator swing to 0V to 3.3V for the residue ADC is in effect an attenuator, so the referred-to-input noise is greater. If instead an amplifier were used in combination with rundown, the RTI noise would decrease.
 
 TODO: (order of minimally invasive)
-- Change Pico power to 3.3V from linear regulator
-- Remove reference filter capacitor and note effects (it's a regular 100nF)
-- Add compensation (47pF?) to reference amplifiers and measure noise
-- change fast op-amp to OPA828
+- Change Pico power to 3.3V from linear regulator V
+- Remove reference filter capacitor and note effects (it's a regular 100nF) V
+- Add compensation (47pF?) to reference amplifiers and measure noise V
+- change fast op-amp to OPA828 X
 
 06.07.2024
 After removing the raw reference filter (consisting of a 10kΩ resistor (one of 8 in a NOMCT array) and a regular 100nF X7R capacitor), conversion noise decreased from 100μVpp to 50μVpp (rough estimate). Switching to linear regulator (pun not intended) didn't seem to make much of a difference, in fact, noise apparently *increased*, have to see if different wiring fixes it. Didn't really, but looks like it improved offset, might have something to do with the Pico drawing current and changing residue ADC vref (the 3.3V supply). Reducing modulation frequency reduced resolution but looks like peak to peak noise has not changed, stuck at 60μVpp...in fact, there are samples up to 100μVpp.
@@ -55,3 +55,13 @@ exit:
     ;in X      32
 
 Another PIO program could be used to read the comparator exclusively, but the fact that a 4-deep RX FIFO exists has to be contended with. Maybe direct read from comparator GPIO pin? similar logic can be used for calibration.
+
+11.07.2024
+The above code works after modifications, but delivering comparator information at the correct time is causing issues. Reading the comparator and writing to the state machine at basically processor clock causes motorboating, controlling the writing using pio_sm_is_tx_fifo_empty() helps but still has the problem of dealing with the 4 word deep FIFO which causes the equivalent of a phase lag in the loop.
+
+12.07.2024
+A few changes to the code have to be made. Assuming I take the rundown-residue approach, I have two options. I can keep the rundown code part of the main code or split it off into a separate PIO program that is loaded onto a separate state machine. There are not many advantages to the first approach (maybe apart from saving some instructions). The second option gives me a lot more flexibility. There will be three separate PIO programs that are loaded into three state machines that are part of the same PIO block. The first is runup, which controls the two PWM phases using set pins. The second is the residue ADC, which uses a fixed-cycle loop to read the MCP3201 (an improvement over the MCP3202 which needs configuration and the second channel goes unused). The third is rundown (which chronologically happens between the first two). I can set the clock divider as I please for more or less resolution and control the PWM phases using side set (different SMs can control the same pins using different methods). The first program can coordinate with the second two using interrupts. Hopefully everything fits within the 32 instruction limit. Calibration is another story, but it looks to me like one program each for up, up-down, and up-down-up will be necessary.
+
+TODO:
+- Record integrator drift problem
+- Move rundown to a separate SM and coordinate using int 1
