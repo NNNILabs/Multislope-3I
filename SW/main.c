@@ -12,8 +12,8 @@
 #include "pico/bootrom.h"
 #include "ms.pio.h"
 
-const float div = 100;
-uint32_t pwmCycles = 1500;
+const float div = 80;
+uint32_t pwmCycles = 1250;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
@@ -29,14 +29,21 @@ PIO pio;
 uint multislopeSM;
 uint residueSM;
 uint calibrationSM;
-
-const uint32_t residueConfig = 53248;
+uint rundownSM;
 
 int32_t counts = 0;
 int32_t residueBefore = 0;
 int32_t residueAfter = 0;
 int32_t RUU = 1540;
 int32_t RUD = 1540;
+int32_t rundownUp = 0;
+int32_t rundownDown = 0;
+int32_t gndCounts = 0;
+int32_t rawCounts = 0;
+int32_t inCounts = 0;
+
+uint32_t newInput = 0;
+char inputBuffer[32] = {0};
 
 // MCP3202 ADC
 #define CS   13
@@ -82,10 +89,15 @@ void get_counts(uint32_t countNum)
     gpio_put(PICO_DEFAULT_LED_PIN, true);
 
     pio_sm_put_blocking(pio, multislopeSM, countNum - 1);         // write number of PWM cycles to runup state machine
-    pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));   // write config data to residue ADC
+
+    // pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));   // write config data to residue ADC
     residueBefore = pio_sm_get_blocking(pio, residueSM);          // read pre-runup integrator state
+
     counts = ~pio_sm_get_blocking(pio, multislopeSM);             // read runup counts
-    pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));   // write config data to residue ADC
+    rundownUp = ~pio_sm_get_blocking(pio, multislopeSM);           // read rundown up counts
+    rundownDown = ~pio_sm_get_blocking(pio, multislopeSM);         // read rundown down counts
+    // printf("Rundown: %d\n", rundown);
+    // pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));   // write config data to residue ADC
     residueAfter = pio_sm_get_blocking(pio, residueSM);           // read post-runup integrator state
 
     // printf("%d, %d, %d, %d\n", counts, residueBefore, residueAfter, (residueAfter - residueBefore));
@@ -95,43 +107,41 @@ void get_counts(uint32_t countNum)
 
 void get_cal()
 {
+    // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
+    // sleep_ms(500);
+
     gpio_put(PICO_DEFAULT_LED_PIN, true);
 
     uint32_t countOne = 0;
     uint32_t countTwo = 0;
     uint32_t countThree = 0;
     uint32_t countFour = 0;
-    while(countFour == 0)
-    {
-        pio_sm_put_blocking(pio, calibrationSM, 1);
-        sleep_us(15);
-        pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));
-        countOne = pio_sm_get_blocking(pio, residueSM);
-        sleep_us(15);
-        pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));
-        countTwo = pio_sm_get_blocking(pio, residueSM);
-        sleep_us(15);
-        pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));
-        countThree = pio_sm_get_blocking(pio, residueSM);
-        sleep_us(15);
-        pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));
-        countFour = pio_sm_get_blocking(pio, residueSM);
-        sleep_ms(1);
-    }
 
-    pio_sm_clear_fifos(pio, calibrationSM);
-    pio_sm_clear_fifos(pio, residueSM);
+    pio_sm_put_blocking(pio, calibrationSM, 1);
+    // sleep_us(15);
+    // pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));
+    countOne = pio_sm_get_blocking(pio, residueSM);
+    // sleep_us(35);
+    // pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));
+    countTwo = pio_sm_get_blocking(pio, residueSM);
+    // sleep_us(35);
+    // pio_sm_put_blocking(pio, residueSM, (residueConfig << 16));
+    countThree = pio_sm_get_blocking(pio, residueSM);
 
-    uint32_t R1 = (countTwo - countOne);
+    // pio_sm_clear_fifos(pio, calibrationSM);
+    // pio_sm_clear_fifos(pio, residueSM);
+
+    uint32_t R1 = (countOne - countTwo);
     uint32_t R2 = (countThree - countTwo);
-    uint32_t R3 = (countFour - countThree);
+    // uint32_t R3 = (countThree - countFour);
     
-    RUD = (R2 > R1)? (R2 - R1) : (R1 - R2);
-    RUU = (R3 > R2)? (R3 - R2) : (R2 - R3);
+    // RUD = (R2 > R1)? (R2 - R1) : (R1 - R2);
+    // RUU = (R3 > R2)? (R3 - R2) : (R2 - R3);
 
-    // printf("%d, %d, %d, %d\n", countOne, countTwo, countThree, countFour);
-    // printf("%d, %d, %d\n", R1, R2, R3);
-    // printf("%d, %d\n", RUD, RUU);
+    RUU = R1;
+    RUD = R2;
+
+    // printf("%d, %d\n", R1, R2);
 
     gpio_put(PICO_DEFAULT_LED_PIN, false);
 
@@ -139,10 +149,8 @@ void get_cal()
 
 int main() 
 {
-    set_sys_clock_khz(100000, true);  
+    set_sys_clock_khz(96000, true);  
     stdio_init_all();
-
-    sleep_ms(1000);
 
     gpio_init(PICO_DEFAULT_LED_PIN);
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
@@ -181,11 +189,18 @@ int main()
     pio_sm_set_enabled(pio, residueSM, true);
     pio_sm_set_enabled(pio, calibrationSM, true);
 
-    // get_cal();
+    get_cal();
 
-    // sleep_ms(1000);
+    sleep_ms(100);
 
-    // get_cal();
+    get_cal();
+
+    while(true)
+    {
+        get_cal();
+        sleep_ms(500);
+        printf("%015b, %015b\n", RUU, RUD);
+    }
 
     pio_sm_set_enabled(pio, residueSM, false);
     pio_sm_set_enabled(pio, calibrationSM, false);
@@ -199,44 +214,52 @@ int main()
     residueSM = pio_claim_unused_sm(pio, true);
     residueOffset = pio_add_program(pio, &residue_program);
 
+    // rundownSM = 0; pio_claim_unused_sm(pio, true);
+    // uint rundownOffset = pio_add_program(pio, &rundown_program);
+
     ms_program_init(pio, multislopeSM, multislopeOffset, PWMA, COMP, div, MEAS);
     residue_program_init(pio, residueSM, residueOffset, MISO, div);
+    // rundown_program_init(pio, rundownSM, rundownOffset, PWMA, PWMB, div);
 
     pio_sm_set_enabled(pio, multislopeSM, true);
     pio_sm_set_enabled(pio, residueSM, true);
+    // pio_sm_set_enabled(pio, rundownSM, true);
 
     get_counts(50);
 
-    int chr = 0;
+    setMuxState(MUX_GND);
+    sleep_ms(20);
+    get_counts(pwmCycles);
+    gndCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
 
-    uint32_t newInput = 0;
-    char inputBuffer[32] = {0};
+    setMuxState(MUX_RAW);
+    sleep_ms(20);
+    get_counts(pwmCycles);
+    rawCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
 
-    setMuxState(MUX_IN);
+    setMuxState(MUX_RAW);
 
     while(true)
     {
-        sleep_ms(100);
         // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
-        // setMuxState(MUX_GND);
-        // sleep_us(10);
-        get_counts(150);
-        // int32_t finalIn = (counts * RUU) - ((6000 - counts) * RUD) + (residueAfter - residueBefore);
+        get_counts(100);
+        sleep_ms(500);
 
-        // setMuxState(MUX_GND);
-        // sleep_us(10);
+        // setMuxState(MUX_IN);
+        // sleep_ms(20);
         // get_counts(pwmCycles);
-        // int32_t finalGround = (counts * RUU) - ((6000 - counts) * RUD) + (residueAfter - residueBefore);
+        // inCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
 
-        // setMuxState(MUX_RAW);
-        // sleep_us(10);
-        // get_counts(pwmCycles);
-        // int32_t finalRaw = (counts * RUU) - ((6000 - counts) * RUD) + (residueAfter - residueBefore);
+        // double voltage = 6.85f * (double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts);
 
-        // double voltage = 6.85f * (double)(finalIn - finalGround)/(double)(finalRaw - finalGround);
+        // printf("%.17g\n", voltage);
 
-        // printf("%d, %d, %d, %012lf\n", finalGround, finalRaw, finalIn, voltage);
+        // printf("%d, %d, %d, %.17g\n", gndCounts, rawCounts, inCounts, voltage);
+
+        // printf("%d, %d, %d, %d, %d, %d\n", counts, residueBefore, residueAfter, (residueAfter - residueBefore), RUU, RUD);
+
+        printf("%d, %d, %d, %d, %d, %d, %d\n", counts, rundownUp, rundownDown, residueBefore, residueAfter, (residueAfter - residueBefore), (rundownDown - rundownUp));
 
     }
     
