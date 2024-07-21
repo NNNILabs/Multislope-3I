@@ -27,14 +27,9 @@ add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/main.c)
 # Link to pico_stdlib (gpio, time, etc. functions)
 target_link_libraries(${PROJECT_NAME} 
     pico_stdlib
-    hardware_spi
     hardware_pio
-    hardware_dma
     hardware_gpio
-    hardware_sync
-    hardware_structs
-    pico_bootrom
-    hardware_adc
+    hardware_irq
 )
 
 # Create map/bin/hex/uf2 files

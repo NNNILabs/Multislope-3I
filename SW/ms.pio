@@ -93,19 +93,19 @@ dither_high:
 
 start:
     out X    32
-    set pins 0b000 [31]
+    set pins 0b000
     irq      wait 0
 runup_u:
     ; set pins 0b001  [13]
     ; set pins 0b010  [1]
     set pins 0b010 [1]
-    set pins 0b000 [31]
+    set pins 0b000
     irq      wait 0
 runup_ud:
     ; set pins 0b001  [1]
     ; set pins 0b010  [13]
     set pins 0b001 [1]
-    set pins 0b000 [31]
+    set pins 0b000
     irq      wait 0
     jmp      dither_start
 
@@ -146,16 +146,17 @@ void calibration_program_init(PIO pio, uint sm, uint offset, uint pin, uint inpu
 %}
 
 .program residue
-.side_set 2 opt
+.side_set 2
 
 .wrap_target
-    wait 0     irq 0   side 0b10
-    set  X     14      side 0b00
+    wait 0     irq 0       side 0b10 [7]
+    set  X     14          side 0b00 [7]
 loop:
-    nop                side 0b01 [1]
-    in   pins  1       side 0b00
-    jmp  X--   loop
-    irq        clear 0 side 0b10
+    nop                    side 0b01 [1]
+    ; nop                    side 0b00
+    in   pins  1           side 0b00
+    jmp  X--   loop        side 0b00
+    irq        clear 0     side 0b00
 .wrap 
 
 % c-sdk {
@@ -179,7 +180,7 @@ void residue_program_init(PIO pio, uint sm, uint offset, uint pin, float div) {
     sm_config_set_in_pins(&c, pin);
     sm_config_set_sideset_pins(&c, pin + 2);
 
-    sm_config_set_out_shift(&c, false, true, 15);
+    // sm_config_set_out_shift(&c, false, true, 15);
     sm_config_set_in_shift(&c, false, true, 15);
 
     sm_config_set_clkdiv(&c, div);
