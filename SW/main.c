@@ -7,7 +7,7 @@
 #include "ms.pio.h"
 
 const float div = 80;
-uint32_t pwmCycles = 1250;
+uint32_t pwmCycles = 1500;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
@@ -35,6 +35,13 @@ int32_t rundownDown = 0;
 int32_t gndCounts = 0;
 int32_t rawCounts = 0;
 int32_t inCounts = 0;
+
+int32_t runup_pos = 0;
+int32_t runup_neg = 0;
+int32_t rundown_pos = 0;
+int32_t rundown_neg = 0;
+int32_t residue_before = 0;
+int32_t residue_after = 0;
 
 uint32_t newInput = 0;
 char inputBuffer[32] = {0};
@@ -84,6 +91,9 @@ void get_counts(uint32_t countNum)
 {
     gpio_put(LED, true);
 
+    pio_sm_clear_fifos(pio, multislopeSM);
+    pio_sm_clear_fifos(pio, residueSM);
+
     pio_sm_put_blocking(pio, multislopeSM, countNum - 1);         // write number of PWM cycles to runup state machine
 
     residueBefore = pio_sm_get_blocking(pio, residueSM);          // read pre-runup integrator state
@@ -93,6 +103,15 @@ void get_counts(uint32_t countNum)
     rundownDown = ~pio_sm_get_blocking(pio, multislopeSM);         // read rundown down counts
 
     residueAfter = pio_sm_get_blocking(pio, residueSM);           // read post-runup integrator state
+
+    runup_pos = pwmCycles - counts;
+    runup_neg = counts;
+
+    rundown_neg = rundownUp - counts;
+    rundown_pos = rundownDown - rundownUp;
+
+    residue_before = residueBefore & 0xFFF;
+    residue_after = residueAfter & 0xFFF;
 
     // printf("%d, %d, %d, %d\n", counts, residueBefore, residueAfter, (residueAfter - residueBefore));
 
@@ -117,11 +136,11 @@ void get_cal()
     countTwo = pio_sm_get_blocking(pio, residueSM);
     countThree = pio_sm_get_blocking(pio, residueSM);
 
-    // pio_sm_clear_fifos(pio, calibrationSM);
-    // pio_sm_clear_fifos(pio, residueSM);
+    pio_sm_clear_fifos(pio, calibrationSM);
+    pio_sm_clear_fifos(pio, residueSM);
 
-    uint32_t R1 = (countOne - countTwo);
-    uint32_t R2 = (countThree - countTwo);
+    uint32_t R1 = (countTwo - countOne);
+    uint32_t R2 = (countTwo - countThree);
     // uint32_t R3 = (countThree - countFour);
     
     // RUD = (R2 > R1)? (R2 - R1) : (R1 - R2);
@@ -178,12 +197,12 @@ int main()
 
     get_cal();
 
-    while(true)
-    {
-        get_cal();
-        sleep_ms(500);
-        printf("%d, %d\n", RUU, RUD);
-    }
+    // while(true)
+    // {
+    //     get_cal();
+    //     sleep_ms(500);
+    //     printf("%d, %d\n", RUU, RUD);
+    // }
 
     pio_sm_set_enabled(pio, residueSM, false);
     pio_sm_set_enabled(pio, calibrationSM, false);
@@ -219,10 +238,10 @@ int main()
 
     while(true)
     {
-        // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
+        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
-        get_counts(100);
-        sleep_ms(500);
+        get_counts(pwmCycles);
+        // sleep_ms(500);
 
         // setMuxState(MUX_IN);
         // sleep_ms(20);
@@ -237,7 +256,9 @@ int main()
 
         // printf("%d, %d, %d, %d, %d, %d\n", counts, residueBefore, residueAfter, (residueAfter - residueBefore), RUU, RUD);
 
-        printf("%d, %d, %d, %d, %d, %d, %d\n", counts, rundownUp, rundownDown, residueBefore, residueAfter, (residueAfter - residueBefore), (rundownDown - rundownUp));
+        // printf("%d, %d, %d, %d, %d, %d, %d\n", counts, rundownUp, rundownDown, residueBefore, residueAfter, RUU, RUD);
+
+        printf("%d, %d, %d, %d, %d, %d, %d, %d\n", runup_pos, runup_neg, rundown_pos, rundown_neg, residue_before, residue_after, RUU, RUD);
 
     }
     

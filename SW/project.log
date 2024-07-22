@@ -83,3 +83,11 @@ I established that in case of rundown, the full scale of the residue ADC should 
 
 19.07.2024
 Moved the instructions in the dither code around to achieve better characteristics. Now it's at 50/50 +REF and -REF, which means more predictable start range centered around zero. Modified rundown code to make it have consistent behaviour. Changed ADC from MCP3202 to MCP3201 with easier driving requirements. Extremely frustrating problems with the new ADC - the state machine responsible for talking to it seems to have developed a mind of its own and fills up FIFO regardless of if int 0 is called or not (which should theoretically not happen since it just has to wait for that interrupt anyway). And sometimes it also runs four or five or six times in a row. Turning off interrupts does not stop it. Using pio_sm_clear_fifos() seems to be causing it, but that would imply that the residue ADC code just runs to fill up the FIFO (and more!) which should not happen.
+
+21.07.2024
+After spending three days breaking my head over this problem, I decided to ask about it in the official Raspberry Pi forums. Waiting for (a) response(s).
+Response: wait irq polarity works the same as a regular wait instruction, so wait 0 waits for a zero interrupt flag, and wait 1 waits for a 1 flag. The problem stems from the fact that wait 0, while not clearing the interrupt, waits for a zero, which is always true till the calibration sm asserts it. This explains why the interrupt runs continuously. The problem with wait 1 is that it immediately clears the interrupt. But there might be a workaround to this problem.
+Fixed the issue by adding 31 delay cycles after setting GPIO to correct state (to allow for settling) and 31 additional delays after the interrupt, plus one nop and 31 more delays to allow enough time for the residue ADC reading.
+
+23.07.2024
+There was a bug that was delaying the residue reading by one cycle, just like the problem I left off with in 2022/3. To solve it, I added a pio_sm_clear_fifos() in the get_counts function before each reading to clear the FIFOs of both the runup/down and residue state machines. Measuring the LM399 reference delivers around 10.3 million counts, with around 20 counts peak-to-peak noise. STDEV.S() in Excel for 1000 readings delivers 3.8 LSBrms.

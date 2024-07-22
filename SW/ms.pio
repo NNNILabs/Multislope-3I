@@ -1,16 +1,16 @@
 .program ms
 
 high:
-    jmp X--   switch [11]
+    jmp X--   switch       [11]
 entry:
     set pins  0b000
     mov X     !NULL
-    out Y     32
-    irq wait  0      
+    out Y     32           [31]
+    irq       0            [31]
 start:
     set pins  0b101
     jmp pin   high      
-    set pins  0b110  [11]
+    set pins  0b110        [11]
 switch:
     set pins  0b110
     jmp Y--   start
@@ -23,7 +23,7 @@ switch:
 rundown_high:
     jmp X--   skip
 skip:
-    jmp pin   rundown_high
+    jmp pin   rundown_high 
     in  X     32
     set pins  0b010
 rundown_low:
@@ -31,15 +31,15 @@ rundown_low:
     jmp X--   rundown_low
 low_stop:
     set pins  0b000
-    in  X     32
+    in  X     32          [31]
 
-    irq wait  0
+    irq       0           [31]
 
 .wrap_target
     set pins  0b001
 dither_high:
     jmp pin   dither_high
-    set pins  0b010  [1]
+    set pins  0b010       [1]
     jmp !OSRE entry
 .wrap
 
@@ -92,21 +92,20 @@ dither_high:
 .wrap
 
 start:
-    out X    32
-    set pins 0b000
-    irq      wait 0
+    out X    32 
+    set pins 0b000        [31]
+    irq   wait   0        [31]
+    nop                   [31]
 runup_u:
-    ; set pins 0b001  [13]
-    ; set pins 0b010  [1]
-    set pins 0b010 [1]
-    set pins 0b000
-    irq      wait 0
+    set pins 0b010        [1]
+    set pins 0b000        [31]
+    irq   wait   0        [31]
+    nop                   [31]
 runup_ud:
-    ; set pins 0b001  [1]
-    ; set pins 0b010  [13]
-    set pins 0b001 [1]
-    set pins 0b000
-    irq      wait 0
+    set pins 0b001        [1]
+    set pins 0b000        [31]
+    irq wait     0        [31]
+    nop                   [31]
     jmp      dither_start
 
 % c-sdk {
@@ -149,14 +148,13 @@ void calibration_program_init(PIO pio, uint sm, uint offset, uint pin, uint inpu
 .side_set 2
 
 .wrap_target
-    wait 0     irq 0       side 0b10 [7]
+    wait 1     irq 0       side 0b10 [7]
     set  X     14          side 0b00 [7]
 loop:
     nop                    side 0b01 [1]
     ; nop                    side 0b00
     in   pins  1           side 0b00
     jmp  X--   loop        side 0b00
-    irq        clear 0     side 0b00
 .wrap 
 
 % c-sdk {
