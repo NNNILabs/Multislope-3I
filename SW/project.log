@@ -91,3 +91,6 @@ Fixed the issue by adding 31 delay cycles after setting GPIO to correct state (t
 
 23.07.2024
 There was a bug that was delaying the residue reading by one cycle, just like the problem I left off with in 2022/3. To solve it, I added a pio_sm_clear_fifos() in the get_counts function before each reading to clear the FIFOs of both the runup/down and residue state machines. Measuring the LM399 reference delivers around 10.3 million counts, with around 20 counts peak-to-peak noise. STDEV.S() in Excel for 1000 readings delivers 3.8 LSBrms.
+
+TODO:
+- Record measurement of integrator and residue waveforms on the scope
