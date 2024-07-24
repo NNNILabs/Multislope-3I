@@ -7,7 +7,7 @@
 #include "ms.pio.h"
 
 const float div = 40;
-uint32_t pwmCycles = 1500;
+uint32_t pwmCycles = 150000;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
@@ -20,7 +20,7 @@ const uint8_t COMP = 6;
 
 const double vrefAbs = 6.85793; // Measured using K2000
 
-double voltage = 0;
+double voltage = 0.0;
 
 PIO pio;
 
@@ -47,6 +47,8 @@ int32_t rundown_pos = 0;
 int32_t rundown_neg = 0;
 int32_t residue_before = 0;
 int32_t residue_after = 0;
+
+int32_t N1, N2, N3;
 
 int32_t result = 0;
 
@@ -155,12 +157,12 @@ void get_cal()
 
 void get_result()
 {
-    int32_t N1, N2, N3;
     N1 = N2 = N3 = 0;
 
-    N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD));
+    // N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD)); // Complementary PWM runup
+    N1 = (runup_neg * (15*RUU)) - (runup_pos * (15*RUD));
     N2 = (rundown_neg * RUU) - (rundown_pos * RUD);
-    N3 = residue_before - residue_after;
+    N3 = residue_after - residue_before;
 
     result = N1 + N2 + N3;
 
@@ -235,34 +237,25 @@ int main()
 
     get_counts(50);
 
+    sleep_ms(1000);
+
     setMuxState(MUX_GND);
-    // sleep_ms(20);
-    // get_counts(pwmCycles);
-    // gndCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
+    sleep_us(100);
+    get_counts(pwmCycles);
+    get_result();
 
-    // setMuxState(MUX_RAW);
-    // sleep_ms(20);
-    // get_counts(pwmCycles);
-    // rawCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
+    gndCounts = result;
 
-    // setMuxState(MUX_GND);
+    setMuxState(MUX_RAW);
+    sleep_us(100);
+    get_counts(pwmCycles);
+    get_result();
+
+    rawCounts = result;
 
     while(true)
     {
-        // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
-        setMuxState(MUX_GND);
-        sleep_us(100);
-        get_counts(pwmCycles);
-        get_result();
-
-        gndCounts = result;
-
-        setMuxState(MUX_RAW);
-        sleep_us(100);
-        get_counts(pwmCycles);
-        get_result();
-
-        rawCounts = result;
+        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
         setMuxState(MUX_GND);
         sleep_us(100);
@@ -271,10 +264,9 @@ int main()
 
         inCounts = result;
 
-        voltage = (double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts);
+        voltage = ((double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts)) * vrefAbs;
 
-        printf("%lf\n", voltage);
-        sleep_ms(500);
+        // printf("%lf\n", voltage);
 
         // setMuxState(MUX_IN);
         // sleep_ms(20);
@@ -292,6 +284,12 @@ int main()
         // printf("%d, %d, %d, %d, %d, %d, %d\n", counts, rundownUp, rundownDown, residueBefore, residueAfter, RUU, RUD);
 
         // printf("%d, %d, %d, %d, %d, %d, %d, %d\n", runup_pos, runup_neg, rundown_pos, rundown_neg, residue_before, residue_after, RUU, RUD);
+
+        // printf("%d, %d, %d, %d\n", N1, N2, N3, result);
+
+        printf("%d, %d, %d, %g\n", gndCounts, rawCounts, inCounts, voltage);
+
+        // sleep_ms(500);
 
     }
     
