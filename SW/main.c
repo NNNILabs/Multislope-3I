@@ -6,7 +6,7 @@
 
 #include "ms.pio.h"
 
-const float div = 80;
+const float div = 40;
 uint32_t pwmCycles = 1500;
 
 const uint8_t MUX_A0 = 0;
@@ -17,6 +17,10 @@ const uint8_t PWMA = 3;                // need to be next to each other
 const uint8_t PWMB = 4;                // need to be next to each other
 const uint8_t MEAS = 5;
 const uint8_t COMP = 6;
+
+const double vrefAbs = 6.85793; // Measured using K2000
+
+double voltage = 0;
 
 PIO pio;
 
@@ -32,6 +36,7 @@ int32_t RUU = 1540;
 int32_t RUD = 1540;
 int32_t rundownUp = 0;
 int32_t rundownDown = 0;
+
 int32_t gndCounts = 0;
 int32_t rawCounts = 0;
 int32_t inCounts = 0;
@@ -42,6 +47,8 @@ int32_t rundown_pos = 0;
 int32_t rundown_neg = 0;
 int32_t residue_before = 0;
 int32_t residue_after = 0;
+
+int32_t result = 0;
 
 uint32_t newInput = 0;
 char inputBuffer[32] = {0};
@@ -113,14 +120,11 @@ void get_counts(uint32_t countNum)
     residue_before = residueBefore & 0xFFF;
     residue_after = residueAfter & 0xFFF;
 
-    // printf("%d, %d, %d, %d\n", counts, residueBefore, residueAfter, (residueAfter - residueBefore));
-
     gpio_put(SIO_INTERP0_CTRL_LANE0_ADD_RAW_ACCESS, false);
 }
 
 void get_cal()
 {
-    // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
     sleep_ms(100);
 
     gpio_put(LED, true);
@@ -141,17 +145,24 @@ void get_cal()
 
     uint32_t R1 = (countTwo - countOne);
     uint32_t R2 = (countTwo - countThree);
-    // uint32_t R3 = (countThree - countFour);
-    
-    // RUD = (R2 > R1)? (R2 - R1) : (R1 - R2);
-    // RUU = (R3 > R2)? (R3 - R2) : (R2 - R3);
 
     RUU = R1;
     RUD = R2;
 
-    // printf("%d, %d\n", R1, R2);
-
     gpio_put(LED, false);
+
+}
+
+void get_result()
+{
+    int32_t N1, N2, N3;
+    N1 = N2 = N3 = 0;
+
+    N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD));
+    N2 = (rundown_neg * RUU) - (rundown_pos * RUD);
+    N3 = residue_before - residue_after;
+
+    result = N1 + N2 + N3;
 
 }
 
@@ -225,30 +236,52 @@ int main()
     get_counts(50);
 
     setMuxState(MUX_GND);
-    sleep_ms(20);
-    get_counts(pwmCycles);
-    gndCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
+    // sleep_ms(20);
+    // get_counts(pwmCycles);
+    // gndCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
 
-    setMuxState(MUX_RAW);
-    sleep_ms(20);
-    get_counts(pwmCycles);
-    rawCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
+    // setMuxState(MUX_RAW);
+    // sleep_ms(20);
+    // get_counts(pwmCycles);
+    // rawCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
 
-    setMuxState(MUX_RAW);
+    // setMuxState(MUX_GND);
 
     while(true)
     {
-        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
-
+        // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
+        setMuxState(MUX_GND);
+        sleep_us(100);
         get_counts(pwmCycles);
-        // sleep_ms(500);
+        get_result();
+
+        gndCounts = result;
+
+        setMuxState(MUX_RAW);
+        sleep_us(100);
+        get_counts(pwmCycles);
+        get_result();
+
+        rawCounts = result;
+
+        setMuxState(MUX_GND);
+        sleep_us(100);
+        get_counts(pwmCycles);
+        get_result();
+
+        inCounts = result;
+
+        voltage = (double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts);
+
+        printf("%lf\n", voltage);
+        sleep_ms(500);
 
         // setMuxState(MUX_IN);
         // sleep_ms(20);
         // get_counts(pwmCycles);
         // inCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
 
-        // double voltage = 6.85f * (double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts);
+        // double voltage = vrefAbs * (double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts);
 
         // printf("%.17g\n", voltage);
 
@@ -258,7 +291,7 @@ int main()
 
         // printf("%d, %d, %d, %d, %d, %d, %d\n", counts, rundownUp, rundownDown, residueBefore, residueAfter, RUU, RUD);
 
-        printf("%d, %d, %d, %d, %d, %d, %d, %d\n", runup_pos, runup_neg, rundown_pos, rundown_neg, residue_before, residue_after, RUU, RUD);
+        // printf("%d, %d, %d, %d, %d, %d, %d, %d\n", runup_pos, runup_neg, rundown_pos, rundown_neg, residue_before, residue_after, RUU, RUD);
 
     }
     

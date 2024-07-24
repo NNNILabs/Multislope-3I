@@ -63,20 +63,11 @@ The above code works after modifications, but delivering comparator information 
 A few changes to the code have to be made. Assuming I take the rundown-residue approach, I have two options. I can keep the rundown code part of the main code or split it off into a separate PIO program that is loaded onto a separate state machine. There are not many advantages to the first approach (maybe apart from saving some instructions). The second option gives me a lot more flexibility. There will be three separate PIO programs that are loaded into three state machines that are part of the same PIO block. The first is runup, which controls the two PWM phases using set pins. The second is the residue ADC, which uses a fixed-cycle loop to read the MCP3201 (an improvement over the MCP3202 which needs configuration and the second channel goes unused). The third is rundown (which chronologically happens between the first two). I can set the clock divider as I please for more or less resolution and control the PWM phases using side set (different SMs can control the same pins using different methods). The first program can coordinate with the second two using interrupts. Hopefully everything fits within the 32 instruction limit. Calibration is another story, but it looks to me like one program each for up, up-down, and up-down-up will be necessary.
 Separate runup with a faster clock necessitates a better comparator to more accurately detect zero crossings. Reference mismatch will also play a larger role if pulse-stretching (3456A style rundown) is used.
 
-TODO:
-- Record integrator drift problem V
-- Move rundown to a separate SM and coordinate using int 1 V
-
 16.07.2024
 Tried moving rundown to a separate state machine, but ran into problems: not sure if controlling the same pins with different state machines is possible. Might not exactly be worth it, so will have to have rundown in the same state machine as runup.
 
 17.07.2024
 Bodged OPA2140 integrator to TMT base board and fixed integrator drift problem. Tried a potentiometer for compensation (10kΩ pot in series with 1kΩ resistor), optimum point to minimize initial spike and ringing was around 4kΩ. Changed residue ADC scaler gain (100kΩ/24kΩ/15kΩ) to accept ±10V input swing. Reduced residue count to around 770. Added compensation capacitor to scaler to prevent ringing because of sudden load. Noise reduced to a few residue counts, but resolution is still at around 9μV. Tried simpler calibration scheme involving one runup up and one runup down.
-
-TODO:
-- Record effect of compensation V
-- Record new calibration scheme V
-- Noise vs compensation setting V
 
 18.07.2024
 I established that in case of rundown, the full scale of the residue ADC should be a unit of PWM counts, in my case 1/8. So to calibrate the residue ADC, the references should be turned on for 1/8 PWM cycle time. However, since my rundown algorithm is imperfect and has an offset, the residue difference is either 2/8 or 1/8. 
@@ -94,3 +85,6 @@ There was a bug that was delaying the residue reading by one cycle, just like th
 
 TODO:
 - Record measurement of integrator and residue waveforms on the scope
+
+24.07.2024
+Implemented a test algorithm that has blanking periods before and after the active period - both references on, then one depending on integrator state, then both references off. This creates a period of time where the integrator is stable, and also sees a smaller load (between 0 and ±vref) and back, instead of between ±vref.
