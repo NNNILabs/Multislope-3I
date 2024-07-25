@@ -1,0 +1,88 @@
+01.07.2024
+Rewrote entire code to remove Dimin's DMA/PIO interrupt routine to measure residue, which was buggy (readings had an unexplicable delay). Now, two state machines are synchronized using interrupt 0 (note, synchronization is not perfect when using different clock dividers for each state machine, even if they are integer multiples). SM0 handles runup, start and stop, while SM1 handles reading the residue ADC. 
+
+02.07.2024
+Implemented chip select for residue ADC. Different state machines in a PIO block can have different in, out, set and sideset pins. First readings had 100uVpp noise at 1PLC, which mostly came from the residue difference. Runup counts were rock solid at 2999. Optimized runup code by removing redundant instructions. Moving purely decremental loops (loop counter not intended to go to zero) to the top of the PIO code helps with program flow by allowing 'top-down' execution, eliminating the need for jump instructions. Wrote a crude implementation of Kleinstein's rundown algorithm - constant + and - pulses whose length depends on the integrator state (determined by sampling the comparator). Bipolar rundown adds approximately 3 bits of resolution (integrator voltage spread before rundown was 8x after rundown), should theoretically reduce noise by that much. The + and - loops show differrent response times because the 'jmp pin' is used differently, causes a constant offset in the - loop. 
+
+03.07.2024
+Came up with a new calibration scheme to combine residue ADC with PWM runup - do 3 runup cycles (1 is too short for effective residue reading) to measure residue difference, should be equivalent to how much integrator changes in 1 PWM cycle, residue difference is then how many residue ADC counts are in 1 PWM cycle. After reading, multiply runup counts (2 * negative switch cycles - total PWM cycles) by calibrated residue difference, then add the residue difference of that reading.
+Did three-phase auto zero on the calibrated reading, noise is generally within 10μVpp with some outliers. Mark elaborated calibration scheme with 2 runup and 3 runup cycles to compensate for the difference between the two slopes. 2 runup cycles delivers the difference between the two slopes (in my case, around 8mV), while 3 runup cycles delivers the residue resolution in terms of one runup cycle.
+
+04.07.2024
+Jaromir elaborated on the residue calibration algorithm. One runup, residue difference = R1; One runup, one rundown, residue difference = R2; One runup, one down, one up, residue difference = R3. One down cycle = R2 - R1, one up cycle = R3 - R2. After normal measurement, count number of 'up' (+) cycles, multiply by (R3-R2), count number of 'down' (-) cycles, multiply by (R2 - R1), (signed) add, add residue difference.
+Wrote a separate calibration PIO program that involved a lot of hacks. irq wait didn't behave properly at all, turns out the problem was very complicated since the SPI code involved in and out shifting, blocking reads and writes took priority over interrupts. Fixed using delays in the C/C++ code. Finally got the 1-2-3 calibration scheme up and running.
+Noise is still in the range of 100μVpp. Discovered a math mistake in yesterday's run, forgot to multiply by abs Vref. I suspect modulation frequency is too high for my circuit.
+
+05.07.2024
+Investigating the reference and summing nodes shows settling time issues. References can be compensated using a 47pF capacitor (according to LTspice) to provide a settling time to sub-ppm levels in a few 100 ns. The summing junction is slightly trickier. The 10kΩ reference resistors create a ±1.4mA reference current that loads the integrator and inreases settling time (verified by LTspice) compared to something like 50kΩ, also increases INL due to switch Ron modulation and PCR. There are three possible solutions to this problem: increase the resistor network from 10kΩ to 50kΩ, decrease the modulation frequency (75kHz seems like a good number, 3x less than the 300kHz currently used), and use a fast second op-amp (OPA828 is in stock and seems suitable).
+The residue ADC's noise also comes into play. The scaling amplifier that scales the ±5V integrator swing to 0V to 3.3V for the residue ADC is in effect an attenuator, so the referred-to-input noise is greater. If instead an amplifier were used in combination with rundown, the RTI noise would decrease.
+
+TODO: (order of minimally invasive)
+- Change Pico power to 3.3V from linear regulator V
+- Remove reference filter capacitor and note effects (it's a regular 100nF) V
+- Add compensation (47pF?) to reference amplifiers and measure noise V
+- change fast op-amp to OPA828 X
+
+06.07.2024
+After removing the raw reference filter (consisting of a 10kΩ resistor (one of 8 in a NOMCT array) and a regular 100nF X7R capacitor), conversion noise decreased from 100μVpp to 50μVpp (rough estimate). Switching to linear regulator (pun not intended) didn't seem to make much of a difference, in fact, noise apparently *increased*, have to see if different wiring fixes it. Didn't really, but looks like it improved offset, might have something to do with the Pico drawing current and changing residue ADC vref (the 3.3V supply). Reducing modulation frequency reduced resolution but looks like peak to peak noise has not changed, stuck at 60μVpp...in fact, there are samples up to 100μVpp.
+
+08.07.2024
+Realized that I had OPAx197 on the integrator and references. Replaced by OPAx140. Ringing reduced on the references, settling is more exponential than ringy on the summing junction. Readings increased in noise by a huge amount. I suspect something wrong with residue calibration, or the residue ADC going out of range. I was right, redid the values of the scaling resistors so a ±10V integrator voltage resulted in a 600mV to 2.8V input on the residue ADC (values could be optimized some more). For some reason, the summing junction is not maintained at 0V. The output of the first stage op-amp drifts to 15V and stays there for some reason. The OPAx140 were from Mouser, so theoretically shouldn't be fake or defective. Decided to start from scratch.
+
+10.07.2024
+Page 316 in the RP2040 datasheet has an interesting example for driving WS2812 LED strips which could theoretically be modified to do multislope runup and calibration with the same code, although the details have to be worked out. Similar to the code I wrote for delta-sigma PWM feedback, DMA (or even the processor) could be used to write to the TX FIFO to set duty cycle, side-set can set the appropriate pins. How counting and residue would work in this case is also yet to be figured out.
+
+;  - code not strictly needed for continuous loop operation
+;; - code needed for residue ADC
+
+low:
+    set pins  0b0110 [1]
+    jmp X--   switch
+entry:
+    ;mov X     !NULL    
+start:
+    set pins  0b0101
+    out Y     1
+    jmp !Y    low      
+    nop              [2]
+switch:
+    set pins  0b0110
+    jmp !OSRE start
+exit:
+    ;;set pins 0b0000
+    ;;irq wait 0
+    ;set pins  0b1000
+    ;in X      32
+
+Another PIO program could be used to read the comparator exclusively, but the fact that a 4-deep RX FIFO exists has to be contended with. Maybe direct read from comparator GPIO pin? similar logic can be used for calibration.
+
+11.07.2024
+The above code works after modifications, but delivering comparator information at the correct time is causing issues. Reading the comparator and writing to the state machine at basically processor clock causes motorboating, controlling the writing using pio_sm_is_tx_fifo_empty() helps but still has the problem of dealing with the 4 word deep FIFO which causes the equivalent of a phase lag in the loop.
+
+12.07.2024
+A few changes to the code have to be made. Assuming I take the rundown-residue approach, I have two options. I can keep the rundown code part of the main code or split it off into a separate PIO program that is loaded onto a separate state machine. There are not many advantages to the first approach (maybe apart from saving some instructions). The second option gives me a lot more flexibility. There will be three separate PIO programs that are loaded into three state machines that are part of the same PIO block. The first is runup, which controls the two PWM phases using set pins. The second is the residue ADC, which uses a fixed-cycle loop to read the MCP3201 (an improvement over the MCP3202 which needs configuration and the second channel goes unused). The third is rundown (which chronologically happens between the first two). I can set the clock divider as I please for more or less resolution and control the PWM phases using side set (different SMs can control the same pins using different methods). The first program can coordinate with the second two using interrupts. Hopefully everything fits within the 32 instruction limit. Calibration is another story, but it looks to me like one program each for up, up-down, and up-down-up will be necessary.
+Separate runup with a faster clock necessitates a better comparator to more accurately detect zero crossings. Reference mismatch will also play a larger role if pulse-stretching (3456A style rundown) is used.
+
+16.07.2024
+Tried moving rundown to a separate state machine, but ran into problems: not sure if controlling the same pins with different state machines is possible. Might not exactly be worth it, so will have to have rundown in the same state machine as runup.
+
+17.07.2024
+Bodged OPA2140 integrator to TMT base board and fixed integrator drift problem. Tried a potentiometer for compensation (10kΩ pot in series with 1kΩ resistor), optimum point to minimize initial spike and ringing was around 4kΩ. Changed residue ADC scaler gain (100kΩ/24kΩ/15kΩ) to accept ±10V input swing. Reduced residue count to around 770. Added compensation capacitor to scaler to prevent ringing because of sudden load. Noise reduced to a few residue counts, but resolution is still at around 9μV. Tried simpler calibration scheme involving one runup up and one runup down.
+
+18.07.2024
+I established that in case of rundown, the full scale of the residue ADC should be a unit of PWM counts, in my case 1/8. So to calibrate the residue ADC, the references should be turned on for 1/8 PWM cycle time. However, since my rundown algorithm is imperfect and has an offset, the residue difference is either 2/8 or 1/8. 
+
+19.07.2024
+Moved the instructions in the dither code around to achieve better characteristics. Now it's at 50/50 +REF and -REF, which means more predictable start range centered around zero. Modified rundown code to make it have consistent behaviour. Changed ADC from MCP3202 to MCP3201 with easier driving requirements. Extremely frustrating problems with the new ADC - the state machine responsible for talking to it seems to have developed a mind of its own and fills up FIFO regardless of if int 0 is called or not (which should theoretically not happen since it just has to wait for that interrupt anyway). And sometimes it also runs four or five or six times in a row. Turning off interrupts does not stop it. Using pio_sm_clear_fifos() seems to be causing it, but that would imply that the residue ADC code just runs to fill up the FIFO (and more!) which should not happen.
+
+21.07.2024
+After spending three days breaking my head over this problem, I decided to ask about it in the official Raspberry Pi forums. Waiting for (a) response(s).
+Response: wait irq polarity works the same as a regular wait instruction, so wait 0 waits for a zero interrupt flag, and wait 1 waits for a 1 flag. The problem stems from the fact that wait 0, while not clearing the interrupt, waits for a zero, which is always true till the calibration sm asserts it. This explains why the interrupt runs continuously. The problem with wait 1 is that it immediately clears the interrupt. But there might be a workaround to this problem.
+Fixed the issue by adding 31 delay cycles after setting GPIO to correct state (to allow for settling) and 31 additional delays after the interrupt, plus one nop and 31 more delays to allow enough time for the residue ADC reading.
+
+23.07.2024
+There was a bug that was delaying the residue reading by one cycle, just like the problem I left off with in 2022/3. To solve it, I added a pio_sm_clear_fifos() in the get_counts function before each reading to clear the FIFOs of both the runup/down and residue state machines. Measuring the LM399 reference delivers around 10.3 million counts, with around 20 counts peak-to-peak noise. STDEV.S() in Excel for 1000 readings delivers 3.8 LSBrms.
+
+24.07.2024
+Implemented a test algorithm that has blanking periods before and after the active period - both references on, then one depending on integrator state, then both references off. This creates a period of time where the integrator is stable, and also sees a smaller load (between 0 and ±vref) and back, instead of between ±vref.
+Tried adding back slope amplifier, but inverting polarity causes problems with scaling amp being inverting. Changed from 1/8 - 7/8 to 1/16 - 15/16 runup. Increased scaling amp gain to 4.7. Resolution is now around 250nV. Added compensation capacitors to reference amplifiers, although that didn't make  much of a difference in noise (increased it by 0.5 LSBs?) RP2040 is now calculating the readings internally and outputting in volts.
