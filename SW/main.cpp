@@ -8,7 +8,7 @@
 #include "lib/i2c_slave.h"
 
 const float div = 40;
-uint32_t pwmCycles = 1500;
+uint32_t pwmCycles = 150000;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
@@ -151,8 +151,8 @@ void get_cal()
     uint32_t R1 = (countTwo - countOne);
     uint32_t R2 = (countTwo - countThree);
 
-    RUU = R1;
-    RUD = R2;
+    RUU = R2 * 1.0001; // R2;
+    RUD = R1 * 0.9999; // R1;
 
     gpio_put(LED, false);
 
@@ -163,7 +163,7 @@ void get_result()
     N1 = N2 = N3 = 0;
 
     // N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD)); // Complementary PWM runup
-    N1 = (runup_neg * (15*RUU)) - (runup_pos * (15*RUD));
+    N1 = (runup_neg * (14*RUU)) - (runup_pos * (14*RUD));
     N2 = (rundown_neg * RUU) - (rundown_pos * RUD);
     N3 = residue_after - residue_before;
 
@@ -249,8 +249,6 @@ int main()
     get_counts(pwmCycles);
     get_result();
 
-    // previousGndCounts = result;
-
     gndCounts = result;
 
     sleep_ms(100);
@@ -264,62 +262,28 @@ int main()
 
     sleep_ms(100);
 
+    setMuxState(MUX_IN);
+
     while(true)
     {
         // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
-        setMuxState(MUX_IN);
-        sleep_us(100);
-        get_counts(pwmCycles);
-        get_result();
+        if(regs.conversionStatus == 1)
+        {
+            get_counts(pwmCycles);
+            get_result();
 
-        inCounts = result;
+            inCounts = result;
 
-        // sleep_ms(10);
+            voltage = ((double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts)) * vrefAbs;
 
-        // setMuxState(MUX_GND);
-        // sleep_us(100);
-        // get_counts(750);
-        // get_result();
+            regs.output = voltage;
+            regs.conversionStatus = 0;
+        }
 
-        // gndCounts = result;
+        // printf("%g\n", voltage);
 
-        // finalGroundCounts = (gndCounts + previousGndCounts);
-
-        // voltage = ((double)(inCounts - finalGroundCounts)/(double)(rawCounts - finalGroundCounts)) * vrefAbs;
-
-        voltage = ((double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts)) * vrefAbs;
-
-        // printf("%lf\n", voltage);
-
-        // setMuxState(MUX_IN);
-        // sleep_ms(20);
-        // get_counts(pwmCycles);
-        // inCounts = (counts * RUU) - ((pwmCycles - counts) * RUD) + (residueAfter - residueBefore);
-
-        // double voltage = vrefAbs * (double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts);
-
-        // printf("%.17g\n", voltage);
-
-        // printf("%d, %d, %d, %.17g\n", gndCounts, rawCounts, inCounts, voltage);
-
-        // printf("%d, %d, %d, %d, %d, %d\n", counts, residueBefore, residueAfter, (residueAfter - residueBefore), RUU, RUD);
-
-        // printf("%d, %d, %d, %d, %d, %d, %d\n", counts, rundownUp, rundownDown, residueBefore, residueAfter, RUU, RUD);
-
-        // printf("%d, %d, %d, %d, %d, %d, %d, %d\n", runup_pos, runup_neg, rundown_pos, rundown_neg, residue_before, residue_after, RUU, RUD);
-
-        // printf("%d, %d, %d, %d\n", N1, N2, N3, result);
-
-        // printf("%d, %d, %d, %g\n", gndCounts, rawCounts, inCounts, voltage);
-
-        // printf("%d, %d, %d, %d, %d, %g\n", gndCounts, previousGndCounts, rawCounts, inCounts, finalGroundCounts, voltage);
-
-        printf("%g\n", voltage);
-
-        // previousGndCounts = gndCounts;
-
-        sleep_ms(100);
+        // sleep_ms(100);
 
     }
     

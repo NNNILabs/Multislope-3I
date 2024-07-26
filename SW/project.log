@@ -86,3 +86,6 @@ There was a bug that was delaying the residue reading by one cycle, just like th
 24.07.2024
 Implemented a test algorithm that has blanking periods before and after the active period - both references on, then one depending on integrator state, then both references off. This creates a period of time where the integrator is stable, and also sees a smaller load (between 0 and ±vref) and back, instead of between ±vref.
 Tried adding back slope amplifier, but inverting polarity causes problems with scaling amp being inverting. Changed from 1/8 - 7/8 to 1/16 - 15/16 runup. Increased scaling amp gain to 4.7. Resolution is now around 250nV. Added compensation capacitors to reference amplifiers, although that didn't make  much of a difference in noise (increased it by 0.5 LSBs?) RP2040 is now calculating the readings internally and outputting in volts.
+
+26.06.2024
+INL tests resulted in an interesting sawtooth pattern (between 0 and -100ppm), indicative of an issue with the residue constants.

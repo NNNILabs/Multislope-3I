@@ -1,5 +1,7 @@
 .program ms
 
+; Complementary PWM runup
+
 ; high:
 ;     jmp X--   switch       [27]
 ; entry:

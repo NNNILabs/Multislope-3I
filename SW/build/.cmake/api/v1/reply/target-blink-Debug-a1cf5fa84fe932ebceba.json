@@ -56,12 +56,6 @@
 				"parent" : 3
 			},
 			{
-				"command" : 3,
-				"file" : 1,
-				"line" : 75,
-				"parent" : 3
-			},
-			{
 				"command" : 4,
 				"file" : 0,
 				"line" : 36,
@@ -71,7 +65,13 @@
 				"command" : 3,
 				"file" : 2,
 				"line" : 45,
-				"parent" : 6
+				"parent" : 5
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 75,
+				"parent" : 3
 			},
 			{
 				"command" : 6,
@@ -89,7 +89,7 @@
 				"command" : 7,
 				"file" : 2,
 				"line" : 50,
-				"parent" : 6
+				"parent" : 5
 			}
 		]
 	},
@@ -1441,12 +1441,12 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 5,
-			"id" : "slower_boot2_padded_checksummed_asm::@6890427a1f51a3e7e1df"
+			"backtrace" : 6,
+			"id" : "blink_ms_pio_h::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 7,
-			"id" : "blink_ms_pio_h::@6890427a1f51a3e7e1df"
+			"id" : "slower_boot2_padded_checksummed_asm::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "blink::@6890427a1f51a3e7e1df",

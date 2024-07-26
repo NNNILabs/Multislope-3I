@@ -18,8 +18,8 @@
 #define I2C0_PERIPHERAL_ADDR 0x2B
 
 // GPIO pins to use for I2C
-#define GPIO_SDA0 8
-#define GPIO_SCK0 9
+#define GPIO_SDA0 16
+#define GPIO_SCK0 17
 
 enum
 {
