@@ -84,8 +84,20 @@ Fixed the issue by adding 31 delay cycles after setting GPIO to correct state (t
 There was a bug that was delaying the residue reading by one cycle, just like the problem I left off with in 2022/3. To solve it, I added a pio_sm_clear_fifos() in the get_counts function before each reading to clear the FIFOs of both the runup/down and residue state machines. Measuring the LM399 reference delivers around 10.3 million counts, with around 20 counts peak-to-peak noise. STDEV.S() in Excel for 1000 readings delivers 3.8 LSBrms.
 
 24.07.2024
-Implemented a test algorithm that has blanking periods before and after the active period - both references on, then one depending on integrator state, then both references off. This creates a period of time where the integrator is stable, and also sees a smaller load (between 0 and ±vref) and back, instead of between ±vref.
+Implemented a test algorithm that has blanking periods before and after the active period - both references on, then one depending on integrator state, then both references off. This creates a period of time where the integrator is stable, and also sees a smaller load (between 0 and ±vref and back), instead of between ±vref.
 Tried adding back slope amplifier, but inverting polarity causes problems with scaling amp being inverting. Changed from 1/8 - 7/8 to 1/16 - 15/16 runup. Increased scaling amp gain to 4.7. Resolution is now around 250nV. Added compensation capacitors to reference amplifiers, although that didn't make  much of a difference in noise (increased it by 0.5 LSBs?) RP2040 is now calculating the readings internally and outputting in volts.
 
 26.06.2024
-INL tests resulted in an interesting sawtooth pattern (between 0 and -100ppm), indicative of an issue with the residue constants.
+INL tests resulted in an interesting sawtooth pattern (between 0 and -100ppm), indicative of an issue with the residue constants. Turns out it was a math error while calculating runup counts.
+Complementary PWM formula: N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD))
+Jaromir runup formula    : N1 = (runup_neg * (14*RUU)) - (runup_pos * (14*RUD))
+
+09.08.2024
+RZ PWM is being investigated.
+
+11.08.2024
+RZ PWM, as currently implemented, takes up too many instructions. RMS noise of CPWM is ~2.8μV, and J Runup is ~1.8μV, confirmed by a few more runs (3 runs each type).
+
+13.08.2024
+RZ PWM definitely needs a Pico 2 (RP2350X), residue can be pushed to another state machine.
+New hypothesis for the large INL error with 100 NPLC integration using Jaromir runup. The fixed part at the start of a runup cycle, where both references are on at the same time, injects a small amount of charge into the integrator since the ±references are not perfectly matched. This charge accumulates over time and is not accounted for in the simple runup calculations as implemented currently. RZ PWM would solve this issue, hypothesis yet to be tested.

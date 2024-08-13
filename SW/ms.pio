@@ -3,21 +3,19 @@
 ; Complementary PWM runup
 
 ; high:
-;     jmp X--   switch       [27]
+;     jmp X--   switch       [25] ;[27]
 ; entry:
 ;     set pins  0b000
 ;     mov X     !NULL
 ;     out Y     32           [31]
 ;     irq       0            [31]
 ; start:
-;     set pins  0b101
+;     set pins  0b101        [2]
 ;     jmp pin   high      
-;     set pins  0b110        [27]
+;     set pins  0b110        [25] ;[27]
 ; switch:
 ;     set pins  0b110
 ;     jmp Y--   start
-;     set pins  0b000
-;     in  X     32
 
 ; Jaromir runup
 
@@ -36,10 +34,30 @@ start:
 switch:
     set pins  0b100
     jmp Y--   start
+
+; RZ PWM (there's no way this is going to fit lol, no point trying to break my head over it)
+ 
+; high:
+;     nop                    [23]
+;     set pins  0b100
+;     jmp X--   end
+; entry:
+;     set pins  0b100
+;     mov X     !NULL
+;     out Y     32           [31]
+;     irq       0            [31]
+; start:
+;     set pins  0b101
+;     jmp pin   high
+;     set pins  0b100        [1]
+;     set pins  0b110        [23]
+; end:
+;     set pins  0b110        [1]
+;     set pins  0b100
+;     jmp Y--   start
+
     set pins  0b000
     in  X     32
-
-; irq wait  1 ; didn't work out at all
 
     set pins  0b001
 rundown_high:
@@ -97,6 +115,50 @@ void ms_program_init(PIO pio, uint sm, uint offset, uint pin, uint input, float 
     sm_config_set_clkdiv(&c, div);
 
     // Load configuration and jump to start of the program
+    pio_sm_init(pio, sm, offset, &c);
+}
+
+%}
+
+.program residue
+.side_set 2
+
+.wrap_target
+    wait 1     irq 0       side 0b10 [7]
+    set  X     14          side 0b00 [7]
+loop:
+    nop                    side 0b01 [1]
+    ; nop                    side 0b00
+    in   pins  1           side 0b00
+    jmp  X--   loop        side 0b00
+.wrap 
+
+% c-sdk {
+
+// Helper function (for use in C program) to initialize this PIO program
+void residue_program_init(PIO pio, uint sm, uint offset, uint pin, float div) {
+
+    pio_sm_config c = residue_program_get_default_config(offset);
+    
+    pio_gpio_init(pio, pin);
+    // pio_gpio_init(pio, pin + 1);
+    pio_gpio_init(pio, pin + 2);
+    pio_gpio_init(pio, pin + 3);
+
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, false);
+    // pio_sm_set_consecutive_pindirs(pio, sm, pin + 1, 1,true);  
+    pio_sm_set_consecutive_pindirs(pio, sm, pin + 2, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, pin + 3, 1, true);
+
+    // sm_config_set_out_pins(&c, pin + 1, 1);
+    sm_config_set_in_pins(&c, pin);
+    sm_config_set_sideset_pins(&c, pin + 2);
+
+    // sm_config_set_out_shift(&c, false, true, 15);
+    sm_config_set_in_shift(&c, false, true, 15);
+
+    sm_config_set_clkdiv(&c, div);
+
     pio_sm_init(pio, sm, offset, &c);
 }
 
@@ -162,50 +224,6 @@ void calibration_program_init(PIO pio, uint sm, uint offset, uint pin, uint inpu
     sm_config_set_clkdiv(&c, div);
 
     // Load configuration and jump to start of the program
-    pio_sm_init(pio, sm, offset, &c);
-}
-
-%}
-
-.program residue
-.side_set 2
-
-.wrap_target
-    wait 1     irq 0       side 0b10 [7]
-    set  X     14          side 0b00 [7]
-loop:
-    nop                    side 0b01 [1]
-    ; nop                    side 0b00
-    in   pins  1           side 0b00
-    jmp  X--   loop        side 0b00
-.wrap 
-
-% c-sdk {
-
-// Helper function (for use in C program) to initialize this PIO program
-void residue_program_init(PIO pio, uint sm, uint offset, uint pin, float div) {
-
-    pio_sm_config c = residue_program_get_default_config(offset);
-    
-    pio_gpio_init(pio, pin);
-    // pio_gpio_init(pio, pin + 1);
-    pio_gpio_init(pio, pin + 2);
-    pio_gpio_init(pio, pin + 3);
-
-    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, false);
-    // pio_sm_set_consecutive_pindirs(pio, sm, pin + 1, 1,true);  
-    pio_sm_set_consecutive_pindirs(pio, sm, pin + 2, 1, true);
-    pio_sm_set_consecutive_pindirs(pio, sm, pin + 3, 1, true);
-
-    // sm_config_set_out_pins(&c, pin + 1, 1);
-    sm_config_set_in_pins(&c, pin);
-    sm_config_set_sideset_pins(&c, pin + 2);
-
-    // sm_config_set_out_shift(&c, false, true, 15);
-    sm_config_set_in_shift(&c, false, true, 15);
-
-    sm_config_set_clkdiv(&c, div);
-
     pio_sm_init(pio, sm, offset, &c);
 }
 

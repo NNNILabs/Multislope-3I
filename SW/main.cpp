@@ -8,7 +8,7 @@
 #include "lib/i2c_slave.h"
 
 const float div = 40;
-uint32_t pwmCycles = 150000;
+uint32_t pwmCycles = 1500;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
@@ -151,8 +151,8 @@ void get_cal()
     uint32_t R1 = (countTwo - countOne);
     uint32_t R2 = (countTwo - countThree);
 
-    RUU = R2 * 1.0001; // R2;
-    RUD = R1 * 0.9999; // R1;
+    RUU = R2; // * 1.0001; // R2;
+    RUD = R1; // * 0.9999; // R1;
 
     gpio_put(LED, false);
 
@@ -163,7 +163,7 @@ void get_result()
     N1 = N2 = N3 = 0;
 
     // N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD)); // Complementary PWM runup
-    N1 = (runup_neg * (14*RUU)) - (runup_pos * (14*RUD));
+    N1 = (runup_neg * (14*RUU)) - (runup_pos * (14*RUD)); // Jaromir runup
     N2 = (rundown_neg * RUU) - (rundown_pos * RUD);
     N3 = residue_after - residue_before;
 
@@ -268,22 +268,33 @@ int main()
     {
         // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
-        if(regs.conversionStatus == 1)
-        {
-            get_counts(pwmCycles);
-            get_result();
+        // get_counts(pwmCycles);
+        // get_result();
 
-            inCounts = result;
+        // inCounts = result;
 
-            voltage = ((double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts)) * vrefAbs;
+        // voltage = ((double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts)) * vrefAbs;
 
-            regs.output = voltage;
-            regs.conversionStatus = 0;
-        }
+        while(!regs.conversionStatus);
+        sleep_ms(1);
+        get_counts(pwmCycles);
+        get_result();
+
+        inCounts = result;
+
+        voltage = ((double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts)) * vrefAbs;
+
+        regs.output = voltage;
+        sleep_ms(1);
+        regs.conversionStatus = 0;
 
         // printf("%g\n", voltage);
 
-        // sleep_ms(100);
+        // printf("%d, %d, %d, %g\n", gndCounts, rawCounts, inCounts, voltage);
+
+        // printf("%d, %d, %d\n", N1, N2, N3);
+
+        // sleep_ms(500);
 
     }
     
