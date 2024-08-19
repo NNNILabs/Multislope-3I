@@ -1,4 +1,6 @@
 
+There are no discarded input sections
+
 Memory Configuration
 
 Name             Origin             Length             Attributes
@@ -7,7 +9,7 @@ SRAM             0x20041f00         0x000000fc         xr
 
 Linker script and memory map
 
-                0x20041f00                . = ORIGIN (SRAM)
+                0x20041f00                        . = ORIGIN (SRAM)
 
 .text           0x20041f00       0xf0
  *(.entry)
@@ -18,14 +20,14 @@ Linker script and memory map
                 0x20041fcc                literals
 LOAD pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
 START GROUP
-LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp\libgcc.a
-LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg.a
-LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc.a
+LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a
+LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libg.a
+LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc.a
 END GROUP
 START GROUP
-LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp\libgcc.a
-LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc.a
-LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libnosys.a
+LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a
+LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc.a
+LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libnosys.a
 END GROUP
 OUTPUT(pico-sdk\src\rp2_common\boot_stage2\bs2_default.elf elf32-littlearm)
 LOAD linker stubs
@@ -62,11 +64,16 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000000       0x22 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
 
-.debug_line     0x00000000      0x1cb
- .debug_line    0x00000000      0x1cb pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+.debug_line     0x00000000       0xed
+ .debug_line    0x00000000       0xed pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
 
-.debug_info     0x00000000       0x26
- .debug_info    0x00000000       0x26 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+.debug_line_str
+                0x00000000      0x111
+ .debug_line_str
+                0x00000000      0x111 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+
+.debug_info     0x00000000       0x25
+ .debug_info    0x00000000       0x25 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
 
 .debug_abbrev   0x00000000       0x14
  .debug_abbrev  0x00000000       0x14 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
@@ -75,5 +82,5 @@ LOAD linker stubs
  .debug_aranges
                 0x00000000       0x20 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
 
-.debug_str      0x00000000       0xa7
- .debug_str     0x00000000       0xa7 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+.debug_str      0x00000000       0x93
+ .debug_str     0x00000000       0x93 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj

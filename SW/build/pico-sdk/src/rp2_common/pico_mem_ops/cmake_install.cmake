@@ -1,4 +1,4 @@
-# Install script for directory: C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_mem_ops
+# Install script for directory: C:/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-objdump.exe")
 endif()
 

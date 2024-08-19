@@ -19,6 +19,13 @@ const uint8_t PWMB = 4;                // need to be next to each other
 const uint8_t MEAS = 5;
 const uint8_t COMP = 6;
 
+// Pinout notes for TMT multislope
+// TMUX1134:
+// S1: RESET (somehow)
+// S2: -VREF
+// S3: +VREF
+// S4: VIN
+
 const double vrefAbs = 6.85793; // Measured using K2000
 
 double voltage = 0.0;
@@ -267,13 +274,6 @@ int main()
     while(true)
     {
         // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
-
-        // get_counts(pwmCycles);
-        // get_result();
-
-        // inCounts = result;
-
-        // voltage = ((double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts)) * vrefAbs;
 
         while(!regs.conversionStatus);
         sleep_ms(1);
