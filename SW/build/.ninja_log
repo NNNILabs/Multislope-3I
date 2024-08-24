@@ -1,13 +1,13 @@
 # ninja log v6
 82	169	7458058260082438	slower_boot2.elf	43e6733ead7fa710
 1422	1600	7458058273484614	CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/class/hid/hid_device.c.obj	1dcefc82c2bc1e37
-8	900	7458068252116914	build.ninja	36c8ee5a000e1688
+22	1047	7461337848913782	build.ninja	36c8ee5a000e1688
 1049	1544	7458058269751221	CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj	85068ce0630b9d2a
 40	59	7458058259832205	ms.pio.h	e29fc83baf6b012f
 854	1345	7458058267809457	CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_math.c.obj	cdbd002b681087dd
 546	990	7458058264766694	CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_util/queue.c.obj	c29ad3ef788bb95e
 681	773	7458058266077880	CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_divider/divider.S.obj	a4af6245d32da429
-23	228	7458060715438525	CMakeFiles/blink.dir/main.cpp.obj	1d0cc778f47bc937
+52	308	7459577820898210	CMakeFiles/blink.dir/main.cpp.obj	1d0cc778f47bc937
 1540	1776	7458058274665685	CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj	8b33702727169a34
 170	188	7458058261113370	slower_boot2.bin	578a00b3777cc1c4
 40	59	7458058259832205	C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/ms.pio.h	e29fc83baf6b012f
@@ -83,13 +83,11 @@
 1680	1875	7458058276066964	CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj	2fab8952932a257c
 1601	1880	7458058275276240	CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pio/pio.c.obj	82df3b64b53396a4
 1578	1884	7458058275046030	CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/common/tusb_fifo.c.obj	37e8046f32f1c7c6
-228	448	7458060717490392	blink.elf	f21b4cf070afd8b7
-449	471	7458060719702399	CMakeFiles/FinalMessage	65ac9a04b5b48ce
-449	471	7458060719702399	C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/FinalMessage	65ac9a04b5b48ce
-19	853	7458068252116914	build.ninja	36c8ee5a000e1688
-36	239	7458068252837568	CMakeFiles/blink.dir/main.cpp.obj	1d0cc778f47bc937
-240	476	7458068254869417	blink.elf	f21b4cf070afd8b7
-477	498	7458068257241576	CMakeFiles/FinalMessage	65ac9a04b5b48ce
-477	498	7458068257241576	C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/FinalMessage	65ac9a04b5b48ce
-27	50	7458068330841287	CMakeFiles/FinalMessage	65ac9a04b5b48ce
-27	50	7458068330841287	C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/FinalMessage	65ac9a04b5b48ce
+309	602	7459577823480562	blink.elf	f21b4cf070afd8b7
+602	628	7459577826393202	CMakeFiles/FinalMessage	65ac9a04b5b48ce
+602	628	7459577826393202	C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/FinalMessage	65ac9a04b5b48ce
+25	998	7461337848913782	build.ninja	36c8ee5a000e1688
+34	59	7461337849604407	CMakeFiles/FinalMessage	65ac9a04b5b48ce
+34	59	7461337849604407	C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/FinalMessage	65ac9a04b5b48ce
+23	45	7461337928536047	CMakeFiles/FinalMessage	65ac9a04b5b48ce
+23	45	7461337928536047	C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/FinalMessage	65ac9a04b5b48ce

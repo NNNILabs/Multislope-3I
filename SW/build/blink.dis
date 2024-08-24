@@ -43,9 +43,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  19 .debug_rnglists 0000196e  00000000  00000000  00055960  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_line   0001b1a8  00000000  00000000  000572ce  2**0
+ 20 .debug_line   0001b1aa  00000000  00000000  000572ce  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_str    00008858  00000000  00000000  00072476  2**0
+ 21 .debug_str    00008858  00000000  00000000  00072478  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  22 .debug_frame  00003778  00000000  00000000  0007acd0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -16517,7 +16517,7 @@ Disassembly of section .data:
 20000b04:	00000604                                ....
 
 20000b08 <pwmCycles>:
-20000b08:	000005dc                                ....
+20000b08:	00003a98                                .:..
 
 20000b0c <striped_spin_lock_num>:
 20000b0c:	00000010                                ....

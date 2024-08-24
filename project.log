@@ -102,6 +102,19 @@ RZ PWM, as currently implemented, takes up too many instructions. RMS noise of C
 RZ PWM definitely needs a Pico 2 (RP2350X), residue can be pushed to another state machine.
 New hypothesis for the large INL error with 100 NPLC integration using Jaromir runup. The fixed part at the start of a runup cycle, where both references are on at the same time, injects a small amount of charge into the integrator since the ±references are not perfectly matched. This charge accumulates over time and is not accounted for in the simple runup calculations as implemented currently. RZ PWM would solve this issue, hypothesis yet to be tested.
 
-14.08.2024
+19.08.2024
 [Switched from Pico C/C++ SDK (Windows installer) to Raspberry Pi Pico VSCode extension]
 Tested Mark's theory that the spikes in the INL run come from intereference with WiFi (and possibly Bluetooth) were tested, with mixed results - the spikes still occured and could not be explained.
+
+20.08.2024
+Jaromir pointed out that the spikes in the INL runs could be because of conducted EMI or ground loops. He suggested doing a run with shorted inputs, which didn't have the spikes on it. When connecting DAC ground (driven) to the shorted inputs of the multislope, the spikes re-appeared. Given the nature of the spikes, I suspect it might be the core 2 blinking LED causing the problems. I was correct. I also discovered that having the USB cable plugged in created some kind of ground loop that worsened the problem. Lessons learned.
+
+21.08.2024
+Performed a Takovksy-style noise plot of NPLC integration time vs RMS noise. First run at 1 PLC is taken as the reference, and RMS(Sample 1)/SQRT(NPLC) is used to plot the ideal line, which is compared to the data. The measured values correspond with the ideal curve closely up to 10 NPLC, after which there is a divergence. 
+Two-phase auto zero was performed on all runs to prevent excessive drift.
+
+23.08.2024 
+Moved project.log to main folder.
+'Ported' code to RP2350.
+TMT multislope construction mostly finished and basic functionality successfully tested.
+

@@ -1688,9 +1688,9 @@ Discarded input sections
                 0x00000000       0x3e CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
  .data.i2c1_inst
                 0x00000000        0x8 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
- .text          0x00000000        0x0 C:\Users\vivek\AppData\Local\Temp\ccgS5Nuj.o
- .data          0x00000000        0x0 C:\Users\vivek\AppData\Local\Temp\ccgS5Nuj.o
- .bss           0x00000000        0x0 C:\Users\vivek\AppData\Local\Temp\ccgS5Nuj.o
+ .text          0x00000000        0x0 C:\Users\vivek\AppData\Local\Temp\cc65dDN1.o
+ .data          0x00000000        0x0 C:\Users\vivek\AppData\Local\Temp\cc65dDN1.o
+ .bss           0x00000000        0x0 C:\Users\vivek\AppData\Local\Temp\cc65dDN1.o
  .data          0x00000000        0x0 C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libg.a(libc_a-calloc.o)
@@ -2009,7 +2009,7 @@ LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/1
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\vivek\AppData\Local\Temp\ccgS5Nuj.o
+ .boot2         0x10000000      0x100 C:\Users\vivek\AppData\Local\Temp\cc65dDN1.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -3753,7 +3753,7 @@ LOAD CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hard
 LOAD CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_rand/rand.c.obj
 LOAD CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_multicore/multicore.c.obj
 LOAD CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
-LOAD C:\Users\vivek\AppData\Local\Temp\ccgS5Nuj.o
+LOAD C:\Users\vivek\AppData\Local\Temp\cc65dDN1.o
 LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libstdc++.a
 LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -3878,7 +3878,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000852       0x2c CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
  .ARM.attributes
-                0x0000087e       0x22 C:\Users\vivek\AppData\Local\Temp\ccgS5Nuj.o
+                0x0000087e       0x22 C:\Users\vivek\AppData\Local\Temp\cc65dDN1.o
  .ARM.attributes
                 0x000008a0       0x1e C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
@@ -4309,56 +4309,56 @@ LOAD linker stubs
  .debug_rnglists
                 0x000018e1       0x8d CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
 
-.debug_line     0x00000000    0x1b1a8
- .debug_line    0x00000000     0x19a1 CMakeFiles/blink.dir/main.cpp.obj
- .debug_line    0x000019a1      0x5d9 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdlib/stdlib.c.obj
- .debug_line    0x00001f7a      0xc25 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_line    0x00002b9f      0x299 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
- .debug_line    0x00002e38      0x4a0 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
- .debug_line    0x000032d8      0x48a CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_line    0x00003762     0x1088 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_line    0x000047ea      0x24a CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
- .debug_line    0x00004a34     0x10fa CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
- .debug_line    0x00005b2e      0x2dc CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_sync/critical_section.c.obj
- .debug_line    0x00005e0a     0x19ec CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
- .debug_line    0x000077f6      0xc2f CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_line    0x00008425      0x82d CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
- .debug_line    0x00008c52      0xa41 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_line    0x00009693      0x527 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_line    0x00009bba      0x470 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_line    0x0000a02a      0x2b9 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_line    0x0000a2e3      0xb30 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_line    0x0000ae13     0x12c0 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_line    0x0000c0d3      0x11a CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_line    0x0000c1ed      0x281 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_line    0x0000c46e      0x2a9 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
- .debug_line    0x0000c717      0x3fa CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_line    0x0000cb11      0x3c4 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_line    0x0000ced5      0x66c CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_line    0x0000d541       0x61 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_line    0x0000d5a2      0x3b2 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_line    0x0000d954      0x3b9 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_line    0x0000dd0d      0x198 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_line    0x0000dea5      0x3be CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_malloc/pico_malloc.c.obj
- .debug_line    0x0000e263       0x94 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_line    0x0000e2f7       0xa5 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_line    0x0000e39c      0x1dd CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_line    0x0000e579      0xf04 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_line    0x0000f47d      0x4c8 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
- .debug_line    0x0000f945      0xde0 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .debug_line    0x00010725      0x34c CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .debug_line    0x00010a71      0x3c6 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_line    0x00010e37      0x8cf CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_flash/flash.c.obj
- .debug_line    0x00011706      0xf2d CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_line    0x00012633      0xad7 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_line    0x0001310a     0x1f0e CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/device/usbd.c.obj
- .debug_line    0x00015018      0x545 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_line    0x0001555d      0xd95 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_line    0x000162f2      0xc10 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/tusb.c.obj
- .debug_line    0x00016f02     0x17df CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_line    0x000186e1      0xf4f CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pio/pio.c.obj
- .debug_line    0x00019630      0xf0e CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_multicore/multicore.c.obj
- .debug_line    0x0001a53e      0xc6a CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
+.debug_line     0x00000000    0x1b1aa
+ .debug_line    0x00000000     0x19a3 CMakeFiles/blink.dir/main.cpp.obj
+ .debug_line    0x000019a3      0x5d9 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdlib/stdlib.c.obj
+ .debug_line    0x00001f7c      0xc25 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_line    0x00002ba1      0x299 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_platform/platform.c.obj
+ .debug_line    0x00002e3a      0x4a0 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_line    0x000032da      0x48a CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_line    0x00003764     0x1088 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_line    0x000047ec      0x24a CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_sync/lock_core.c.obj
+ .debug_line    0x00004a36     0x10fa CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_sync/mutex.c.obj
+ .debug_line    0x00005b30      0x2dc CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_sync/critical_section.c.obj
+ .debug_line    0x00005e0c     0x19ec CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+ .debug_line    0x000077f8      0xc2f CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_line    0x00008427      0x82d CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/common/pico_util/pheap.c.obj
+ .debug_line    0x00008c54      0xa41 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_line    0x00009695      0x527 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_line    0x00009bbc      0x470 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_line    0x0000a02c      0x2b9 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_line    0x0000a2e5      0xb30 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_line    0x0000ae15     0x12c0 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_line    0x0000c0d5      0x11a CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_line    0x0000c1ef      0x281 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_line    0x0000c470      0x2a9 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_divider/divider.S.obj
+ .debug_line    0x0000c719      0x3fa CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_line    0x0000cb13      0x3c4 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_line    0x0000ced7      0x66c CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_line    0x0000d543       0x61 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_line    0x0000d5a4      0x3b2 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_line    0x0000d956      0x3b9 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_line    0x0000dd0f      0x198 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_line    0x0000dea7      0x3be CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ .debug_line    0x0000e265       0x94 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_line    0x0000e2f9       0xa5 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_line    0x0000e39e      0x1dd CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_line    0x0000e57b      0xf04 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_line    0x0000f47f      0x4c8 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+ .debug_line    0x0000f947      0xde0 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .debug_line    0x00010727      0x34c CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .debug_line    0x00010a73      0x3c6 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_line    0x00010e39      0x8cf CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_line    0x00011708      0xf2d CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_line    0x00012635      0xad7 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_line    0x0001310c     0x1f0e CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/device/usbd.c.obj
+ .debug_line    0x0001501a      0x545 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_line    0x0001555f      0xd95 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_line    0x000162f4      0xc10 CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/tusb.c.obj
+ .debug_line    0x00016f04     0x17df CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_line    0x000186e3      0xf4f CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pio/pio.c.obj
+ .debug_line    0x00019632      0xf0e CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_multicore/multicore.c.obj
+ .debug_line    0x0001a540      0xc6a CMakeFiles/blink.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
 
 .debug_str      0x00000000     0x8858
  .debug_str     0x00000000     0x8858 CMakeFiles/blink.dir/main.cpp.obj
