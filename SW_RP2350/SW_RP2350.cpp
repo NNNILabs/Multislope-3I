@@ -3,21 +3,29 @@
 #include "hardware/gpio.h"
 #include "hardware/pio.h"
 #include "hardware/irq.h"
+#include "hardware/clocks.h"
+#include "hardware/xosc.h"
 
 #include "ms.pio.h"
 #include "lib/i2c_slave.h"
 
 const float div = 40;
-uint32_t pwmCycles = 15000;
+uint32_t pwmCycles = 1500;
 
-const uint8_t MUX_A0 = 0;
-const uint8_t MUX_A1 = 2;
-const uint8_t MUX_A2 = 1;
+// MCP3202 ADC
+const uint8_t MISO = 3;
+const uint8_t CLK  = 4;
+const uint8_t CS   = 5;
 
-const uint8_t PWMA = 3;                // need to be next to each other
-const uint8_t PWMB = 4;                // need to be next to each other
-const uint8_t MEAS = 5;
-const uint8_t COMP = 6;
+const uint8_t LED = 25;
+
+const uint8_t MUX_A0 = 26;
+const uint8_t MUX_A1 = 22;
+
+const uint8_t COMP = 1;
+const uint8_t PWMA = 18;                // need to be next to each other
+const uint8_t PWMB = 19;                // need to be next to each other
+const uint8_t MEAS = 20;
 
 // Pinout notes for TMT multislope
 // TMUX1134:
@@ -26,7 +34,7 @@ const uint8_t COMP = 6;
 // S3: +VREF
 // S4: VIN
 
-const double vrefAbs = 6.85793; // Measured using K2000
+const double vrefAbs = 6.91740; // Measured using K2000
 
 double voltage = 0.0;
 
@@ -65,22 +73,17 @@ int32_t result = 0;
 uint32_t newInput = 0;
 char inputBuffer[32] = {0};
 
-// MCP3202 ADC
-#define CS   13
-#define CLK  12
-#define MOSI 11
-#define MISO 10
-
-#define LED  25
-
 enum muxState
 {
     MUX_IN, 
     MUX_RAW,
     MUX_GND,
-    MUX_POSREF,  // Implement if input resistor is > 10kΩ
-    MUX_NEGREF   // Same as above
 };
+
+// S1: IN
+// S2: AGND
+// S3: -
+// S4: RAW
 
 void setMuxState(enum muxState inputState)
 {
@@ -89,19 +92,16 @@ void setMuxState(enum muxState inputState)
         case MUX_IN:
             gpio_put(MUX_A0, false);
             gpio_put(MUX_A1, false);
-            gpio_put(MUX_A2, false);
             break;
 
-        case MUX_RAW:
+        case MUX_GND:
             gpio_put(MUX_A0, true);
             gpio_put(MUX_A1, false);
-            gpio_put(MUX_A2, false);
             break;
         
-        case MUX_GND:
-            gpio_put(MUX_A0, false);
-            gpio_put(MUX_A1, false);
-            gpio_put(MUX_A2, true);
+        case MUX_RAW:
+            gpio_put(MUX_A0, true);
+            gpio_put(MUX_A1, true);
             break;
     }
 }
@@ -109,6 +109,18 @@ void setMuxState(enum muxState inputState)
 void get_counts(uint32_t countNum)
 {
     gpio_put(LED, true);
+
+    residueBefore = 0;
+    residueAfter = 0;
+    counts = 0;
+    rundownUp = 0;
+    rundownDown = 0;
+    runup_pos = 0;
+    runup_neg = 0;
+    rundown_pos = 0;
+    rundown_neg = 0;
+    residue_before = 0;
+    residue_after = 0;
 
     pio_sm_clear_fifos(pio, multislopeSM);
     pio_sm_clear_fifos(pio, residueSM);
@@ -132,6 +144,8 @@ void get_counts(uint32_t countNum)
     residue_before = residueBefore & 0xFFF;
     residue_after = residueAfter & 0xFFF;
 
+    // printf("%d, %d, %d, %d, %d, %d, %d, %d\n", runup_pos, runup_neg, rundown_pos, rundown_neg, residue_before, residue_after, rundown_neg - rundown_pos, residue_after - residue_before);
+
     gpio_put(LED, false);
 }
 
@@ -148,9 +162,9 @@ void get_cal()
 
     pio_sm_put_blocking(pio, calibrationSM, 1);
 
-    countOne = pio_sm_get_blocking(pio, residueSM);
-    countTwo = pio_sm_get_blocking(pio, residueSM);
-    countThree = pio_sm_get_blocking(pio, residueSM);
+    countOne = pio_sm_get_blocking(pio, residueSM) & 0xFFF;
+    countTwo = pio_sm_get_blocking(pio, residueSM) & 0xFFF;
+    countThree = pio_sm_get_blocking(pio, residueSM) & 0xFFF;
 
     pio_sm_clear_fifos(pio, calibrationSM);
     pio_sm_clear_fifos(pio, residueSM);
@@ -163,24 +177,34 @@ void get_cal()
 
     gpio_put(LED, false);
 
+    printf("%d, %d, %d, %d, %d\n", countOne, countTwo, countThree, RUU, RUD);
+
 }
 
 void get_result()
 {
     N1 = N2 = N3 = 0;
 
-    // N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD)); // Complementary PWM runup
-    N1 = (runup_neg * (14*RUU)) - (runup_pos * (14*RUD)); // Jaromir runup
+    // Calculate runup counts:
+    N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD)); // Complementary PWM runup
+    // N1 = (runup_neg * (14*RUU)) - (runup_pos * (14*RUD)); // Jaromir runup
+    // N1 = (runup_neg * (13*RUU + 1*RUD)) - (runup_pos * (1*RUU + 13*RUD)); // RZ PWM runup
+
+    // Calculate fast rundown counts:
     N2 = (rundown_neg * RUU) - (rundown_pos * RUD);
+
+    // Calculate residue counts:
     N3 = residue_after - residue_before;
 
+    // Combinea all counts:
     result = N1 + N2 + N3;
 
 }
 
 int main() 
 {
-    set_sys_clock_khz(96000, true);  
+    xosc_disable();
+    set_sys_clock_khz(96000, true);
     stdio_init_all();
 
     i2c_init();
@@ -190,17 +214,11 @@ int main()
 
     gpio_init(MUX_A0);
     gpio_init(MUX_A1);
-    gpio_init(MUX_A2);
 
     gpio_set_dir(MUX_A0, GPIO_OUT);
     gpio_set_dir(MUX_A1, GPIO_OUT);
-    gpio_set_dir(MUX_A2, GPIO_OUT);
     
     sleep_us(10);
-
-    gpio_init(13);
-    gpio_set_dir(13, GPIO_OUT);
-    gpio_put(13, false);
 
     pio = pio0;
 
@@ -224,6 +242,7 @@ int main()
 
     // while(true)
     // {
+    //     newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
     //     get_cal();
     //     sleep_ms(500);
     //     printf("%d, %d\n", RUU, RUD);
@@ -269,13 +288,13 @@ int main()
 
     sleep_ms(100);
 
-    setMuxState(MUX_IN);
+    setMuxState(MUX_GND);
 
     while(true)
     {
-        // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
+        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
-        while(!regs.conversionStatus);
+        // while(!regs.conversionStatus);
 
         // setMuxState(MUX_GND);
 
@@ -295,17 +314,20 @@ int main()
 
         voltage = ((double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts)) * vrefAbs;
 
-        regs.output = voltage;
-        sleep_ms(1);
-        regs.conversionStatus = 0;
+        // regs.output = voltage;
+        // sleep_ms(1);
+        // regs.conversionStatus = 0;
 
-        // printf("%g\n", voltage);
+        printf("%g\n", voltage);
 
-        // printf("%d, %d, %d, %g\n", gndCounts, rawCounts, inCounts, voltage);
+        // printf("%d, %d, %d, %d, %d, %g\n", RUU, RUD, gndCounts, rawCounts, inCounts, voltage);
 
         // printf("%d, %d, %d\n", N1, N2, N3);
 
         // sleep_ms(500);
+
+        voltage = 0.0;
+        inCounts = 0;
 
     }
     

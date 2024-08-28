@@ -12,46 +12,45 @@
 // ms //
 // -- //
 
-#define ms_wrap_target 23
-#define ms_wrap 26
+#define ms_wrap_target 22
+#define ms_wrap 25
 #define ms_pio_version 1
 
 static const uint16_t ms_program_instructions[] = {
-    0xe005, //  0: set    pins, 5                    
-    0x1a49, //  1: jmp    x--, 9                 [26]
-    0xe000, //  2: set    pins, 0                    
-    0xa02b, //  3: mov    x, !null                   
-    0x7f40, //  4: out    y, 32                  [31]
-    0xdf00, //  5: irq    nowait 0               [31]
-    0xe007, //  6: set    pins, 7                    
-    0x00c0, //  7: jmp    pin, 0                     
-    0xfb06, //  8: set    pins, 6                [27]
-    0xe004, //  9: set    pins, 4                    
-    0x0086, // 10: jmp    y--, 6                     
-    0xe000, // 11: set    pins, 0                    
-    0x4020, // 12: in     x, 32                      
-    0xe001, // 13: set    pins, 1                    
-    0x004f, // 14: jmp    x--, 15                    
-    0x00ce, // 15: jmp    pin, 14                    
-    0x4020, // 16: in     x, 32                      
-    0xe002, // 17: set    pins, 2                    
-    0x00d4, // 18: jmp    pin, 20                    
-    0x0052, // 19: jmp    x--, 18                    
-    0xe000, // 20: set    pins, 0                    
-    0x5f20, // 21: in     x, 32                  [31]
-    0xdf00, // 22: irq    nowait 0               [31]
+    0x1948, //  0: jmp    x--, 8                 [25]
+    0xe000, //  1: set    pins, 0                    
+    0xa02b, //  2: mov    x, !null                   
+    0x7f40, //  3: out    y, 32                  [31]
+    0xdf00, //  4: irq    nowait 0               [31]
+    0xe205, //  5: set    pins, 5                [2] 
+    0x00c0, //  6: jmp    pin, 0                     
+    0xf906, //  7: set    pins, 6                [25]
+    0xe006, //  8: set    pins, 6                    
+    0x0085, //  9: jmp    y--, 5                     
+    0xe000, // 10: set    pins, 0                    
+    0x4020, // 11: in     x, 32                      
+    0xe001, // 12: set    pins, 1                    
+    0x004e, // 13: jmp    x--, 14                    
+    0x00cd, // 14: jmp    pin, 13                    
+    0x4020, // 15: in     x, 32                      
+    0xe002, // 16: set    pins, 2                    
+    0x00d3, // 17: jmp    pin, 19                    
+    0x0051, // 18: jmp    x--, 17                    
+    0xe000, // 19: set    pins, 0                    
+    0x5f20, // 20: in     x, 32                  [31]
+    0xdf00, // 21: irq    nowait 0               [31]
             //     .wrap_target
-    0xe001, // 23: set    pins, 1                    
-    0x00d8, // 24: jmp    pin, 24                    
-    0xe102, // 25: set    pins, 2                [1] 
-    0x00e2, // 26: jmp    !osre, 2                   
+    0xe001, // 22: set    pins, 1                    
+    0x00d7, // 23: jmp    pin, 23                    
+    0xe102, // 24: set    pins, 2                [1] 
+    0x00e1, // 25: jmp    !osre, 1                   
             //     .wrap
 };
 
 #if !PICO_NO_HARDWARE
 static const struct pio_program ms_program = {
     .instructions = ms_program_instructions,
-    .length = 27,
+    .length = 26,
     .origin = -1,
     .pio_version = 1,
 #if PICO_PIO_VERSION > 0
@@ -73,13 +72,15 @@ void ms_program_init(PIO pio, uint sm, uint offset, uint pin, uint input, float 
     // Allow PIO to control GPIO pin (as output)
     pio_gpio_init(pio, pin);
     pio_gpio_init(pio, pin+1);
-    pio_gpio_init(pio, pin_MEAS);      
+    pio_gpio_init(pio, pin_MEAS);
+    pio_gpio_init(pio, input);     
+    // Set the pin direction to output (in PIO)
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 3, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, input, 1, false);
     // set the pin for jump if pin high instruction
     sm_config_set_jmp_pin(&c, input); 
     // Connect pin to SET pin (control with 'set' instruction)
     sm_config_set_set_pins(&c, pin, 3);
-    // Set the pin direction to output (in PIO)
-    pio_sm_set_consecutive_pindirs(pio, sm, pin, 3, true);
     // Set auto push to ISR
     sm_config_set_in_shift(&c, false, true, 32);
     sm_config_set_out_shift(&c, false, true, 32);
@@ -131,17 +132,13 @@ static inline pio_sm_config residue_program_get_default_config(uint offset) {
 void residue_program_init(PIO pio, uint sm, uint offset, uint pin, float div) {
     pio_sm_config c = residue_program_get_default_config(offset);
     pio_gpio_init(pio, pin);
-    // pio_gpio_init(pio, pin + 1);
+    pio_gpio_init(pio, pin + 1);
     pio_gpio_init(pio, pin + 2);
-    pio_gpio_init(pio, pin + 3);
     pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, false);
-    // pio_sm_set_consecutive_pindirs(pio, sm, pin + 1, 1,true);  
+    pio_sm_set_consecutive_pindirs(pio, sm, pin + 1, 1, true);  
     pio_sm_set_consecutive_pindirs(pio, sm, pin + 2, 1, true);
-    pio_sm_set_consecutive_pindirs(pio, sm, pin + 3, 1, true);
-    // sm_config_set_out_pins(&c, pin + 1, 1);
     sm_config_set_in_pins(&c, pin);
-    sm_config_set_sideset_pins(&c, pin + 2);
-    // sm_config_set_out_shift(&c, false, true, 15);
+    sm_config_set_sideset_pins(&c, pin + 1); // initialize sideset LSB
     sm_config_set_in_shift(&c, false, true, 15);
     sm_config_set_clkdiv(&c, div);
     pio_sm_init(pio, sm, offset, &c);
@@ -204,7 +201,10 @@ void calibration_program_init(PIO pio, uint sm, uint offset, uint pin, uint inpu
     // Allow PIO to control GPIO pin (as output)
     pio_gpio_init(pio, pin);
     pio_gpio_init(pio, pin+1);
-    pio_gpio_init(pio, pin_MEAS);      
+    pio_gpio_init(pio, pin_MEAS);    
+    pio_gpio_init(pio, input);  
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 3, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, input, 1, false);
     // set the pin for jump if pin high instruction
     sm_config_set_jmp_pin(&c, input); 
     // Connect pin to SET pin (control with 'set' instruction)

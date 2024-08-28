@@ -1,39 +1,40 @@
 .program ms
+.pio_version 1
 
 ; Complementary PWM runup
 
-; high:
-;     jmp X--   switch       [25] ;[27]
-; entry:
-;     set pins  0b000
-;     mov X     !NULL
-;     out Y     32           [31]
-;     irq       0            [31]
-; start:
-;     set pins  0b101        [2]
-;     jmp pin   high      
-;     set pins  0b110        [25] ;[27]
-; switch:
-;     set pins  0b110
-;     jmp Y--   start
-
-; Jaromir runup
-
 high:
-    set pins  0b101
-    jmp X--   switch       [26]
+    jmp X--   switch       [25] ;[27]
 entry:
     set pins  0b000
     mov X     !NULL
     out Y     32           [31]
     irq       0            [31]
 start:
-    set pins  0b111
+    set pins  0b101        [2]
     jmp pin   high      
-    set pins  0b110        [27]
+    set pins  0b110        [25] ;[27]
 switch:
-    set pins  0b100
+    set pins  0b110
     jmp Y--   start
+
+; Jaromir runup
+
+; high:
+;     set pins  0b101
+;     jmp X--   switch       [26]
+; entry:
+;     set pins  0b000
+;     mov X     !NULL
+;     out Y     32           [31]
+;     irq       0            [31]
+; start:
+;     set pins  0b111
+;     jmp pin   high      
+;     set pins  0b110        [27]
+; switch:
+;     set pins  0b100
+;     jmp Y--   start
 
 ; RZ PWM (there's no way this is going to fit lol, no point trying to break my head over it)
  
@@ -96,17 +97,18 @@ void ms_program_init(PIO pio, uint sm, uint offset, uint pin, uint input, float 
     // Allow PIO to control GPIO pin (as output)
     pio_gpio_init(pio, pin);
     pio_gpio_init(pio, pin+1);
-    pio_gpio_init(pio, pin_MEAS);      
-    
+    pio_gpio_init(pio, pin_MEAS);
+    pio_gpio_init(pio, input);     
+
+    // Set the pin direction to output (in PIO)
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 3, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, input, 1, false);
     
     // set the pin for jump if pin high instruction
     sm_config_set_jmp_pin(&c, input); 
 
     // Connect pin to SET pin (control with 'set' instruction)
     sm_config_set_set_pins(&c, pin, 3);
-    
-    // Set the pin direction to output (in PIO)
-    pio_sm_set_consecutive_pindirs(pio, sm, pin, 3, true);
 
     // Set auto push to ISR
     sm_config_set_in_shift(&c, false, true, 32);
@@ -141,20 +143,16 @@ void residue_program_init(PIO pio, uint sm, uint offset, uint pin, float div) {
     pio_sm_config c = residue_program_get_default_config(offset);
     
     pio_gpio_init(pio, pin);
-    // pio_gpio_init(pio, pin + 1);
+    pio_gpio_init(pio, pin + 1);
     pio_gpio_init(pio, pin + 2);
-    pio_gpio_init(pio, pin + 3);
 
     pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, false);
-    // pio_sm_set_consecutive_pindirs(pio, sm, pin + 1, 1,true);  
+    pio_sm_set_consecutive_pindirs(pio, sm, pin + 1, 1, true);  
     pio_sm_set_consecutive_pindirs(pio, sm, pin + 2, 1, true);
-    pio_sm_set_consecutive_pindirs(pio, sm, pin + 3, 1, true);
 
-    // sm_config_set_out_pins(&c, pin + 1, 1);
     sm_config_set_in_pins(&c, pin);
-    sm_config_set_sideset_pins(&c, pin + 2);
+    sm_config_set_sideset_pins(&c, pin + 1); // initialize sideset LSB
 
-    // sm_config_set_out_shift(&c, false, true, 15);
     sm_config_set_in_shift(&c, false, true, 15);
 
     sm_config_set_clkdiv(&c, div);
@@ -204,8 +202,11 @@ void calibration_program_init(PIO pio, uint sm, uint offset, uint pin, uint inpu
     // Allow PIO to control GPIO pin (as output)
     pio_gpio_init(pio, pin);
     pio_gpio_init(pio, pin+1);
-    pio_gpio_init(pio, pin_MEAS);      
-    
+    pio_gpio_init(pio, pin_MEAS);    
+    pio_gpio_init(pio, input);  
+
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 3, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, input, 1, false);
     
     // set the pin for jump if pin high instruction
     sm_config_set_jmp_pin(&c, input); 

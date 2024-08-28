@@ -118,3 +118,16 @@ Moved project.log to main folder.
 'Ported' code to RP2350.
 TMT multislope construction mostly finished and basic functionality successfully tested.
 
+25.08.2024
+Construction finished. Ongoing issues with MCP3201 residue ADC. CS and CLK are doing what they should, MISO is misbehaving - 2V in idle state, then goes to 0V, then to 3.3V, and then back to 2V. No data is clocked out.
+Problem turned out to be damaged 3.3V trace that prevented the ADC's reference from being powered.
+
+28.08.2024
+Summarized noise results so far:
+Shorted input RMS noise (JPWM) ................. : 4.5μV
+Pico 2 additional ground pins connected (CPWM) . : 3μV
+Same as above, but with JPWM ................... : 3.8μV
+Same as above, but with CPWM ................... : 2.7μV
+Three run average - CPWM ....................... : 2.7μV
+Three run average - JPWM ....................... : 3.5μV
+
