@@ -203,7 +203,7 @@ void get_result()
 
 int main() 
 {
-    xosc_disable();
+    // xosc_disable();
     set_sys_clock_khz(96000, true);
     stdio_init_all();
 
@@ -292,7 +292,7 @@ int main()
 
     while(true)
     {
-        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
+        // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
         // while(!regs.conversionStatus);
 
@@ -324,7 +324,7 @@ int main()
 
         // printf("%d, %d, %d\n", N1, N2, N3);
 
-        // sleep_ms(500);
+        sleep_ms(500);
 
         voltage = 0.0;
         inCounts = 0;

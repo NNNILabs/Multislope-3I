@@ -131,3 +131,9 @@ Same as above, but with CPWM ................... : 2.7μV
 Three run average - CPWM ....................... : 2.7μV
 Three run average - JPWM ....................... : 3.5μV
 
+29.08.2024
+Attempts at using an external 48MHz oscillator to drive the XIN pin were unsuccessful. Could not figure out configuration of internal PLLs, or at least the documentation is not very straightforward regarding this. The setup code seems to be hard-coded into the SDK. Multiple sources confirm that using a 12MHz oscillator works 'out-of-the-box' with no changes to code necessary.
+Residue ADC SPI MISO pin misbehaviour was because of a hardware bug on the RP2350 chip itself: https://github.com/raspberrypi/pico-feedback/issues/401
+
+
+
