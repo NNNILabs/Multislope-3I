@@ -124,16 +124,19 @@ Problem turned out to be damaged 3.3V trace that prevented the ADC's reference f
 
 28.08.2024
 Summarized noise results so far:
-Shorted input RMS noise (JPWM) ................. : 4.5μV
-Pico 2 additional ground pins connected (CPWM) . : 3μV
-Same as above, but with JPWM ................... : 3.8μV
-Same as above, but with CPWM ................... : 2.7μV
-Three run average - CPWM ....................... : 2.7μV
-Three run average - JPWM ....................... : 3.5μV
+Shorted input RMS noise (JPWM) .................. : 4.5μV
+Pico 2 additional ground pins connected (CPWM) .. : 3.0μV
+Same as above, but with JPWM .................... : 3.8μV
+Same as above, but with CPWM .................... : 2.7μV
+Three run average - CPWM ........................ : 2.7μV
+Three run average - JPWM ........................ : 3.5μV
+JPWM could have more noise because of the number of distinct edges making it more sensitive to clock jitter. The assumption being, in this case, that switching noise from the 1.1V on-board switching regulator is causing excess jitter on the IO pins. To prove that, resync using an external TCXO and latch would be necessary.
 
 29.08.2024
 Attempts at using an external 48MHz oscillator to drive the XIN pin were unsuccessful. Could not figure out configuration of internal PLLs, or at least the documentation is not very straightforward regarding this. The setup code seems to be hard-coded into the SDK. Multiple sources confirm that using a 12MHz oscillator works 'out-of-the-box' with no changes to code necessary.
-Residue ADC SPI MISO pin misbehaviour was because of a hardware bug on the RP2350 chip itself: https://github.com/raspberrypi/pico-feedback/issues/401
+Residue ADC SPI MISO pin misbehaviour was because of a hardware bug on the RP2350 chip itself: https://github.com/raspberrypi/pico-feedback/issues/401. Does not affect functionality. Masking bits using 0xFFF necessary to prevent the input being interpreted as ones in the first two clock cycles.
 
+20.09.2024
+Replaced 48MHz oscillator with 12MHz oscillator, RP2350 starts up normally with no changes to the code. RMS noise with shorted inputs is down to around 1.2μV. CPWM or JPWM does not make a difference, I assume some other mechanism is preventing a difference in noise floor from showing up. Latch timing needs to be investigated.
 
 
