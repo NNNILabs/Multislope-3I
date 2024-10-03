@@ -139,4 +139,7 @@ Residue ADC SPI MISO pin misbehaviour was because of a hardware bug on the RP235
 20.09.2024
 Replaced 48MHz oscillator with 12MHz oscillator, RP2350 starts up normally with no changes to the code. RMS noise with shorted inputs is down to around 1.2μV. CPWM or JPWM does not make a difference, I assume some other mechanism is preventing a difference in noise floor from showing up. Latch timing needs to be investigated.
 
-
+21.09.2024
+Measured input, output and clock waveforms, there is a small phase shift between resets on the input relative to the 12MHz oscillator. Noise suddenly increased by 3 times compared to yesterday's runs. After more testing, I determined that the increased noise was a mistake in yesterday's measurements.
+CPWM (updated) .. : 1.17μVrms
+JPWM (updated) .. : 2.66μVrms

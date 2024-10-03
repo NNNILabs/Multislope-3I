@@ -8,7 +8,7 @@ mode com13 BAUD=1200
 
 :loop
 
-copy build\*.uf2 E:\
+copy build\*.uf2 F:\
 echo %errorlevel%
 if "%errorlevel%"=="0" goto success
 

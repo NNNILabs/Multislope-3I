@@ -12,45 +12,46 @@
 // ms //
 // -- //
 
-#define ms_wrap_target 22
-#define ms_wrap 25
+#define ms_wrap_target 23
+#define ms_wrap 26
 #define ms_pio_version 1
 
 static const uint16_t ms_program_instructions[] = {
-    0x1948, //  0: jmp    x--, 8                 [25]
-    0xe000, //  1: set    pins, 0                    
-    0xa02b, //  2: mov    x, !null                   
-    0x7f40, //  3: out    y, 32                  [31]
-    0xdf00, //  4: irq    nowait 0               [31]
-    0xe205, //  5: set    pins, 5                [2] 
-    0x00c0, //  6: jmp    pin, 0                     
-    0xf906, //  7: set    pins, 6                [25]
-    0xe006, //  8: set    pins, 6                    
-    0x0085, //  9: jmp    y--, 5                     
-    0xe000, // 10: set    pins, 0                    
-    0x4020, // 11: in     x, 32                      
-    0xe001, // 12: set    pins, 1                    
-    0x004e, // 13: jmp    x--, 14                    
-    0x00cd, // 14: jmp    pin, 13                    
-    0x4020, // 15: in     x, 32                      
-    0xe002, // 16: set    pins, 2                    
-    0x00d3, // 17: jmp    pin, 19                    
-    0x0051, // 18: jmp    x--, 17                    
-    0xe000, // 19: set    pins, 0                    
-    0x5f20, // 20: in     x, 32                  [31]
-    0xdf00, // 21: irq    nowait 0               [31]
+    0xe005, //  0: set    pins, 5                    
+    0x1a49, //  1: jmp    x--, 9                 [26]
+    0xe000, //  2: set    pins, 0                    
+    0xa02b, //  3: mov    x, !null                   
+    0x7f40, //  4: out    y, 32                  [31]
+    0xdf00, //  5: irq    nowait 0               [31]
+    0xe007, //  6: set    pins, 7                    
+    0x00c0, //  7: jmp    pin, 0                     
+    0xfb06, //  8: set    pins, 6                [27]
+    0xe004, //  9: set    pins, 4                    
+    0x0086, // 10: jmp    y--, 6                     
+    0xe000, // 11: set    pins, 0                    
+    0x4020, // 12: in     x, 32                      
+    0xe001, // 13: set    pins, 1                    
+    0x004f, // 14: jmp    x--, 15                    
+    0x00ce, // 15: jmp    pin, 14                    
+    0x4020, // 16: in     x, 32                      
+    0xe002, // 17: set    pins, 2                    
+    0x00d4, // 18: jmp    pin, 20                    
+    0x0052, // 19: jmp    x--, 18                    
+    0xe000, // 20: set    pins, 0                    
+    0x5f20, // 21: in     x, 32                  [31]
+    0xdf00, // 22: irq    nowait 0               [31]
             //     .wrap_target
-    0xe001, // 22: set    pins, 1                    
-    0x00d7, // 23: jmp    pin, 23                    
-    0xe102, // 24: set    pins, 2                [1] 
-    0x00e1, // 25: jmp    !osre, 1                   
+    0xe001, // 23: set    pins, 1                    
+    0x00d8, // 24: jmp    pin, 24                    
+    0xe102, // 25: set    pins, 2                [1] 
+    0x00e2, // 26: jmp    !osre, 2                   
             //     .wrap
 };
 
 #if !PICO_NO_HARDWARE
 static const struct pio_program ms_program = {
     .instructions = ms_program_instructions,
-    .length = 26,
+    .length = 27,
     .origin = -1,
     .pio_version = 1,
 #if PICO_PIO_VERSION > 0

@@ -186,8 +186,8 @@ void get_result()
     N1 = N2 = N3 = 0;
 
     // Calculate runup counts:
-    N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD)); // Complementary PWM runup
-    // N1 = (runup_neg * (14*RUU)) - (runup_pos * (14*RUD)); // Jaromir runup
+    // N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD)); // Complementary PWM runup
+    N1 = (runup_neg * (14*RUU)) - (runup_pos * (14*RUD)); // Jaromir runup
     // N1 = (runup_neg * (13*RUU + 1*RUD)) - (runup_pos * (1*RUU + 13*RUD)); // RZ PWM runup
 
     // Calculate fast rundown counts:
