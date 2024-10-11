@@ -143,3 +143,12 @@ Replaced 48MHz oscillator with 12MHz oscillator, RP2350 starts up normally with 
 Measured input, output and clock waveforms, there is a small phase shift between resets on the input relative to the 12MHz oscillator. Noise suddenly increased by 3 times compared to yesterday's runs. After more testing, I determined that the increased noise was a mistake in yesterday's measurements.
 CPWM (updated) .. : 1.17μVrms
 JPWM (updated) .. : 2.66μVrms
+Increased JPWM noise could be because of clock sync issues. After each reset, there is a random phase shift between the external 12MHz oscillator and the GPIO outputs controlling the multislope.
+
+06.10.2024
+While testing CPWM and JPWM with a logic analyzer, a bug was discovered in the CPWM code that caused a mismatch in duty cycles. Instead of 1/16 and 15/16, the duty cycle was 2/16 and 15/16. Since the calculations assumed 1/16 and 15/16.
+Fixing the bug made no difference in RMS noise, CPWM still results in 1.17μV on average, and JPWM 2.77μV.
+Probing the PWM and control outputs to the analog switch after the sync latch show no obvious problems in timing.
+
+07.10.2024
+Ringing was measured on the reference pins which worsen when switching from CPWM to JPWM. The negative reference is affected more than the positive reference.

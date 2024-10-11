@@ -21,7 +21,6 @@ Linker script and memory map
 LOAD CMakeFiles/slower_boot2.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/boot_stage2/compile_time_choice.S.obj
 START GROUP
 LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a
-LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libg.a
 LOAD C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc.a
 END GROUP
 START GROUP
@@ -63,24 +62,3 @@ LOAD linker stubs
                 0x00000000       0x22
  .ARM.attributes
                 0x00000000       0x22 CMakeFiles/slower_boot2.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/boot_stage2/compile_time_choice.S.obj
-
-.debug_line     0x00000000       0xed
- .debug_line    0x00000000       0xed CMakeFiles/slower_boot2.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/boot_stage2/compile_time_choice.S.obj
-
-.debug_line_str
-                0x00000000      0x111
- .debug_line_str
-                0x00000000      0x111 CMakeFiles/slower_boot2.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/boot_stage2/compile_time_choice.S.obj
-
-.debug_info     0x00000000       0x25
- .debug_info    0x00000000       0x25 CMakeFiles/slower_boot2.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/boot_stage2/compile_time_choice.S.obj
-
-.debug_abbrev   0x00000000       0x14
- .debug_abbrev  0x00000000       0x14 CMakeFiles/slower_boot2.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/boot_stage2/compile_time_choice.S.obj
-
-.debug_aranges  0x00000000       0x20
- .debug_aranges
-                0x00000000       0x20 CMakeFiles/slower_boot2.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/boot_stage2/compile_time_choice.S.obj
-
-.debug_str      0x00000000       0x93
- .debug_str     0x00000000       0x93 CMakeFiles/slower_boot2.dir/C_/Users/vivek/.pico-sdk/sdk/1.5.1/src/rp2_common/boot_stage2/compile_time_choice.S.obj

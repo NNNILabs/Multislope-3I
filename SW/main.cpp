@@ -8,7 +8,7 @@
 #include "lib/i2c_slave.h"
 
 const float div = 40;
-uint32_t pwmCycles = 15000;
+uint32_t pwmCycles = 1500;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
@@ -269,13 +269,13 @@ int main()
 
     sleep_ms(100);
 
-    setMuxState(MUX_IN);
+    setMuxState(MUX_GND);
 
     while(true)
     {
-        // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
+        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
-        while(!regs.conversionStatus);
+        // while(!regs.conversionStatus);
 
         // setMuxState(MUX_GND);
 
@@ -295,11 +295,11 @@ int main()
 
         voltage = ((double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts)) * vrefAbs;
 
-        regs.output = voltage;
-        sleep_ms(1);
-        regs.conversionStatus = 0;
+        // regs.output = voltage;
+        // sleep_ms(1);
+        // regs.conversionStatus = 0;
 
-        // printf("%g\n", voltage);
+        printf("%e\n", voltage);
 
         // printf("%d, %d, %d, %g\n", gndCounts, rawCounts, inCounts, voltage);
 

@@ -7,14 +7,14 @@
 
 # =============================================================================
 # Project: blink
-# Configurations: Debug
+# Configurations: Release
 # =============================================================================
 # =============================================================================
 
 #############################################
 # Rule for compiling ASM files.
 
-rule ASM_COMPILER__blink_unscanned_Debug
+rule ASM_COMPILER__blink_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\Users\vivek\.pico-sdk\toolchain\13_2_Rel1\bin\arm-none-eabi-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
@@ -24,7 +24,7 @@ rule ASM_COMPILER__blink_unscanned_Debug
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__blink_unscanned_Debug
+rule C_COMPILER__blink_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\Users\vivek\.pico-sdk\toolchain\13_2_Rel1\bin\arm-none-eabi-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -34,7 +34,7 @@ rule C_COMPILER__blink_unscanned_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__blink_unscanned_Debug
+rule CXX_COMPILER__blink_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\Users\vivek\.pico-sdk\toolchain\13_2_Rel1\bin\arm-none-eabi-g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -44,7 +44,7 @@ rule CXX_COMPILER__blink_unscanned_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__blink_Debug
+rule CXX_EXECUTABLE_LINKER__blink_Release
   command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Users\vivek\.pico-sdk\toolchain\13_2_Rel1\bin\arm-none-eabi-g++.exe $FLAGS -Wl,--build-id=none $LINK_FLAGS @$RSP_FILE -o $TARGET_FILE  && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   rspfile = $RSP_FILE
@@ -55,7 +55,7 @@ rule CXX_EXECUTABLE_LINKER__blink_Debug
 #############################################
 # Rule for compiling ASM files.
 
-rule ASM_COMPILER__slower_boot2_unscanned_Debug
+rule ASM_COMPILER__slower_boot2_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\Users\vivek\.pico-sdk\toolchain\13_2_Rel1\bin\arm-none-eabi-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
@@ -65,7 +65,7 @@ rule ASM_COMPILER__slower_boot2_unscanned_Debug
 #############################################
 # Rule for linking ASM executable.
 
-rule ASM_EXECUTABLE_LINKER__slower_boot2_Debug
+rule ASM_EXECUTABLE_LINKER__slower_boot2_Release
   command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Users\vivek\.pico-sdk\toolchain\13_2_Rel1\bin\arm-none-eabi-gcc.exe $FLAGS -Wl,--build-id=none $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking ASM executable $TARGET_FILE
   restat = $RESTAT
@@ -82,7 +82,7 @@ rule CUSTOM_COMMAND
 #############################################
 # Rule for compiling ASM files.
 
-rule ASM_COMPILER__bs2_default_unscanned_Debug
+rule ASM_COMPILER__bs2_default_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\Users\vivek\.pico-sdk\toolchain\13_2_Rel1\bin\arm-none-eabi-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
@@ -92,7 +92,7 @@ rule ASM_COMPILER__bs2_default_unscanned_Debug
 #############################################
 # Rule for linking ASM executable.
 
-rule ASM_EXECUTABLE_LINKER__bs2_default_Debug
+rule ASM_EXECUTABLE_LINKER__bs2_default_Release
   command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Users\vivek\.pico-sdk\toolchain\13_2_Rel1\bin\arm-none-eabi-gcc.exe $FLAGS -Wl,--build-id=none $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking ASM executable $TARGET_FILE
   restat = $RESTAT

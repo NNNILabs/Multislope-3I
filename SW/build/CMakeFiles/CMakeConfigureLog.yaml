@@ -135,8 +135,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-nih5ih"
-      binary: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-nih5ih"
+      source: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-jnadzl"
+      binary: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-jnadzl"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mcpu=cortex-m0plus -mthumb"
       CMAKE_C_FLAGS_DEBUG: "-Og -g"
@@ -146,10 +146,10 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-nih5ih'
+        Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-jnadzl'
         
-        Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_51fc4
-        [1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_b7e17
+        [1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe
         Target: arm-none-eabi
@@ -157,8 +157,8 @@ events:
         Thread model: single
         Supported LTO compression algorithms: zlib
         gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_51fc4.dir/'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_51fc4.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\cciYssfK.s
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_b7e17.dir/'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_b7e17.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccccp0Ut.s
         GNU C17 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) version 13.2.1 20231009 (arm-none-eabi)
         	compiled by GNU C version 9.3-win32 20200320, GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
         
@@ -175,13 +175,13 @@ events:
          C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/include
         End of search list.
         Compiler executable checksum: cb09303cfa46f5ecbf59d9467eac8678
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_51fc4.dir/'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\cciYssfK.s
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_b7e17.dir/'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccccp0Ut.s
         GNU assembler version 2.41.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 2.41.0.20231009
         COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/\x0d
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.'\x0d
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -Wl,--build-id=none -nostdlib -v CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj -o cmTC_51fc4.elf   && cd ."
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.'\x0d
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -Wl,--build-id=none -nostdlib -v CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj -o cmTC_b7e17.elf   && cd ."
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe
         COLLECT_LTO_WRAPPER=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe
@@ -192,10 +192,10 @@ events:
         gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 
         COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_51fc4.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_51fc4.elf.'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccSsx0XP.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_51fc4.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_b7e17.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_b7e17.elf.'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccGjkRlz.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_b7e17.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj
         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00008000
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_51fc4.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_51fc4.elf.'\x0d
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_b7e17.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_b7e17.elf.'\x0d
         
       exitCode: 0
   -
@@ -227,10 +227,10 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(arm-none-eabi-ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-nih5ih']
+        ignore line: [Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-jnadzl']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_51fc4]
-        ignore line: [[1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_b7e17]
+        ignore line: [[1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe]
         ignore line: [Target: arm-none-eabi]
@@ -238,8 +238,8 @@ events:
         ignore line: [Thread model: single]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_51fc4.dir/']
-        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_51fc4.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\cciYssfK.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_b7e17.dir/']
+        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_b7e17.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccccp0Ut.s]
         ignore line: [GNU C17 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) version 13.2.1 20231009 (arm-none-eabi)]
         ignore line: [	compiled by GNU C version 9.3-win32 20200320  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
         ignore line: []
@@ -256,8 +256,8 @@ events:
         ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: cb09303cfa46f5ecbf59d9467eac8678]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_51fc4.dir/']
-        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\cciYssfK.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_b7e17.dir/']
+        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccccp0Ut.s]
         ignore line: [GNU assembler version 2.41.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 2.41.0.20231009]
         ignore line: [COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/]
@@ -269,8 +269,8 @@ events:
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.'\x0d]
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -Wl --build-id=none -nostdlib -v CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj -o cmTC_51fc4.elf   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.'\x0d]
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -Wl --build-id=none -nostdlib -v CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj -o cmTC_b7e17.elf   && cd ."]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe]
@@ -289,17 +289,17 @@ events:
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_51fc4.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_51fc4.elf.']
-        link line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccSsx0XP.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_51fc4.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_b7e17.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_b7e17.elf.']
+        link line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccGjkRlz.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_b7e17.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj]
           arg [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccSsx0XP.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccGjkRlz.res] ==> ignore
           arg [--sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi] ==> ignore
           arg [-X] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_51fc4.elf] ==> ignore
+          arg [cmTC_b7e17.elf] ==> ignore
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp]
@@ -308,7 +308,7 @@ events:
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib]
           arg [--build-id=none] ==> ignore
-          arg [CMakeFiles/cmTC_51fc4.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_b7e17.dir/CMakeCCompilerABI.c.obj] ==> ignore
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp]
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/lib/thumb/v6-m/nofp]
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/lib/thumb/v6-m/nofp]
@@ -331,8 +331,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-ctw2vw"
-      binary: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-ctw2vw"
+      source: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-3eq4wl"
+      binary: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-3eq4wl"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-mcpu=cortex-m0plus -mthumb"
       CMAKE_CXX_FLAGS_DEBUG: "-Og -g"
@@ -343,10 +343,10 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-ctw2vw'
+        Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-3eq4wl'
         
-        Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_4a51b
-        [1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_f90d2
+        [1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe
         Target: arm-none-eabi
@@ -354,8 +354,8 @@ events:
         Thread model: single
         Supported LTO compression algorithms: zlib
         gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_4a51b.dir/'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1plus.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4a51b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccCsND71.s
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_f90d2.dir/'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1plus.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f90d2.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccmPvgZP.s
         GNU C++17 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) version 13.2.1 20231009 (arm-none-eabi)
         	compiled by GNU C version 9.3-win32 20200320, GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
         
@@ -378,13 +378,13 @@ events:
          C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/include
         End of search list.
         Compiler executable checksum: a40e8addbeb3630b34e653a108e6a4b8
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_4a51b.dir/'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccCsND71.s
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_f90d2.dir/'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccmPvgZP.s
         GNU assembler version 2.41.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 2.41.0.20231009
         COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/\x0d
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.'\x0d
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe -mcpu=cortex-m0plus -mthumb -Wl,--build-id=none -nostdlib -v CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_4a51b.elf   && cd ."
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.'\x0d
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe -mcpu=cortex-m0plus -mthumb -Wl,--build-id=none -nostdlib -v CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_f90d2.elf   && cd ."
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe
         COLLECT_LTO_WRAPPER=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe
@@ -395,10 +395,10 @@ events:
         gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 
         COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_4a51b.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_4a51b.elf.'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\cc6TCzf8.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_4a51b.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_f90d2.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_f90d2.elf.'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\cceF0PoR.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_f90d2.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj
         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00008000
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_4a51b.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_4a51b.elf.'\x0d
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_f90d2.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_f90d2.elf.'\x0d
         
       exitCode: 0
   -
@@ -436,10 +436,10 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(arm-none-eabi-ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-ctw2vw']
+        ignore line: [Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-3eq4wl']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_4a51b]
-        ignore line: [[1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_f90d2]
+        ignore line: [[1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe]
         ignore line: [Target: arm-none-eabi]
@@ -447,8 +447,8 @@ events:
         ignore line: [Thread model: single]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_4a51b.dir/']
-        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1plus.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4a51b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccCsND71.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_f90d2.dir/']
+        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1plus.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f90d2.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccmPvgZP.s]
         ignore line: [GNU C++17 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) version 13.2.1 20231009 (arm-none-eabi)]
         ignore line: [	compiled by GNU C version 9.3-win32 20200320  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
         ignore line: []
@@ -471,8 +471,8 @@ events:
         ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: a40e8addbeb3630b34e653a108e6a4b8]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_4a51b.dir/']
-        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccCsND71.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_f90d2.dir/']
+        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccmPvgZP.s]
         ignore line: [GNU assembler version 2.41.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 2.41.0.20231009]
         ignore line: [COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/]
@@ -484,8 +484,8 @@ events:
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.'\x0d]
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe -mcpu=cortex-m0plus -mthumb -Wl --build-id=none -nostdlib -v CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_4a51b.elf   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.'\x0d]
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe -mcpu=cortex-m0plus -mthumb -Wl --build-id=none -nostdlib -v CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_f90d2.elf   && cd ."]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe]
@@ -504,17 +504,17 @@ events:
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_4a51b.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_4a51b.elf.']
-        link line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\cc6TCzf8.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_4a51b.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_f90d2.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_f90d2.elf.']
+        link line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\cceF0PoR.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_f90d2.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj]
           arg [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\cc6TCzf8.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\cceF0PoR.res] ==> ignore
           arg [--sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi] ==> ignore
           arg [-X] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_4a51b.elf] ==> ignore
+          arg [cmTC_f90d2.elf] ==> ignore
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp]
@@ -523,7 +523,7 @@ events:
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib]
           arg [--build-id=none] ==> ignore
-          arg [CMakeFiles/cmTC_4a51b.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_f90d2.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp]
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/lib/thumb/v6-m/nofp]
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/lib/thumb/v6-m/nofp]
@@ -545,7 +545,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:228 (message)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     message: |
       The target system is: PICO -  - cortex-m0plus
       The host system is: Windows - 10.0.19045 - AMD64
@@ -555,7 +555,7 @@ events:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
       Compiler: C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-gcc.exe 
@@ -585,7 +585,7 @@ events:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler: C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-gcc.exe 
@@ -607,7 +607,7 @@ events:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
       Compiler: C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-g++.exe 
@@ -637,7 +637,7 @@ events:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-g++.exe 
@@ -658,7 +658,7 @@ events:
     backtrace:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:1155 (message)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineASMCompiler.cmake:131 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     message: |
       Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
       arm-none-eabi-gcc.exe (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 13.2.1 20231009
@@ -671,12 +671,12 @@ events:
     backtrace:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:60 (try_compile)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-awqhb1"
-      binary: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-awqhb1"
+      source: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-x6os7n"
+      binary: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-x6os7n"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mcpu=cortex-m0plus -mthumb"
       CMAKE_C_FLAGS_DEBUG: "-Og -g"
@@ -686,10 +686,10 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-awqhb1'
+        Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-x6os7n'
         
-        Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_2dcae
-        [1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_0b4a0
+        [1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe
         Target: arm-none-eabi
@@ -697,8 +697,8 @@ events:
         Thread model: single
         Supported LTO compression algorithms: zlib
         gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_2dcae.dir/'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_2dcae.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccdIbkkt.s
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_0b4a0.dir/'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_0b4a0.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccHscdsV.s
         GNU C17 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) version 13.2.1 20231009 (arm-none-eabi)
         	compiled by GNU C version 9.3-win32 20200320, GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
         
@@ -715,13 +715,13 @@ events:
          C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/include
         End of search list.
         Compiler executable checksum: cb09303cfa46f5ecbf59d9467eac8678
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_2dcae.dir/'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccdIbkkt.s
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_0b4a0.dir/'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccHscdsV.s
         GNU assembler version 2.41.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 2.41.0.20231009
         COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/\x0d
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.'\x0d
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -Wl,--build-id=none -nostdlib -v CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj -o cmTC_2dcae.elf   && cd ."
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.'\x0d
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -Wl,--build-id=none -nostdlib -v CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj -o cmTC_0b4a0.elf   && cd ."
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe
         COLLECT_LTO_WRAPPER=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe
@@ -732,10 +732,10 @@ events:
         gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 
         COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_2dcae.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_2dcae.elf.'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccP1yS2y.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_2dcae.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_0b4a0.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_0b4a0.elf.'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccnSUx50.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_0b4a0.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj
         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00008000
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_2dcae.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_2dcae.elf.'\x0d
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_0b4a0.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_0b4a0.elf.'\x0d
         
       exitCode: 0
   -
@@ -743,7 +743,7 @@ events:
     backtrace:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:130 (message)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
         found start of include info
@@ -763,14 +763,14 @@ events:
     backtrace:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:162 (message)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(arm-none-eabi-ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-awqhb1']
+        ignore line: [Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-x6os7n']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_2dcae]
-        ignore line: [[1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_0b4a0]
+        ignore line: [[1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe]
         ignore line: [Target: arm-none-eabi]
@@ -778,8 +778,8 @@ events:
         ignore line: [Thread model: single]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_2dcae.dir/']
-        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_2dcae.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccdIbkkt.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_0b4a0.dir/']
+        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_0b4a0.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccHscdsV.s]
         ignore line: [GNU C17 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) version 13.2.1 20231009 (arm-none-eabi)]
         ignore line: [	compiled by GNU C version 9.3-win32 20200320  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
         ignore line: []
@@ -796,8 +796,8 @@ events:
         ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: cb09303cfa46f5ecbf59d9467eac8678]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_2dcae.dir/']
-        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccdIbkkt.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_0b4a0.dir/']
+        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccHscdsV.s]
         ignore line: [GNU assembler version 2.41.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 2.41.0.20231009]
         ignore line: [COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/]
@@ -809,8 +809,8 @@ events:
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.'\x0d]
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -Wl --build-id=none -nostdlib -v CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj -o cmTC_2dcae.elf   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.'\x0d]
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -Wl --build-id=none -nostdlib -v CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj -o cmTC_0b4a0.elf   && cd ."]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-gcc.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe]
@@ -829,17 +829,17 @@ events:
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_2dcae.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_2dcae.elf.']
-        link line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccP1yS2y.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_2dcae.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_0b4a0.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_0b4a0.elf.']
+        link line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccnSUx50.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_0b4a0.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj]
           arg [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccP1yS2y.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccnSUx50.res] ==> ignore
           arg [--sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi] ==> ignore
           arg [-X] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_2dcae.elf] ==> ignore
+          arg [cmTC_0b4a0.elf] ==> ignore
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp]
@@ -848,7 +848,7 @@ events:
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib]
           arg [--build-id=none] ==> ignore
-          arg [CMakeFiles/cmTC_2dcae.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_0b4a0.dir/CMakeCCompilerABI.c.obj] ==> ignore
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp]
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/lib/thumb/v6-m/nofp]
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/lib/thumb/v6-m/nofp]
@@ -867,12 +867,12 @@ events:
     backtrace:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:60 (try_compile)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-nypshn"
-      binary: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-nypshn"
+      source: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-gj2wdz"
+      binary: "C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-gj2wdz"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-mcpu=cortex-m0plus -mthumb"
       CMAKE_CXX_FLAGS_DEBUG: "-Og -g"
@@ -883,10 +883,10 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-nypshn'
+        Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-gj2wdz'
         
-        Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_e8c6e
-        [1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_5d429
+        [1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe
         Target: arm-none-eabi
@@ -894,8 +894,8 @@ events:
         Thread model: single
         Supported LTO compression algorithms: zlib
         gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_e8c6e.dir/'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1plus.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_e8c6e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccPTh6wM.s
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_5d429.dir/'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1plus.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5d429.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccfi5Q9h.s
         GNU C++17 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) version 13.2.1 20231009 (arm-none-eabi)
         	compiled by GNU C version 9.3-win32 20200320, GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
         
@@ -918,13 +918,13 @@ events:
          C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/include
         End of search list.
         Compiler executable checksum: a40e8addbeb3630b34e653a108e6a4b8
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_e8c6e.dir/'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccPTh6wM.s
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_5d429.dir/'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccfi5Q9h.s
         GNU assembler version 2.41.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 2.41.0.20231009
         COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/\x0d
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.'\x0d
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe -mcpu=cortex-m0plus -mthumb -Wl,--build-id=none -nostdlib -v CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_e8c6e.elf   && cd ."
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.'\x0d
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe -mcpu=cortex-m0plus -mthumb -Wl,--build-id=none -nostdlib -v CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_5d429.elf   && cd ."
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe
         COLLECT_LTO_WRAPPER=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe
@@ -935,10 +935,10 @@ events:
         gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 
         COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/;C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_e8c6e.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_e8c6e.elf.'
-         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccJiDEfS.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_e8c6e.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_5d429.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_5d429.elf.'
+         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccUkaM5b.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_5d429.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj
         C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00008000
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_e8c6e.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_e8c6e.elf.'\x0d
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_5d429.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_5d429.elf.'\x0d
         
       exitCode: 0
   -
@@ -946,7 +946,7 @@ events:
     backtrace:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:130 (message)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
@@ -972,14 +972,14 @@ events:
     backtrace:
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:162 (message)"
       - "C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:46 (project)"
+      - "CMakeLists.txt:37 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(arm-none-eabi-ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-nypshn']
+        ignore line: [Change Dir: 'C:/Users/vivek/Desktop/Projects/Multislope-3I/SW/build/CMakeFiles/CMakeScratch/TryCompile-gj2wdz']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_e8c6e]
-        ignore line: [[1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): C:/Users/vivek/.pico-sdk/ninja/v1.12.1/ninja.exe -v cmTC_5d429]
+        ignore line: [[1/2] C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe]
         ignore line: [Target: arm-none-eabi]
@@ -987,8 +987,8 @@ events:
         ignore line: [Thread model: single]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 13.2.1 20231009 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_e8c6e.dir/']
-        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1plus.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_e8c6e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccPTh6wM.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_5d429.dir/']
+        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/cc1plus.exe -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/ -isysroot C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -D__USES_INITFINI__ C:/Users/vivek/.pico-sdk/cmake/v3.28.6/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5d429.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -o C:\\Users\\vivek\\AppData\\Local\\Temp\\ccfi5Q9h.s]
         ignore line: [GNU C++17 (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) version 13.2.1 20231009 (arm-none-eabi)]
         ignore line: [	compiled by GNU C version 9.3-win32 20200320  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
         ignore line: []
@@ -1011,8 +1011,8 @@ events:
         ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: a40e8addbeb3630b34e653a108e6a4b8]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_e8c6e.dir/']
-        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccPTh6wM.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_5d429.dir/']
+        ignore line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\vivek\\AppData\\Local\\Temp\\ccfi5Q9h.s]
         ignore line: [GNU assembler version 2.41.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 2.41.0.20231009]
         ignore line: [COMPILER_PATH=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/]
@@ -1024,8 +1024,8 @@ events:
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.'\x0d]
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe -mcpu=cortex-m0plus -mthumb -Wl --build-id=none -nostdlib -v CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_e8c6e.elf   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-v' '-o' 'CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.'\x0d]
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe -mcpu=cortex-m0plus -mthumb -Wl --build-id=none -nostdlib -v CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_5d429.elf   && cd ."]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\vivek\\.pico-sdk\\toolchain\\13_2_Rel1\\bin\\arm-none-eabi-g++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe]
@@ -1044,17 +1044,17 @@ events:
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/]
         ignore line: [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_e8c6e.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_e8c6e.elf.']
-        link line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccJiDEfS.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_e8c6e.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-nostdlib' '-v' '-o' 'cmTC_5d429.elf' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_5d429.elf.']
+        link line: [ C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe -plugin C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll -plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccUkaM5b.res --sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi -X -o cmTC_5d429.elf -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1 -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib -LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib --build-id=none CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj]
           arg [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../libexec/gcc/arm-none-eabi/13.2.1/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccJiDEfS.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\vivek\\AppData\\Local\\Temp\\ccUkaM5b.res] ==> ignore
           arg [--sysroot=C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi] ==> ignore
           arg [-X] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_e8c6e.elf] ==> ignore
+          arg [cmTC_5d429.elf] ==> ignore
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp]
@@ -1063,7 +1063,7 @@ events:
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib]
           arg [-LC:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib] ==> dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib]
           arg [--build-id=none] ==> ignore
-          arg [CMakeFiles/cmTC_e8c6e.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_5d429.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp]
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/lib/thumb/v6-m/nofp]
         collapse library dir [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/bin/../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/Users/vivek/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/lib/thumb/v6-m/nofp]
