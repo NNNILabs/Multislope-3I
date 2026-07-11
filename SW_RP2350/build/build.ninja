@@ -1397,7 +1397,7 @@ build pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_
 # Custom command for pico-sdk\src\rp2350\boot_stage2\bs2_default_padded_checksummed.S
 
 build pico-sdk/src/rp2350/boot_stage2/bs2_default_padded_checksummed.S | ${cmake_ninja_workdir}pico-sdk/src/rp2350/boot_stage2/bs2_default_padded_checksummed.S: CUSTOM_COMMAND pico-sdk/src/rp2350/boot_stage2/bs2_default.bin || pico-sdk/src/rp2350/boot_stage2/bs2_default.elf
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\vivek\Desktop\Projects\Multislope-3I\SW_RP2350\build\pico-sdk\src\rp2350\boot_stage2 && C:\Users\vivek\.pico-sdk\python\3.12.1\python.exe C:/Users/vivek/.pico-sdk/sdk/2.0.0/src/rp2350/boot_stage2/pad_checksum -s 0xffffffff -a arm C:/Users/vivek/Desktop/Projects/Multislope-3I/SW_RP2350/build/pico-sdk/src/rp2350/boot_stage2/bs2_default.bin C:/Users/vivek/Desktop/Projects/Multislope-3I/SW_RP2350/build/pico-sdk/src/rp2350/boot_stage2/bs2_default_padded_checksummed.S"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\vivek\Desktop\Projects\Multislope-3I\SW_RP2350\build\pico-sdk\src\rp2350\boot_stage2 && C:\Users\vivek\.pico-sdk\python\3.12.6\python.exe C:/Users/vivek/.pico-sdk/sdk/2.0.0/src/rp2350/boot_stage2/pad_checksum -s 0xffffffff -a arm C:/Users/vivek/Desktop/Projects/Multislope-3I/SW_RP2350/build/pico-sdk/src/rp2350/boot_stage2/bs2_default.bin C:/Users/vivek/Desktop/Projects/Multislope-3I/SW_RP2350/build/pico-sdk/src/rp2350/boot_stage2/bs2_default_padded_checksummed.S"
   DESC = Generating bs2_default_padded_checksummed.S
   restat = 1
 

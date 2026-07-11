@@ -319,7 +319,7 @@ PICO_STDIO_UART:BOOL=ON
 PICO_STDIO_USB:BOOL=OFF
 
 //No help, variable specified on the command line.
-Python3_EXECUTABLE:UNINITIALIZED=C:/Users/vivek/.pico-sdk/python/3.12.1/python.exe
+Python3_EXECUTABLE:UNINITIALIZED=C:/Users/vivek/.pico-sdk/python/3.12.6/python.exe
 
 //Value Computed by CMake
 SW_RP2350_BINARY_DIR:STATIC=C:/Users/vivek/Desktop/Projects/Multislope-3I/SW_RP2350/build
@@ -508,7 +508,7 @@ DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
 DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
 FAMILY_MCUS:INTERNAL=RP2040
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Users/vivek/.pico-sdk/python/3.12.1/python.exe][cfound components: Interpreter ][v3.12.1()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Users/vivek/.pico-sdk/python/3.12.6/python.exe][cfound components: Interpreter ][v3.12.6()]
 PICO_ARM:INTERNAL=1
 PICO_BOOT_STAGE2_DIR:INTERNAL=C:/Users/vivek/.pico-sdk/sdk/2.0.0/src/rp2350/boot_stage2
 PICO_CMAKE_PRELOAD_PLATFORM_DIR:INTERNAL=C:/Users/vivek/.pico-sdk/sdk/2.0.0/cmake/preload/platforms
@@ -537,10 +537,10 @@ PICO_TOOLS_DIR:INTERNAL=C:/Users/vivek/.pico-sdk/sdk/2.0.0/tools
 _Python3_Compiler_REASON_FAILURE:INTERNAL=
 //Development reason failure
 _Python3_Development_REASON_FAILURE:INTERNAL=
-_Python3_EXECUTABLE:INTERNAL=C:/Users/vivek/.pico-sdk/python/3.12.1/python.exe
+_Python3_EXECUTABLE:INTERNAL=C:/Users/vivek/.pico-sdk/python/3.12.6/python.exe
 //Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;1;32;64;;;abi3;C:\Users\vivek\.pico-sdk\python\3.12.1\Lib;C:\Users\vivek\.pico-sdk\python\3.12.1\Lib;C:\Users\vivek\.pico-sdk\python\3.12.1\Lib\site-packages;C:\Users\vivek\.pico-sdk\python\3.12.1\Lib\site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=902dd6be843301e80964dfedeb08881c
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;6;32;64;;;abi3;C:\Users\vivek\.pico-sdk\python\3.12.6\Lib;C:\Users\vivek\.pico-sdk\python\3.12.6\Lib;C:\Users\vivek\.pico-sdk\python\3.12.6\Lib\site-packages;C:\Users\vivek\.pico-sdk\python\3.12.6\Lib\site-packages
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=ef3f7e09457253bc6e7c05e4e84ce2af
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 

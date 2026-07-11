@@ -1,0 +1,44 @@
+.program SPI
+.side_set 1
+
+; one CONV pin as pins, one CLK pin as sideset, one SDI as in pin
+.wrap_target
+    pull                  side 0
+    set pins 0        [1] side 1          ; pull CONV low
+    set x    13       [1] side 0          ; 16 transfers
+bitloop:
+    out NULL 1        [1] side 1          ; raise CLK
+    in  pins 1        [0] side 0          ; read SDI bit
+    jmp x--  bitloop      side 0          ; loop until x == 0
+    set pins 1            side 0          ; pull CONV high
+.wrap
+
+% c-sdk {
+
+void SPI_program_init(PIO pio, uint sm, uint offset, uint pin, float div) 
+{
+    pio_sm_config c = SPI_program_get_default_config(offset);
+
+    pio_gpio_init(pio, pin);
+    pio_gpio_init(pio, pin + 1);
+    pio_gpio_init(pio, pin + 2);
+
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, pin + 1, 1, false);
+    pio_sm_set_consecutive_pindirs(pio, sm, pin + 2, 1, true);
+
+    sm_config_set_set_pins(&c, pin, 1);
+    sm_config_set_in_pins(&c, pin + 1);
+    sm_config_set_sideset_pins(&c, pin + 2);
+
+    hw_set_bits(&pio->input_sync_bypass, 1u << pin + 1);
+
+    sm_config_set_out_shift(&c, false, false, 14);
+    sm_config_set_in_shift(&c, false, true, 14);
+    
+    sm_config_set_clkdiv(&c, div);
+
+    pio_sm_init(pio, sm, offset, &c);
+}
+
+%}

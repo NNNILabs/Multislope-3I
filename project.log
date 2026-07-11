@@ -9,7 +9,7 @@ Came up with a new calibration scheme to combine residue ADC with PWM runup - do
 Did three-phase auto zero on the calibrated reading, noise is generally within 10μVpp with some outliers. Mark elaborated calibration scheme with 2 runup and 3 runup cycles to compensate for the difference between the two slopes. 2 runup cycles delivers the difference between the two slopes (in my case, around 8mV), while 3 runup cycles delivers the residue resolution in terms of one runup cycle.
 
 04.07.2024
-Jaromir elaborated on the residue calibration algorithm. One runup, residue difference = R1; One runup, one rundown, residue difference = R2; One runup, one down, one up, residue difference = R3. One down cycle = R2 - R1, one up cycle = R3 - R2. After normal measurement, count number of 'up' (+) cycles, multiply by (R3-R2), count number of 'down' (-) cycles, multiply by (R2 - R1), (signed) add, add residue difference.
+Jaromir elaborated on the residue calibration algorithm. One runup, residue difference = R1; One runup, one rundown, residue difference = R2; One runup, one down, one up, residue difference = R3. One down cycle = R2 - R1, one up cycle = R3 - R2. After normal measurement, count number of 'up' (+) cycles, multiply by (R3-R2), count number of 'down' (-) cycles, multiply by (R2 - R1), (signed) add, add residue difference. 
 Wrote a separate calibration PIO program that involved a lot of hacks. irq wait didn't behave properly at all, turns out the problem was very complicated since the SPI code involved in and out shifting, blocking reads and writes took priority over interrupts. Fixed using delays in the C/C++ code. Finally got the 1-2-3 calibration scheme up and running.
 Noise is still in the range of 100μVpp. Discovered a math mistake in yesterday's run, forgot to multiply by abs Vref. I suspect modulation frequency is too high for my circuit.
 
@@ -143,7 +143,7 @@ Replaced 48MHz oscillator with 12MHz oscillator, RP2350 starts up normally with 
 Measured input, output and clock waveforms, there is a small phase shift between resets on the input relative to the 12MHz oscillator. Noise suddenly increased by 3 times compared to yesterday's runs. After more testing, I determined that the increased noise was a mistake in yesterday's measurements.
 CPWM (updated) .. : 1.17μVrms
 JPWM (updated) .. : 2.66μVrms
-Increased JPWM noise could be because of clock sync issues. After each reset, there is a random phase shift between the external 12MHz oscillator and the GPIO outputs controlling the multislope.
+Increased JPWM noise could be because of clock sync issues. After each reset, there is a random phase shift between the external 12MHz oscillator and the GPIO outputs controlling the multislope. This could be causing the increased noise in JPWM.
 
 06.10.2024
 While testing CPWM and JPWM with a logic analyzer, a bug was discovered in the CPWM code that caused a mismatch in duty cycles. Instead of 1/16 and 15/16, the duty cycle was 2/16 and 15/16. Since the calculations assumed 1/16 and 15/16.
@@ -152,3 +152,14 @@ Probing the PWM and control outputs to the analog switch after the sync latch sh
 
 07.10.2024
 Ringing was measured on the reference pins which worsen when switching from CPWM to JPWM. The negative reference is affected more than the positive reference.
+
+15.02.2025
+The MS3I board was tested to make sure that noise was consistent with the results from last time. Shorted-input noise (with and without auto zero) has increased from 1.8μVpp to around 2μVpp, with no explanation. Measuring RMS noise over several values of integration times shows a clear divergence even at 2 NPLC, whereas the divergence was observed at 10 NPLC last time.
+
+17.02.2025
+I was on a wild goose chase with the noise, 1 NPLC with shielding and air-current protection gets back around 1.8μVpp (with occasional outliers), but the RMS noise vs. integration time characteristic has definitely worsened. The TMT board's INL was tested. At 1 NPLC, spikes are visible at roughly regular intervals, with the INL itself having a slight quadratic/cubic/triangular characteristic (~2ppm). At 20 NPLC, the spikes are gone, and the characteristic looks more triangular. Mark points out that the spikes might be because of repeating integrator patterns.
+The formula for CPWM ((runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD))) also turned out to be wrong - there is no need to take into account the 1*RUU or 1*RUD amount of charge in a PWM cycle, since it is cancelled out by the complementary PWM channel.
+
+26.02.2025
+Over the last week, I've worked on rebuilding the multislope board to clean up the reference and V-to-I section, and remove the residue scaling amplifier, residue ADC and comparator, to replace the three with the fast ADC. The code was also compeletely rewritten to use the PWM peripheral, which was quite the undertaking.
+Changing the frequency of PWM slices on-the-fly resulted in the phase offset being reset, with the effect of delaying feedback by exactly one PWM cycle.

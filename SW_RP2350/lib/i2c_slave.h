@@ -17,7 +17,7 @@
 #include "hardware/clocks.h"
 
 // define I2C addresses to be used for this peripheral
-#define I2C0_PERIPHERAL_ADDR 0x2B
+#define I2C0_PERIPHERAL_ADDR 0x2C
 
 // GPIO pins to use for I2C
 #define GPIO_SDA0 16

@@ -10,7 +10,7 @@
 #include "lib/i2c_slave.h"
 
 const float div = 40;
-uint32_t pwmCycles = 1500;
+uint32_t pwmCycles = 150000;
 
 // MCP3202 ADC
 const uint8_t MISO = 3;
@@ -153,7 +153,7 @@ void get_cal()
 {
     sleep_ms(100);
 
-    // gpio_put(LED, true);
+    gpio_put(LED, true);
 
     uint32_t countOne = 0;
     uint32_t countTwo = 0;
@@ -175,7 +175,7 @@ void get_cal()
     RUU = R2; // * 1.0001; // R2;
     RUD = R1; // * 0.9999; // R1;
 
-    // gpio_put(LED, false);
+    gpio_put(LED, false);
 
     printf("%d, %d, %d, %d, %d\n", countOne, countTwo, countThree, RUU, RUD);
 
@@ -186,8 +186,8 @@ void get_result()
     N1 = N2 = N3 = 0;
 
     // Calculate runup counts:
-    N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD)); // Complementary PWM runup
-    // N1 = (runup_neg * (14*RUU)) - (runup_pos * (14*RUD)); // Jaromir runup
+    // N1 = (runup_neg * (15*RUU + 1*RUD)) - (runup_pos * (1*RUU + 15*RUD)); // Complementary PWM runup
+    N1 = (runup_neg * (14*RUU)) - (runup_pos * (14*RUD)); // Jaromir runup
     // N1 = (runup_neg * (13*RUU + 1*RUD)) - (runup_pos * (1*RUU + 13*RUD)); // RZ PWM runup
 
     // Calculate fast rundown counts:
@@ -292,19 +292,19 @@ int main()
 
     while(true)
     {
-        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
+        // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
 
-        // while(!regs.conversionStatus);
+        while(!regs.conversionStatus);
 
         // setMuxState(MUX_GND);
 
-        // sleep_ms(1);
+        // sleep_ms(10);
         // get_counts(pwmCycles);
         // get_result();
 
         // gndCounts = result;
 
-        // setMuxState(MUX_IN);
+        setMuxState(MUX_IN);
 
         sleep_ms(1);
         get_counts(pwmCycles);
@@ -314,11 +314,11 @@ int main()
 
         voltage = ((double)(inCounts - gndCounts)/(double)(rawCounts - gndCounts)) * vrefAbs;
 
-        // regs.output = voltage;
-        // sleep_ms(1);
-        // regs.conversionStatus = 0;
+        regs.output = voltage;
+        sleep_ms(1);
+        regs.conversionStatus = 0;
 
-        printf("%g\n", voltage);
+        // printf("%e\n", voltage);
 
         // printf("%d, %d, %d, %d, %d, %g\n", RUU, RUD, gndCounts, rawCounts, inCounts, voltage);
 

@@ -1,3 +1,9 @@
+/*
+
+    SDK Version (29.11.2024): V2.0.0
+
+*/
+
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
@@ -8,7 +14,7 @@
 #include "lib/i2c_slave.h"
 
 const float div = 40;
-uint32_t pwmCycles = 1500;
+uint32_t pwmCycles = 15000;
 
 const uint8_t MUX_A0 = 0;
 const uint8_t MUX_A1 = 2;
@@ -180,7 +186,7 @@ void get_result()
 
 int main() 
 {
-    set_sys_clock_khz(96000, true);  
+    set_sys_clock_khz(96000, true); 
     stdio_init_all();
 
     i2c_init();
@@ -277,15 +283,15 @@ int main()
 
         // while(!regs.conversionStatus);
 
-        // setMuxState(MUX_GND);
+        setMuxState(MUX_GND);
 
-        // sleep_ms(1);
-        // get_counts(pwmCycles);
-        // get_result();
+        sleep_ms(1);
+        get_counts(pwmCycles);
+        get_result();
 
-        // gndCounts = result;
+        gndCounts = result;
 
-        // setMuxState(MUX_IN);
+        setMuxState(MUX_IN);
 
         sleep_ms(1);
         get_counts(pwmCycles);
@@ -301,11 +307,11 @@ int main()
 
         printf("%e\n", voltage);
 
-        // printf("%d, %d, %d, %g\n", gndCounts, rawCounts, inCounts, voltage);
+        // printf("%d, %d, %d, %d, %d, %d, %g\n", gndCounts, rawCounts, inCounts, residueBefore, residueAfter, (residueAfter - residueBefore), voltage);
 
-        // printf("%d, %d, %d\n", N1, N2, N3);
+        // printf("%d, %d, %d, %d\n", N1, N2, N3, result);
 
-        // sleep_ms(500);
+        // sleep_ms(100);
 
     }
     
